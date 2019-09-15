@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-header.css">
     <title>Document</title>
 </head>
 <body id="body">
@@ -14,11 +14,10 @@
                 <img src="img.jpg" alt="Logo">
                 <h1>Randfood</h1>
             </a>
-              
             <nav class="navReg">
                 <ul>
                     <li>
-                        <p><a href="#">Sign Up</a></p>
+                        <p><a href="login.php">Sign Up</a></p>
                     </li>
                     <p>|</p>
                     <li>
