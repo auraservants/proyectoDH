@@ -12,7 +12,7 @@
   <div class="fondo">
     <div class="registro">
       <p>No tienes una cuenta?</p>
-      <p>Registrate <a href="login.html">acá</a></p>
+      <p>Registrate <a href="login.php">acá</a></p>
     </div>
   </div>
   <div class="signIn">

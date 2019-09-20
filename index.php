@@ -22,7 +22,7 @@
                 <a href="#" id="link-home" class="btn-header">Inicio</a>
                 <a href="#" id="link-shop" class="btn-header">Shop</a>
                 <a href="#" id="link-us" class="btn-header">Conócenos</a>
-                <a href="#" id="link-contact" class="btn-header">Contacto</a>
+                <a href="contact.php" id="link-contact" class="btn-header">Contacto</a>
             </div>
             <div class="nav-links-btn">
                 <a href="signin.html" id="link-signin" class="btn-header"><i class="fas fa-user"></i> Ingresar</a>
