@@ -1,0 +1,96 @@
+#body {
+    background-image: url("../image/imagen1.jpg");
+    background-size: cover;
+}
+
+h2 {
+    margin: 0;
+    padding-top: 35px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-family: sans-serif;
+    color: rgba(245, 130, 32, 0.9);
+}
+.fondo {
+    position: absolute;
+    top: 30%;
+    bottom: 25%;
+    right: 20%;
+    left: 20%;
+    background-color: #272931de;
+    border-radius: 3px;
+}
+
+.registro {
+  width: 300px;
+  margin-right: 300px;
+  margin-left: 30px;
+  margin-top: 120px;
+  text-align: center;
+
+}
+.registro p{
+  color: white;
+  font-size: 25px;
+  font-family: Montserrat;
+}
+.registro p a {
+  text-decoration: none;
+  color: rgba(245, 130, 32, 0.6);
+}
+
+.signIn {
+    position: absolute;
+    top: 27%;
+    bottom: 22%;
+    right: 25%;
+    left: 50%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    z-index: 1;
+}
+.formSignIn p {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.formSignIn .formItems {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    outline: none;
+    padding: 12px 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    width: 75%;
+    color: rgba(0, 0, 0, 0.4);
+    transition: .3s;
+    height: 45px;
+}
+.formSignIn .formItems:focus {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-size: 22px;
+}
+.formSignIn .formItems:hover {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-size: 22px;
+}
+.bottonSignIn {
+    border: none;
+    outline: none;
+    padding: 12px 38px;
+    box-sizing: border-box;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 3px;
+    margin-top: 40px;
+    background-color: rgba(245, 130, 32, 0.6);
+    transition: .3s;
+}
+.bottonSignIn:hover {
+    background-color: rgba(245, 130, 32, 0.8);
+}
