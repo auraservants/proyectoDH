@@ -1,0 +1,59 @@
+#body {
+    background-image: url("../image/imagen2.jpg");
+    background-size: cover;
+}
+h2 {
+    margin: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-family: sans-serif;
+    color: rgba(245, 130, 32, 0.9);
+}
+.contact {
+    padding-top: 13%;
+}
+form {
+    text-align: center;
+}
+form .formContact {
+    background-color: #ffffff9c;;
+    margin: 15px 0;
+    width: 30%;
+    padding: 7px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+    height: 30px;
+}
+form .formContact:hover {
+    background-color: #ffffffc7;
+    border: none;
+    font-size: 23px;
+}
+form .formContact:focus {
+    background-color: #ffffffc7;
+    border: none;
+    font-size: 23px;
+}
+form .mensaje {
+    width: 50%;
+    height: 165px;
+}
+.bottonContact{
+    border: none;
+    outline: none;
+    padding: 12px 38px;
+    box-sizing: border-box;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 3px;
+    margin-top: 15px;
+    background-color: rgba(245, 130, 32, 0.8); 
+    transition: .3s;
+}
+.bottonContact:hover {
+    background-color: rgba(245, 130, 32, 0.9); 
+}

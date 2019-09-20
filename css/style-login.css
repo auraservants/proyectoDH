@@ -62,12 +62,12 @@ h2 {
 .bottonSignUp {
     border: none;
     outline: none;
-    padding: 12px 38px;
+    padding: 9px 28px;
     box-sizing: border-box;
     font-size: 22px;
     color: #fff;
     border-radius: 3px;
-    margin-top: 40px;
+    margin-top: 16px;
     background-color: rgba(245, 130, 32, 0.6); 
     transition: .3s;
 }

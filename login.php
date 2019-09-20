@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="css/style-login.css">
     <title>Document</title>
 </head>
-<?php 
-    require_once("header.php");
-?>
+<?php require_once("header.php"); ?>
 <body id="body">
     <div class="fondo">
     </div>
