@@ -21,6 +21,24 @@ h2 {
     background-color: #272931de;
     border-radius: 3px;
 }
+.ingresar {
+  width: 300px;
+  margin-left: 420px;
+  margin-top: 120px;
+  text-align: center;
+}
+
+.ingresar p{
+  color: white;
+  font-size: 25px;
+  font-family: Montserrat;
+}
+.ingresar p a {
+  text-decoration: none;
+  color: rgba(245, 130, 32, 0.6);
+
+}
+
 .signUp {
     position: absolute;
     top: 27%;
@@ -72,5 +90,5 @@ h2 {
     transition: .3s;
 }
 .bottonSignUp:hover {
-    background-color: rgba(245, 130, 32, 0.8); 
+    background-color: rgba(245, 130, 32, 0.8);
 }
