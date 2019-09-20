@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style-header.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body id="body">
+<body>
     <header id="header">
         <div class="header">
             <a class="logo" href="#">
                 <img src="img.jpg" alt="Logo">
-                <h1>Randfood</h1>
+                <h1 class="brand">Randfood</h1>
             </a>
             <nav class="navReg">
                 <ul>
                     <li>
-                        <p><a href="login.php">Sign Up</a></p>
+                        <p><a href="signUp.php">Sign Up</a></p>
                     </li>
                     <p>|</p>
                     <li>
-                        <p><a href="#">Log In</a></p>
+                        <p><a href="login.php">Log In</a></p>
                     </li>
                 </ul> 
             </nav>
@@ -45,5 +45,3 @@
             </nav> 
         </div>
     </header>
-</body>
-</html>

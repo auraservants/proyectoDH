@@ -2,7 +2,7 @@
     background-image: url("../image/imagen1.jpg");
     background-size: cover;
 }
-h2 {
+.signUp {
     margin: 0;
     padding-top: 35px;
     padding-left: 40px;

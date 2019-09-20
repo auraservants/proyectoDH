@@ -1,7 +1,4 @@
-#body {
-    font-family: sans-serif;
-    margin: 0;
-}
+
 #header {
     position: absolute;
     width: 100vw;
@@ -24,9 +21,9 @@ a {
     padding-left: 10px;
 }
 .logo img {
-    padding:
+    padding: 0 15px;
 }
-h1{
+.brand{
     font-size: 40px;
     color: rgb(245, 130, 32);
     margin: 0px;

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+
+<?php 
+    require_once("header.php");
+?>
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +15,11 @@
 </head>
 <?php require_once("header.php"); ?>
 <body id="body">
+>>>>>>> f46070363d718dc609735822c911ba15aa742950
     <div class="fondo">
     </div>
-    <div class="signUp">
-        <h2>Sign Up</h2>
+    <div class="menu-login">
+        <h2 class="signUp">Sign Up</h2>
         <form action="validar.php" method="POST">
             <div class="formSignUp">
                 <p>

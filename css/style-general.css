@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/* 
+Esto es en caso que quisieramos usar la unidad de medida "rem"
+font-size: 62.5% hace que un rem sea igual a 10px y facilita el 
+cálculo de dimensiones
+
+html {
+  //Esto define el valor de 1rem 
+  font-size: 62.5%;
+} */
+
+body {
+  background-image: url("../image/imagen1.jpg");
+  background-size: cover;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
