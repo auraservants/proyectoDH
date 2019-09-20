@@ -39,7 +39,7 @@
                         <p><a href="#">Ejemplo</a></p>
                     </li>
                     <li>
-                        <p><a href="#">Ejemplo</a></p>
+                        <p><a href="contact.php">Contacto</a></p>
                     </li>
                 </ul>
             </nav> 

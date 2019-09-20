@@ -2,7 +2,7 @@
     background-image: url("../image/imagen1.jpg");
     background-size: cover;
 }
-h2 {
+.signUp {
     margin: 0;
     padding-top: 35px;
     padding-left: 40px;
@@ -21,6 +21,24 @@ h2 {
     background-color: #272931de;
     border-radius: 3px;
 }
+.ingresar {
+  width: 300px;
+  margin-left: 420px;
+  margin-top: 120px;
+  text-align: center;
+}
+
+.ingresar p{
+  color: white;
+  font-size: 25px;
+  font-family: Montserrat;
+}
+.ingresar p a {
+  text-decoration: none;
+  color: rgba(245, 130, 32, 0.6);
+
+}
+
 .signUp {
     position: absolute;
     top: 27%;
@@ -62,15 +80,15 @@ h2 {
 .bottonSignUp {
     border: none;
     outline: none;
-    padding: 12px 38px;
+    padding: 9px 28px;
     box-sizing: border-box;
     font-size: 22px;
     color: #fff;
     border-radius: 3px;
-    margin-top: 40px;
+    margin-top: 16px;
     background-color: rgba(245, 130, 32, 0.6); 
     transition: .3s;
 }
 .bottonSignUp:hover {
-    background-color: rgba(245, 130, 32, 0.8); 
+    background-color: rgba(245, 130, 32, 0.8);
 }
