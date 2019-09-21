@@ -1,22 +1,19 @@
-#contact {
+.contact {
     padding: 13% 0;
     background-image: url("../image/imagen3.jpg");
     background-size: cover;
-}
-#contact h2 {
-    margin: 0;
-    margin-bottom: 25px;
     text-align: center;
+}
+.contact__title {
+    margin-bottom: 25px;
     text-transform: uppercase;
     font-weight: lighter;
-    font-family: sans-serif;
     color: rgba(245, 130, 32, 0.9);
 }
-
-#contact form {
-    text-align: center;
+.contact__form {
 }
-#contact form .formContact {
+
+.contact__input {
     background-color: #ffffff9c;;
     margin: 15px 0;
     width: 30%;
@@ -24,24 +21,28 @@
     font-size: 20px;
     border: none;
     outline: none;
-    font-family: sans-serif;
     height: 30px;
+    border-radius: 4px;
+    transition: all .3s;
 }
-#contact form .formContact:hover {
+.contact__input:hover {
     background-color: #ffffffc7;
     border: none;
     font-size: 23px;
 }
-#contact form .formContact:focus {
+.contact__input:focus {
     background-color: #ffffffc7;
     border: none;
     font-size: 23px;
 }
-#contact form .mensaje {
+.mensaje {
     width: 50%;
     height: 165px;
+    resize: none;
 }
-#contact .bottonContact{
+.bottonContact,
+.bottonContact:link,
+.bottonContact:visited {
     border: none;
     outline: none;
     padding: 12px 38px;
@@ -50,9 +51,19 @@
     color: #fff;
     border-radius: 3px;
     margin-top: 15px;
-    background-color: rgba(245, 130, 32, 0.8); 
-    transition: .3s;
+    background-color: rgba(245, 130, 32, 0.8);
+    box-shadow: 0 5px 7px rgba(0,0,0 , .5);
+    transition: all .2s;
 }
-#contact .bottonContact:hover {
-    background-color: rgba(245, 130, 32, 0.9); 
+.bottonContact:hover {
+    transform: scale(1.01) translateY(-3px);
+    background-color: rgba(245, 130, 32, 0.9);
+    box-shadow: 0 10px 12px rgba(0,0,0 , .2);
+    cursor:pointer;
+}
+.bottonContact:active {
+    transform: scale(1) translateY(-1px);
+    background-color: rgba(245, 130, 32, 0.9);
+    box-shadow: 0 7px 9px rgba(0,0,0 , .3);
+    cursor: pointer;
 }
