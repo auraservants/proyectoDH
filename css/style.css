@@ -1,9 +1,34 @@
-
 @import "style-contact.css";
-@import "style-general.css";
+@import "style-footer.css";
 @import "style-header.css";
 @import "style-index.css";
-@import "style-login.css";
-@import "style-login.css";
+@import "style-login-signup.css";
+@import "style-products.css";
 @import "style-profile.css";
-@import "style-signin";
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+#body {
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+
+:root{
+--color1: #f58220;
+--color2: #ffcd34;
+--color3: #f0f0f0;
+--titles: 33px;
+--subtitles: 17px;
+--margins: 60px;
+--spaces: 20px;
+--content-spaces: 45px;
+}

@@ -1,8 +1,9 @@
-#body {
-    background-image: url("../image/imagen2.jpg");
+#contact {
+    padding: 13% 0;
+    background-image: url("../image/imagen3.jpg");
     background-size: cover;
 }
-h2 {
+#contact h2 {
     margin: 0;
     margin-bottom: 25px;
     text-align: center;
@@ -11,13 +12,11 @@ h2 {
     font-family: sans-serif;
     color: rgba(245, 130, 32, 0.9);
 }
-.contact {
-    padding-top: 13%;
-}
-form {
+
+#contact form {
     text-align: center;
 }
-form .formContact {
+#contact form .formContact {
     background-color: #ffffff9c;;
     margin: 15px 0;
     width: 30%;
@@ -28,21 +27,21 @@ form .formContact {
     font-family: sans-serif;
     height: 30px;
 }
-form .formContact:hover {
+#contact form .formContact:hover {
     background-color: #ffffffc7;
     border: none;
     font-size: 23px;
 }
-form .formContact:focus {
+#contact form .formContact:focus {
     background-color: #ffffffc7;
     border: none;
     font-size: 23px;
 }
-form .mensaje {
+#contact form .mensaje {
     width: 50%;
     height: 165px;
 }
-.bottonContact{
+#contact .bottonContact{
     border: none;
     outline: none;
     padding: 12px 38px;
@@ -54,6 +53,6 @@ form .mensaje {
     background-color: rgba(245, 130, 32, 0.8); 
     transition: .3s;
 }
-.bottonContact:hover {
+#contact .bottonContact:hover {
     background-color: rgba(245, 130, 32, 0.9); 
 }

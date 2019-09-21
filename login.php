@@ -1,48 +1,30 @@
-<<<<<<< HEAD
+<?php include_once("head.php"); ?>
+<?php include_once("header.php"); ?>
 
-<?php 
-    require_once("header.php");
-?>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style-login.css">
-    <title>Document</title>
-</head>
-<?php require_once("header.php"); ?>
-<body id="body">
->>>>>>> f46070363d718dc609735822c911ba15aa742950
-    <div class="fondo">
+<section id="login">
+    <div class="users-background login">
+        <div class="anotherOption login">
+            <p>No tienes una cuenta?</p>
+            <p>Registrate <a href="signup.php">acá</a></p>
+        </div>
     </div>
-    <div class="menu-login">
-        <h2 class="signUp">Sign Up</h2>
+    <div class="users-login">
+        <h2 class="users-title">Log In</h2>
         <form action="validar.php" method="POST">
-            <div class="formSignUp">
-                <p>
-                    <label for="nombre"></label>
-                    <input class="formItems" type="text" name="nombre" placeholder="Nombre">
-                </p>
-                <p>
-                    <label for="apellido"></label>
-                    <input class="formItems" type="text" name="apellido" placeholder="Apellido">
-                </p>
-                <p>
-                    <label for="email"></label>
-                    <input class="formItems" type="email" name="email" placeholder="Email">
-                </p>
-                <p>
-                    <label for="password"></label>
-                    <input class="formItems" type="password" name="password" placeholder="Contraseña">
-                </p>
-                <p>
-                    <input class="bottonSignUp" type="submit" value="Sign Up">
-                </p>
+            <div class="users-form">
+                <div>
+                    <input class="form-items" type="text" name=user placeholder="Usuario">
+                </div>
+                <div>
+                    <input class="form-items" type="password" name="password" placeholder="Contraseña">
+                </div>
+                <div>
+                    <input class="users-btn" type="submit" value="Sign Up">
+                </div>
             </div>
         </form> 
     </div>
-</body>
-</html>
+</section>
+
+
+<?php include_once("footer.php"); ?>

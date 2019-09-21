@@ -5,14 +5,14 @@ let menu = document.getElementById('nav-links');
 
 function menus(){
     let Desplazamiento_Actual = window.pageYOffset;
-    if(Desplazamiento_Actual <= 244){
+    if(Desplazamiento_Actual <= 100){
         nav.classList.remove('nav2');
         nav.className = ('nav1');
-        nav.style.transition = '1s';
+        nav.style.transition = '.5s';
     }else{
         nav.classList.remove('nav1');
         nav.className = ('nav2');
-        nav.style.transition = '1s';
+        nav.style.transition = '.5s';
 
     }
 }

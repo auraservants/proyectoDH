@@ -1,47 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <header id="header">
-        <div class="header">
-            <a class="logo" href="#">
-                <img src="img.jpg" alt="Logo">
-                <h1 class="brand">Randfood</h1>
-            </a>
-            <nav class="navReg">
+<header>
+    <nav id="nav" class="nav1">
+        <div class="container-nav">
+            <div class="nav-logo">
+                <a href="index.php"><img src="image/randfood.png" alt="randfood"></a>
+            </div>
+            <div class="header-nav-links">
                 <ul>
-                    <li>
-                        <p><a href="signUp.php">Sign Up</a></p>
-                    </li>
-                    <p>|</p>
-                    <li>
-                        <p><a href="login.php">Log In</a></p>
-                    </li>
-                </ul> 
-            </nav>
-        </div>
-        <div class="headerBottom">
-           <nav class="navBar">
-                <ul>
-                    <li>
-                        <p><a href="#">Ejemplo</a></p>
-                    </li>
-                    <li>
-                        <p><a href="#">Ejemplo</a></p>
-                    </li>
-                    <li>
-                        <p><a href="#">Ejemplo</a></p>
-                    </li>
-                    <li>
-                        <p><a href="contact.php">Contacto</a></p>
-                    </li>
+                    <li><a href="#" id="link-home" class="btn-header">Inicio</a></li>
+                    <li><a href="#" id="link-shop" class="btn-header">Shop</a></li>
+                    <li><a href="#" id="link-us" class="btn-header">Conócenos</a></li>
+                    <li><a href="contact.php" id="link-contact" class="btn-header">Contacto</a></li>
                 </ul>
-            </nav> 
+            </div>
+            <div class="header-nav-options">
+                <ul>
+                    <li><a href="login.php" id="link-signin" class="btn-header"><i class="fas fa-user"></i> Ingresar</a></li>
+                    <li><a href="#" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
+                    <li><a href="#" class="icon" id="open">&#9776;</a></li>
+                    
+                </ul>    
+            </div>
+            
         </div>
-    </header>
+    </nav>
+</header>
