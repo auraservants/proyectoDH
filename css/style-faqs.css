@@ -1,0 +1,6 @@
+.faqs {
+  position: absolute;
+  top: 20%;
+  display:flex;
+  width: 100vw;
+}

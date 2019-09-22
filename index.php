@@ -63,61 +63,61 @@
 			<h3>Ingredientes destacados</h3>
 			<p class="after">Elige el tuyo!</p>
 			<div id="ingredients">
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/1.jpg" alt="">
 					<h4>Tomato</h4>
 					<p>$5,00</p>
 					<a href="#">Agregar</a>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/2.jpg" alt="">
 					<h4>Salmon</h4>
 					<p>$1,00</p>
 					<div class="btn"><a href="#">Agregar</a></div>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/3.jpg" alt="">
 					<h4>Huevo</h4>
 					<p>$8,00</p>
 					<a href="#">Agregar</a>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/4.jpg" alt="">
 					<h4>Palta</h4>
 					<p>$30,00</p>
 					<a href="#">Agregar</a>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/5.jpg" alt="">
 					<h4>Tomato</h4>
 					<p>$5,00</p>
 					<a href="#">Agregar</a>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/6.jpg" alt="">
 					<h4>Salmon</h4>
 					<p>$1,00</p>
 					<div class="btn"><a href="#">Agregar</a></div>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/3.jpg" alt="">
 					<h4>Huevo</h4>
 					<p>$8,00</p>
 					<a href="#">Agregar</a>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/1.jpg" alt="">
 					<h4>Palta</h4>
 					<p>$30,00</p>
 					<a href="#">Agregar</a>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/2.jpg" alt="">
 					<h4>Palta</h4>
 					<p>$30,00</p>
 					<a href="#">Agregar</a>
 				</div>
-				<div class="card-products" id="ingredient">
+				<div class="card-products ingredient">
 					<img src="image/ingredients/3.jpg" alt="">
 					<h4>Palta</h4>
 					<p>$30,00</p>
