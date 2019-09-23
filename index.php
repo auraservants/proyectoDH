@@ -45,7 +45,6 @@
 			</div>
 		</div>
 	</section>
-<<<<<<< HEAD
 	<section class="about container" id="about">
 		<h3>Que es Randfood?</h3>
 		<p class="after">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -61,10 +60,9 @@
 		</div>
 	</section>
 	<section class="ingredients container" id="products">
-=======
+
 
 		<section class="ingredients container" id="products">
->>>>>>> 008624b6fc43ab5101aec60fe85caad860b29fd7
 			<h3>Ingredientes destacados</h3>
 			<p class="after">Elige el tuyo!</p>
 			<div id="ingredients">
@@ -93,13 +91,13 @@
 					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
-					<img src="image/ingredients/5.jpg" alt="">
+					<img src="image/ingredients/05.jpg" alt="">
 					<h4>Naranja</h4>
 					<p>$5,00</p>
 					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
-					<img src="image/ingredients/6.jpg" alt="">
+					<img src="image/ingredients/06.jpg" alt="">
 					<h4>Lomo</h4>
 					<p>$1,00</p>
 					<div class="btn"><a href="#">Agregar</a></div>
@@ -129,12 +127,7 @@
 					<a href="#">Agregar</a> 
 				</div>
 			</div>
-<<<<<<< HEAD
 		</section>
-=======
-		</div>
-	</section>
->>>>>>> 008624b6fc43ab5101aec60fe85caad860b29fd7
 		
 	<section class="features container" id="features">
 		<div class="container">
