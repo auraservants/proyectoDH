@@ -12,7 +12,6 @@
 			<h2>Tán fácil como elegir tus ingredientes y listo!</h2>
 		</div>
 	</section>
-
 	<section class="steps container" id="steps">
 		<h3>Randfood es muy simple</h3>
 		<p class="after">Sigue estos pasos para armar tu plato</p>
@@ -46,15 +45,27 @@
 			</div>
 		</div>
 	</section>
-
-<<<<<<< HEAD
-		<section class="ingredients container" id="products">
+	<section class="about container" id="about">
+		<h3>Que es Randfood?</h3>
+		<p class="after">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		<div class="content-about">
+			<div class="about-img">
+				<img src="image/about.jpg" alt="">
+			</div>
+			<div class="about-text">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquam quos hic facere amet, voluptas eum unde natus corrupti culpa consequuntur non temporibus excepturi laborum placeat sunt recusandae doloribus libero.
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae nemo voluptas, id asperiores accusantium, labore consequatur corporis cumque ipsam officia reprehenderit praesentium est obcaecati temporibus architecto magni amet non molestiae.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="ingredients container" id="products">
 			<h3>Ingredientes destacados</h3>
 			<p class="after">Elige el tuyo!</p>
 			<div id="ingredients">
 				<div class="card-products ingredient">
 					<img src="image/ingredients/1.jpg" alt="">
-					<h4>Tomato</h4>
+					<h4>Tomate</h4>
 					<p>$5,00</p>
 					<a href="#">Agregar</a>
 				</div>
@@ -78,123 +89,42 @@
 				</div>
 				<div class="card-products ingredient">
 					<img src="image/ingredients/5.jpg" alt="">
-					<h4>Tomato</h4>
+					<h4>Naranja</h4>
 					<p>$5,00</p>
 					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
 					<img src="image/ingredients/6.jpg" alt="">
-					<h4>Salmon</h4>
+					<h4>Lomo</h4>
 					<p>$1,00</p>
 					<div class="btn"><a href="#">Agregar</a></div>
 				</div>
 				<div class="card-products ingredient">
-					<img src="image/ingredients/3.jpg" alt="">
-					<h4>Huevo</h4>
+					<img src="image/ingredients/7.jpg" alt="">
+					<h4>Mozzarella</h4>
 					<p>$8,00</p>
 					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
-					<img src="image/ingredients/1.jpg" alt="">
-					<h4>Palta</h4>
+					<img src="image/ingredients/10.jpg" alt="">
+					<h4>Morrón</h4>
 					<p>$30,00</p>
 					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
-					<img src="image/ingredients/2.jpg" alt="">
-					<h4>Palta</h4>
+					<img src="image/ingredients/8.jpg" alt="">
+					<h4>Hongos</h4>
 					<p>$30,00</p>
 					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
-					<img src="image/ingredients/3.jpg" alt="">
-					<h4>Palta</h4>
+					<img src="image/ingredients/9.jpg" alt="">
+					<h4>Pollo</h4>
 					<p>$30,00</p>
 					<a href="#">Agregar</a> 
 				</div>
-=======
-	<section class="about container" id="about">
-		<h3>Que es Randfood?</h3>
-		<p class="after">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-		<div class="content-about">
-			<div class="about-img">
-				<img src="image/about.jpg" alt="">
 			</div>
-			<div class="about-text">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquam quos hic facere amet, voluptas eum unde natus corrupti culpa consequuntur non temporibus excepturi laborum placeat sunt recusandae doloribus libero.
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae nemo voluptas, id asperiores accusantium, labore consequatur corporis cumque ipsam officia reprehenderit praesentium est obcaecati temporibus architecto magni amet non molestiae.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="ingredients container" id="products">
-		<h3>Ingredientes destacados</h3>
-		<p class="after">Elige el tuyo!</p>
-		<div id="ingredients">
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/1.jpg" alt="">
-				<h4>Tomato</h4>
-				<p>$5,00</p>
-				<a href="#">Agregar</a>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/2.jpg" alt="">
-				<h4>Salmon</h4>
-				<p>$1,00</p>
-				<div class="btn"><a href="#">Agregar</a></div>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/3.jpg" alt="">
-				<h4>Huevo</h4>
-				<p>$8,00</p>
-				<a href="#">Agregar</a>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/4.jpg" alt="">
-				<h4>Palta</h4>
-				<p>$30,00</p>
-				<a href="#">Agregar</a>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/5.jpg" alt="">
-				<h4>Tomato</h4>
-				<p>$5,00</p>
-				<a href="#">Agregar</a>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/6.jpg" alt="">
-				<h4>Salmon</h4>
-				<p>$1,00</p>
-				<div class="btn"><a href="#">Agregar</a></div>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/3.jpg" alt="">
-				<h4>Huevo</h4>
-				<p>$8,00</p>
-				<a href="#">Agregar</a>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/1.jpg" alt="">
-				<h4>Palta</h4>
-				<p>$30,00</p>
-				<a href="#">Agregar</a>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/2.jpg" alt="">
-				<h4>Palta</h4>
-				<p>$30,00</p>
-				<a href="#">Agregar</a>
-			</div>
-			<div class="card-products" id="ingredient">
-				<img src="image/ingredients/3.jpg" alt="">
-				<h4>Palta</h4>
-				<p>$30,00</p>
-				<a href="#">Agregar</a> 
->>>>>>> 464ce6f681325956cdf48586ca65ae6e78934d68
-			</div>
-		</div>
-	</section>
+		</section>
 		
 	<section class="features container" id="features">
 		<div class="container">

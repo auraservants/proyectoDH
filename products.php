@@ -28,37 +28,37 @@
 	</div>
 	<div class="card-products ingredient">
 		<img src="image/ingredients/5.jpg" alt="">
-		<h4>Tomato</h4>
+		<h4>naranja</h4>
 		<p>$5,00</p>
 		<a href="#">Agregar</a>
 	</div>
 	<div class="card-products ingredient">
 		<img src="image/ingredients/6.jpg" alt="">
-		<h4>Salmon</h4>
+		<h4>Lomo</h4>
 		<p>$1,00</p>
 		<div class="btn"><a href="#">Agregar</a></div>
 	</div>
 	<div class="card-products ingredient">
-		<img src="image/ingredients/3.jpg" alt="">
-		<h4>Huevo</h4>
+		<img src="image/ingredients/7.jpg" alt="">
+		<h4>Mozzarella</h4>
 		<p>$8,00</p>
 		<a href="#">Agregar</a>
 	</div>
 	<div class="card-products ingredient">
-		<img src="image/ingredients/4.jpg" alt="">
-		<h4>Palta</h4>
+		<img src="image/ingredients/10.jpg" alt="">
+		<h4>Morrón</h4>
 		<p>$30,00</p>
 		<a href="#">Agregar</a>
 	</div>
 	<div class="card-products ingredient">
-		<img src="image/ingredients/4.jpg" alt="">
-		<h4>Palta</h4>
+		<img src="image/ingredients/8.jpg" alt="">
+		<h4>Hongos</h4>
 		<p>$30,00</p>
 		<a href="#">Agregar</a>
 	</div>
 	<div class="card-products ingredient">
-		<img src="image/ingredients/4.jpg" alt="">
-		<h4>Palta</h4>
+		<img src="image/ingredients/9.jpg" alt="">
+		<h4>Pollo</h4>
 		<p>$30,00</p>
 		<a href="#">Agregar</a>
 	</div>  
