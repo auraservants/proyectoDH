@@ -8,7 +8,7 @@
 <main>
 	<section class="fotoDeFondo">
 		<div class="text">
-			<h1>La forma más genial de comer.</h1>
+			<h1>La forma más genial de <span>comer.</span></h1>
 			<h2>Tán fácil como elegir tus ingredientes y listo!</h2>
 		</div>
 	</section>
