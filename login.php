@@ -19,7 +19,7 @@
 					<input class="form-items" type="password" name="password" placeholder="Contraseña">
 				</div>
 				<div>
-					<input class="users-btn" type="submit" value="Sign Up">
+					<input class="users-btn" type="submit" value="Log In">
 				</div>
 			</div>
 		</form> 

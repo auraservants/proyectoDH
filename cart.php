@@ -16,7 +16,7 @@
             <p>➤</p>
         </div>
         <div class="options_steps_cart">
-            <p><a href="#">Envio</a></p>
+            <p><a href="#">Entrega</a></p>
         </div>
     </section>
     <section class="buy_cart">
@@ -47,7 +47,7 @@
         
 
         <div class="additional_cart">
-            <form action="validar.php" method="post">
+            <form action="page.php" method="post">
                 <div class="title_additional">
                     <p class="name_cart">Adicionales</p>
                     <p>Precio</p>
@@ -102,7 +102,7 @@
 
     <section>
         <div class="envio_cart">
-            <p>Calcular envio</p>
+            <p><a href="#">Calcular envio</a></p>
         </div>
         <form class="cupon_cart" action="validar.php" method="post">
             <p>Canjear cupones</p>

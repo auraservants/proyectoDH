@@ -130,8 +130,11 @@
 .envio_cart {
     padding: 10px 40px;
 }
-.envio_cart p, .cupon_cart p {
+.envio_cart a, .cupon_cart p {
     color: rgb(245, 130, 32);
+}
+.envio_cart a:hover {
+    border-bottom: 1.5px solid rgba(245, 130, 32, 0.7);
 }
 .cupon_cart {
     display: flex;
@@ -148,4 +151,5 @@
     background-color: rgba(228, 228, 228, 0.3);
     border-radius: 3px;
     box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.15);
+    outline: none;
 }
