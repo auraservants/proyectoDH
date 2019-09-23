@@ -10,7 +10,7 @@
 	</div>
 	<div class="users-login">
 		<h2 class="users-title">Log In</h2>
-		<form action="validar.php" method="POST">
+		<form action="profile-favoritos.php" method="POST">
 			<div class="users-form">
 				<div>
 					<input class="form-items" type="text" name=user placeholder="Usuario">
@@ -19,7 +19,7 @@
 					<input class="form-items" type="password" name="password" placeholder="Contraseña">
 				</div>
 				<div>
-					<input class="users-btn" type="submit" value="Sign Up">
+					<input class="users-btn" type="submit" value="Log In">
 				</div>
 			</div>
 		</form> 

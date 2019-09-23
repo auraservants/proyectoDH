@@ -27,6 +27,9 @@
 .text h1 {
     font-size: 50px;
 }
+.text h1 span {
+    color: var(--color1);
+}
 
 .text h2 {
     font-size: 20px;

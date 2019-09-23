@@ -8,7 +8,7 @@
 <main>
 	<section class="fotoDeFondo">
 		<div class="text">
-			<h1>La forma más genial de comer.</h1>
+			<h1>La forma más genial de <span>comer.</span></h1>
 			<h2>Tán fácil como elegir tus ingredientes y listo!</h2>
 		</div>
 	</section>
@@ -45,6 +45,7 @@
 			</div>
 		</div>
 	</section>
+<<<<<<< HEAD
 	<section class="about container" id="about">
 		<h3>Que es Randfood?</h3>
 		<p class="after">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -60,6 +61,10 @@
 		</div>
 	</section>
 	<section class="ingredients container" id="products">
+=======
+
+		<section class="ingredients container" id="products">
+>>>>>>> 008624b6fc43ab5101aec60fe85caad860b29fd7
 			<h3>Ingredientes destacados</h3>
 			<p class="after">Elige el tuyo!</p>
 			<div id="ingredients">
@@ -124,7 +129,12 @@
 					<a href="#">Agregar</a> 
 				</div>
 			</div>
+<<<<<<< HEAD
 		</section>
+=======
+		</div>
+	</section>
+>>>>>>> 008624b6fc43ab5101aec60fe85caad860b29fd7
 		
 	<section class="features container" id="features">
 		<div class="container">
