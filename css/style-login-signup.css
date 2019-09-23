@@ -19,38 +19,38 @@
 }
 .users-login {
     position: absolute;
-    top: 27%;
-    bottom: 22%;
+    top: 26%;
+    bottom: 21%;
     right: 50%;
     left: 25%;
     background-color: rgb(255, 255, 255);
     border-radius: 3px;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
 }
 .users-signup {
     position: absolute;
-    top: 27%;
-    bottom: 22%;
+    top: 26%;
+    bottom: 21%;
     right: 25%;
     left: 50%;
     background-color: rgb(255, 255, 255);
     border-radius: 3px;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
 }
 .users-title {
-    margin: 0;
-    padding-top: 35px;
-    padding-left: 40px;
-    padding-bottom: 5px;
     text-transform: uppercase;
-    font-weight: lighter;
-    font-family: sans-serif;
     color: rgba(245, 130, 32, 0.9);
 }
 .users-form div {
     display: flex;
-    justify-content: center;
-    margin: 0;
 }
 .users-form .form-items {
     border: none;
@@ -60,21 +60,11 @@
     margin-top: 10px;
     box-sizing: border-box;
     font-size: 20px;
-    width: 75%;
     color: rgba(0, 0, 0, 0.4);
     transition: .3s;
     height: 45px;
 }
-.users-form .form-items:focus {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    font-size: 22px;
-}
-.users-form .form-items:hover {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    font-size: 22px;
-}
+
 .users-form .users-btn{
     border: none;
     outline: none;
@@ -112,4 +102,25 @@
 .anotherOption p a {
     text-decoration: none;
     color: rgba(245, 130, 32, 0.6);
+}
+.remember_login {
+    display: flex;
+    justify-content: end;
+    padding: 12px 8px;
+    margin-top: 10px;
+    align-items: center;
+}
+.remember_login input {
+    margin-right: 10px;
+}
+.forget_pass {
+    padding-top: 10px;
+    font-size: 14px;
+    color: rgba(245, 130, 32, 0.6);
+}
+.forget_pass a {
+    color: rgb(245, 130, 32);
+}
+.forget_pass a:hover {
+    color:#000;
 }

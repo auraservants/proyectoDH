@@ -9,27 +9,30 @@
         </div>
     </div>
     <div class="users-signup">
-        <h2 class="users-title">Sign Up</h2>
-        <form action="profile-favoritos.php" method="POST">
-            <div class="users-form">
-                <div>
-                    <input class="form-items" type="text" name="nombre" placeholder="Nombre">
+        <div>
+            <h2 class="users-title">Sign Up</h2>
+            <form action="profile-favoritos.php" method="POST">
+                <div class="users-form">
+                    <div>
+                        <input class="form-items" type="text" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div>
+                        <input class="form-items" type="text" name="apellido" placeholder="Apellido">
+                    </div>
+                    <div>
+                        <input class="form-items" type="email" name="email" placeholder="Email">
+                    </div>
+                    <div>
+                        <input class="form-items" type="password" name="password" placeholder="Contraseña">
+                    </div>
+                    <div>
+                        <input class="users-btn" type="submit" value="Sign Up">
+                    </div>
                 </div>
-                <div>
-                    <input class="form-items" type="text" name="apellido" placeholder="Apellido">
-                </div>
-                <div>
-                    <input class="form-items" type="email" name="email" placeholder="Email">
-                </div>
-                <div>
-                    <input class="form-items" type="password" name="password" placeholder="Contraseña">
-                </div>
-                <div>
-                    <input class="users-btn" type="submit" value="Sign Up">
-                </div>
-            </div>
-        </form> 
+            </form> 
+        </div>
     </div>
+    
 </section>
 
 

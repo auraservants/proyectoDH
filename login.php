@@ -9,21 +9,27 @@
 		</div>
 	</div>
 	<div class="users-login">
-		<h2 class="users-title">Log In</h2>
-		<form action="profile-favoritos.php" method="POST">
-			<div class="users-form">
-				<div>
-					<input class="form-items" type="text" name=user placeholder="Usuario">
+		<div>
+			<h2 class="users-title">Log In</h2>
+			<form action="profile-favoritos.php" method="POST">
+				<div class="users-form">
+					<div>
+						<input class="form-items" type="text" name=user placeholder="Usuario">
+					</div>
+					<div>
+						<input class="form-items" type="password" name="password" placeholder="Contraseña">
+					</div>
+					<div class="remember_login">
+						<input type="checkbox" value="Recuerdame">Recuerdame
+					</div>
+					<div>
+						<input class="users-btn" type="submit" value="Log In">
+					</div>
+					<p class="forget_pass"><a href="#">¿Olvidaste tu contraseña?</a></p>
 				</div>
-				<div>
-					<input class="form-items" type="password" name="password" placeholder="Contraseña">
-				</div>
-				<div>
-					<input class="users-btn" type="submit" value="Log In">
-				</div>
-			</div>
-		</form> 
-	</div>
+			</form> 
+		</div>
+	</div>	
 </section>
 
 

@@ -29,19 +29,19 @@
                 <img class="img_products" src="" alt="product">
                 <p class="detail_products">Descripción del producto</p>
                 <p class="amount_products">$ ...</p>
-                <p class="remove_products"><a href="#">+</a></p>
+                <p class="remove_products"><a href="#">✖</a></p>
             </div>
             <div class="description_cart">
                 <img class="img_products" src="" alt="product">
                 <p class="detail_products">Descripción del producto</p>
                 <p class="amount_products">$ ...</p>
-                <p class="remove_products"><a href="#">+</a></p>
+                <p class="remove_products"><a href="#">✖</a></p>
             </div>
             <div class="description_cart">
                 <img class="img_products" src="" alt="product">
                 <p class="detail_products">Descripción del producto</p>
                 <p class="amount_products">$ ...</p>
-                <p class="remove_products"><a href="#">+</a></p>
+                <p class="remove_products"><a href="#">✖</a></p>
             </div>
         </div>
         
@@ -123,7 +123,7 @@
 			<input class= "btn_seguir" type="submit" value="Elegir más productos">
         </div>
         <div class="btn_cart">
-			<input class="btn_finalizar" type="submit" value="Finalizar compra">
+            <input class="btn_finalizar" type="submit" value="Finalizar compra">
 		</div>
         
     </section>
