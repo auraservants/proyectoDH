@@ -8,13 +8,6 @@
   
 
 }
-
-.selected {
-  display: block;
-}
-.unselected {
-  display: none;
-}
 .profile-container {
   display: flex;
   flex-wrap: wrap;
