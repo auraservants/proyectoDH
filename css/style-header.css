@@ -1,7 +1,8 @@
 #nav {
     width: 100vw;
     position: fixed;
-    z-index: 3;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    
 }
 .nav1{
     background-color: #fff;
@@ -98,6 +99,7 @@
     padding-right: 5px;
 }
 .header-nav-options .icon {
+    display: none;
     font-size: 24px;
 }
 .header-nav-options .icon:hover {
