@@ -14,10 +14,7 @@
             <form action="profile-favoritos.php" method="POST">
                 <div class="users-form">
                     <div>
-                        <input class="form-items" type="text" name="nombre" placeholder="Nombre">
-                    </div>
-                    <div>
-                        <input class="form-items" type="text" name="apellido" placeholder="Apellido">
+                        <input class="form-items" type="text" name="nombre" placeholder="Nombre y Apellido">
                     </div>
                     <div>
                         <input class="form-items" type="email" name="email" placeholder="Email">
@@ -26,7 +23,7 @@
                         <input class="form-items" type="password" name="password" placeholder="Contraseña">
                     </div>
                     <div>
-                        <input class="users-btn" type="submit" value="Sign Up">
+                        <input class="btn btn--orange btn--large" type="submit" value="Sign Up">
                     </div>
                 </div>
             </form> 

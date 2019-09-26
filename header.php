@@ -8,15 +8,17 @@
                 <ul>
                     <li><a href="index.php" id="link-home" class="btn-header">Inicio</a></li>
                     <li><a href="products.php" id="link-shop" class="btn-header">Shop</a></li>
-                    <li><a href="#" id="link-us" class="btn-header">Conócenos</a></li>
+                    <li><a href="faqs.php" id="link-us" class="btn-header">Faqs</a></li>
                     <li><a href="contact.php" id="link-contact" class="btn-header">Contacto</a></li>
                 </ul>
             </div>
             <div class="header-nav-options">
-                <ul>
-                    <li><a href="login.php" id="link-signin" class="btn-header"><i class="fas fa-user"></i> Ingresar</a></li>
+                <ul>    
                     <li><a href="cart.php" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
-                    <li><a href="#" class="icon" id="open">&#9776;</a></li>
+                    <li><a href="login.php" id="link-signin" class="btn-header"><i class="fas fa-user"></i> Ingresar</a></li>
+                    <!--
+                        <li><a href="#" class="icon" id="open">&#9776;</a></li>
+                    -->
                     
                 </ul>    
             </div>

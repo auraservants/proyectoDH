@@ -120,10 +120,10 @@
             </div>
         </div>
         <div class="btn_cart">
-			<input class= "btn_seguir" type="submit" value="Elegir más productos">
+			<input class= "btn btn--light btn--medium" type="submit" value="Elegir más productos">
         </div>
         <div class="btn_cart">
-            <input class="btn_finalizar" type="submit" value="Finalizar compra">
+            <input class="btn btn--orange btn--large" type="submit" value="Finalizar compra">
 		</div>
         
     </section>

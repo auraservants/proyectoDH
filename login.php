@@ -23,7 +23,7 @@
 						<input type="checkbox" value="Recuerdame">Recuerdame
 					</div>
 					<div>
-						<input class="users-btn" type="submit" value="Log In">
+						<input class="btn btn--orange btn--large" type="submit" value="Log In">
 					</div>
 					<p class="forget_pass"><a href="#">¿Olvidaste tu contraseña?</a></p>
 				</div>

@@ -43,7 +43,7 @@
     width: 127px;
     height: 3px;
     background: var(--color1);
-    margin-bottom: var(--spaces);
+    margin-bottom: var(--margin-medium);
 }
 .contact__input {
     background-color: #ffffffa1;

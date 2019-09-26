@@ -16,7 +16,7 @@ footer .logo-footer img{
   
 .social-icons img{
     height: 25px;
-    margin-top: var(--spaces);
+    margin-top: var(--margin-medium);
     justify-content: space-between;
     align-items: center;
     margin-right: 5px;
