@@ -11,7 +11,7 @@
     <div class="users-signup">
         <div>
             <h2 class="users-title">Sign Up</h2>
-            <form action="profile-favoritos.php" method="POST">
+            <form action="profile-miPerfil.php" method="POST">
                 <div class="users-form">
                     <div>
                         <input class="form-items" type="text" name="nombre" placeholder="Nombre y Apellido">

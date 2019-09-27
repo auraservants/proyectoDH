@@ -10,33 +10,32 @@
 }
 .profile-container {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   position: absolute;
-  top:50%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -40%);
-  height: 70vh;
-  width:90vw;
-  background-color: rgba(44, 44, 44, 0.95);
-  border-radius: 10px;
+  height: 75vh;
+  width: 75vw;
+  background-color: var(--color4);
+  border-radius: 4px;
   margin-top: 10px;
   box-shadow: 0 10px 20px rgba(0,0,0, .7);
 }
 .profile {
-  display:flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 90%;
+  display: flex;
+  height: 94%;
   position: relative;
-  top: 5%;
-  left: 3%;
   text-align: center;
-  padding: 5px;
-  width: 15%;
+  padding: 10px;
+  width: 20%;
   border-radius: 10px;
-  background-color: rgba(44, 44, 44, 1);
-  box-shadow: 0 10px 20px rgba(245, 131, 32, 0.1);
-  overflow: hidden;
+  background-color: var(--color5);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
+}
+.profile__userphoto img {
+  width: 60%;
 }
 .profile__username {
   display: flex;
@@ -52,7 +51,7 @@
   width: 80%;
   border-bottom: 3px solid rgba(245, 131, 32, 0.5);
   margin: 0 auto;
-  top: 22%;
+  top: 40%;
 
 }
 .user-nav {
@@ -70,42 +69,40 @@
   list-style: none;
   align-items: center;
 }
-
-
 .user-nav__items a,
 .user-nav__items a:link,
 .user-nav__items a:visited {
   display: inline-flex;
   padding: 20px;
-  color: rgba(240,240,240,1);;
+  color: rgba(240,240,240,1);
   transition: all 0.2s;
   text-transform: uppercase;
 }
 
 .user-nav__items a:hover {
   transform: translateY(-4px) scale(1.02);
-  text-shadow: 0 5px 10px rgba(245, 131, 32, 0.5);
+  text-shadow: 0 3px 10px var(--color4);
 }
 .user-nav__items a:active {
-  text-shadow: 0 5px 10px rgba(245, 131, 32, .8);
+  text-shadow: 0 2px 10px var(--color4);
   transform: translateY(-2px) scale(1.01);
 }
 .selection-container {
   position: relative;
-  width: 77%;
-  top: 5%;
-  left: 5%;
-  background-color: rgba(44, 44, 44, 1);
+  width: 75%;
+  background-color: var(--color5);
   box-shadow: 0 10px 20px rgba(245, 131, 32, 0.1);
-  height: 90%;
+  height: 94%;
   border-radius: 10px;
   backface-visibility: hidden;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
 }
 .compras-items  {
   display: flex;
   height: 100%;
   flex-direction: column;
   overflow-y: scroll;
+  align-items: center;
   
 }
 .compras-items::-webkit-scrollbar {
@@ -121,17 +118,19 @@
 
 }
 .product {
-  margin: 8px auto;
-  width: 90%;
+  margin-top: 33px;
+  width: 87%;
   display: flex;
   flex-direction: row;
   border-radius: 10px;
-  background-color: rgba(44, 44, 44, 1);
-  box-shadow: 0 10px 20px rgba(245, 131, 32, 0.1);
+  background-color: #bbbbbb14;
+}
+.product:last-child {
+  margin-bottom: 33px;
 }
 .product-text {
   display: flex;
-  padding: 10px;
+  padding: 15px;
   justify-content: center;
   flex-direction: column;
   margin-left: 5px;
@@ -149,7 +148,7 @@
   display: flex;
   text-align: center;
   width: 15%;
-  margin: 5px;
+  margin: 13px;
 }
 .product__img::after {
   content: "";
@@ -216,13 +215,15 @@
   border-radius: 10px;
 }
 .premios__item {
-  margin: 8px auto;
-  width: 90%;
+  margin-top: 33px;
+  width: 87%;
   display: flex;
   flex-direction: row;
   border-radius: 10px;
-  background-color: rgba(44, 44, 44, 1);
-  box-shadow: 0 10px 20px rgba(245, 131, 32, 0.1);
+  background-color: #bbbbbb14;
+}
+.premios__item:last-child {
+  margin-bottom: 33px;
 }
 .premios__value {
   position: relative;
@@ -263,4 +264,30 @@
   background-color: rgba(245, 131, 32, 0.5);
   outline: 1px solid slategrey;
 
+}
+.selection__welcome {
+  font-size: 28px;
+  padding: var(--margin-large);
+  text-align: center;
+}
+.selection__welcome h1 {
+  color: var(--color3);
+}
+.selection__welcome h1 span {
+  color: var(--color1);
+}
+.selection__dataUser {
+  margin: 0 var(--margin-x-large);
+  background-color: #bbbbbb14;
+  padding: var(--padding-large);
+  border-radius: 10px;
+  height: 65%;
+}
+.selection__dataUser h2 {
+  color: var(--color1);
+  padding: var(--padding-small) 0;
+}
+.selection__dataUser p {
+  color: var(--color3);
+  padding: 5px 0;
 }
