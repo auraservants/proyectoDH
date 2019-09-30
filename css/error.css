@@ -1,0 +1,13 @@
+.error {
+  display: flex;
+  position: relative;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(255, 128, 128);
+  top: -8px;
+  width: 95%;
+}
+
+.error__msg {
+  color: rgb(196, 40, 40);
+}
