@@ -18,7 +18,7 @@
   transform: translate(-50%, -40%);
   height: 75vh;
   width: 75vw;
-  background-color: var(--color4);
+  background-color: #bbbbbbcf;
   border-radius: 4px;
   margin-top: 10px;
   box-shadow: 0 10px 20px rgba(0,0,0, .7);
@@ -90,12 +90,8 @@
 .selection-container {
   position: relative;
   width: 75%;
-  background-color: var(--color5);
-  box-shadow: 0 10px 20px rgba(245, 131, 32, 0.1);
   height: 94%;
   border-radius: 10px;
-  backface-visibility: hidden;
-  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
 }
 .compras-items  {
   display: flex;
@@ -267,27 +263,79 @@
 }
 .selection__welcome {
   font-size: 28px;
-  padding: var(--margin-large);
-  text-align: center;
+  padding: 30px;
+  padding-bottom: 20px;
 }
-.selection__welcome h1 {
-  color: var(--color3);
-}
-.selection__welcome h1 span {
+.selection__welcome span {
   color: var(--color1);
 }
+.selection__welcome h1 {
+  color: #fff;
+}
 .selection__dataUser {
-  margin: 0 var(--margin-x-large);
-  background-color: #bbbbbb14;
-  padding: var(--padding-large);
+  padding: 0 30px;
   border-radius: 10px;
   height: 65%;
 }
 .selection__dataUser h2 {
   color: var(--color1);
-  padding: var(--padding-small) 0;
+  padding-bottom: var(--padding-medium);
 }
-.selection__dataUser p {
-  color: var(--color3);
-  padding: 5px 0;
+
+.container__data {
+  display: flex;
+  align-items: flex-end;
+  margin: 16px 0;
+}
+.container__password {
+  display: flex;
+  align-content: center;
+}
+
+.container__data p {
+  width: 38%;
+  color: #000;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.container__data input {
+  border-image: initial;
+  border: solid 1.5px var(--color1);
+  background-color: transparent;
+  height: 40px;
+  font-size: 20px;
+  display: block;
+  width: 220px;
+  padding: 10px;
+  border-radius: 0 8px 8px 0;
+}
+.container__password input{
+  margin-top: 16px;
+  border-radius: 8px 8px 8px 8px;
+}
+
+.container__data label {
+  width: 40px;
+  background-color: var(--color1);
+  border: solid 1px var(--color1);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 0 0 8px;
+}
+.container__data i {
+  color: #ffffffd6;
+  font-size: 25px;
+}
+
+::-webkit-input-placeholder { color:#000; }
+
+.container__data input:focus {
+  outline: none;  
+}
+.btn__data {
+  text-align: center;
+  margin: 25px 0;
 }

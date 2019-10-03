@@ -28,10 +28,37 @@
         <h1>Bienvenido, <span>Ramiro Bastianes!</span></h1>
       </div>
       <div class="selection__dataUser">
-        <h2>Tus Datos</h2>
-        <p>Ramiro Bastianes</p>
-        <p>Lima 1111</p>
-        <p>11-65487932</p>
+        <form action="" method="post">
+          <h2>Tus Datos</h2>
+
+          <div class="container__data">
+            <p>Ramiro Bastianes</p>
+            <label for="name"><i class="fas fa-user"></i></label>
+            <input type="text" name="name" value="" placeholder="Modificar nombre">              
+          </div>
+          <div class="container__data">
+            <p>Lima 1111</p>
+            <label for="direction"><i class="fas fa-user"></i></label>
+            <input type="text" name="direction" value="" placeholder="Modificar dirección">              
+          </div>
+          <div class="container__data">
+            <p>11-65487932</p>
+            <label for="phone"><i class="fas fa-user"></i></label>
+            <input type="text" name="phone" value="" placeholder="Modificar teléfono">              
+          </div>
+          <div class="container__data container__password">
+            <p><span>Cambiar contraseña:</span> </p>
+            <div>
+              <input type="text" name="password" value="" placeholder="Contraseña actual"> 
+              <input type="text" name="password" value="" placeholder="Nueva contraseña">  
+              <input type="text" name="password" value="" placeholder="Confirmar contraseña">                 
+            </div>
+          </div> 
+          <div class="btn__data">
+            <button type="submit" class="btn btn--light btn--small ">Guardar cambios</button>
+          </div>
+        </form>
+        
 
       </div>
     </div>
