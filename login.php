@@ -1,29 +1,47 @@
-<?php include_once("head.php"); ?>
-<?php include_once("header.php"); ?>
+<?php 
+	include_once("head.php"); 
+	include_once("header.php");
+	require("funciones.php");
+
+	$errores = checkUser();
+	loginRemember();
+?>
+
 
 <section id="login">
 	<div class="users-background login">
-		<div class="anotherOption login">
+		<div class="another-option">
 			<p>No tienes una cuenta?</p>
 			<p>Registrate <a href="signup.php">acá</a></p>
 		</div>
 	</div>
-	<div class="users-login">
-		<div>
-			<h2 class="users-title">Log In</h2>
-			<form action="profile-miPerfil.php" method="POST">
+	<div class="container-users-login">
+		<div class="users-login">
+			<h2 class="users-title">Iniciar sesión</h2>
+			<form action="login.php" method="post">
 				<div class="users-form">
 					<div>
-						<input class="form-items" type="text" name=user placeholder="Usuario">
+						<input class="form-items" type="email" name="email" value="<?php if(isset($_POST["email"]) && empty($errores["email"])) { echo $_POST["email"]; } ?>" placeholder="Email" >
+						<span class='error'>
+							<?php if (isset($errores["email"])): ?>
+								<p><?= $errores["email"]?></p>
+							<?php endif ?>
+                    	</span>
 					</div>
 					<div>
-						<input class="form-items" type="password" name="password" placeholder="Contraseña">
+						<input class="form-items" type="password" name="password" value="<?php if(isset($_POST["password"]) && empty($errores["password"])) { echo $_POST["password"]; } ?>" placeholder="Contraseña">
+						<span class='error'>
+							<?php if (isset($errores["password"])): ?>
+								<p><?= $errores["password"]?></p>
+							<?php endif ?>                    
+                    	</span>
 					</div>
-					<div class="remember_login">
-						<input type="checkbox" value="Recuerdame">Recuerdame
+					<div class="remember">
+						<label for="remember">Recuerdame</label>
+						<input type="checkbox" name="remember" value="remember">
 					</div>
 					<div>
-						<input class="btn btn--orange btn--large" type="submit" value="Log In">
+						<input class="btn btn--orange btn--large" type="submit" value="Enviar">
 					</div>
 					<p class="forget_pass"><a href="#">¿Olvidaste tu contraseña?</a></p>
 				</div>

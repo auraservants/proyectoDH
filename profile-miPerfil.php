@@ -1,5 +1,24 @@
-<?php require_once("head.php"); ?>
-<?php require_once("header.php"); ?>
+<?php 
+  require_once("head.php"); 
+  require_once("header.php");
+  require("funciones.php");
+
+  session_start();
+  closeUser();
+  
+
+  if(!empty($_COOKIE)){
+      foreach($_COOKIE as $clave => $valor){
+          $_SESSION[$clave] = $valor;
+      }
+  }
+
+  if(!empty($_SESSION)){
+      $users = getUsers();
+      $user = searchUser($users);
+  }
+?>
+
 
 <div class="marco-profile-container">
   <section class="profile-container">
@@ -9,7 +28,7 @@
           <img src="image/avatar.png" alt="Foto usuario">
         </div>
         <div class="profile__username">
-          <h3 class="username">Ramiro Bastianes</h3>
+          <h3 class="username"><?= $user["name"]?></h3>
         </div>
         <div class="user-nav">
           <div class="user-nav__bar">
@@ -25,37 +44,44 @@
     </div>
     <div class="selection-container">
       <div class="selection__welcome">
-        <h1>Bienvenido, <span>Ramiro Bastianes!</span></h1>
+        <h1>Hola <?= $user["name"]?>!</h1>
+        <h2>Tus Datos</h2>
       </div>
       <div class="selection__dataUser">
-        <form action="" method="post">
-          <h2>Tus Datos</h2>
 
+        <form action="profile-miperfil.php" method="post">
           <div class="container__data">
-            <p>Ramiro Bastianes</p>
             <label for="name"><i class="fas fa-user"></i></label>
+            <p><?= $user["name"]?></p>
             <input type="text" name="name" value="" placeholder="Modificar nombre">              
           </div>
           <div class="container__data">
+            <label for="direction"><i class="fas fa-map-marker-alt"></i></label>
             <p>Lima 1111</p>
-            <label for="direction"><i class="fas fa-user"></i></label>
             <input type="text" name="direction" value="" placeholder="Modificar dirección">              
           </div>
-          <div class="container__data">
+          <div class="container__data">   
+            <label for="phone"><i class="fas fa-phone-alt"></i></label>
             <p>11-65487932</p>
-            <label for="phone"><i class="fas fa-user"></i></label>
             <input type="text" name="phone" value="" placeholder="Modificar teléfono">              
           </div>
           <div class="container__data container__password">
-            <p><span>Cambiar contraseña:</span> </p>
+            <label for="password"><i class="fas fa-lock"></i></label>
+            <p>Cambiar contraseña:</p>
             <div>
-              <input type="text" name="password" value="" placeholder="Contraseña actual"> 
-              <input type="text" name="password" value="" placeholder="Nueva contraseña">  
-              <input type="text" name="password" value="" placeholder="Confirmar contraseña">                 
+              <input type="password" name="password" value="" placeholder="Contraseña actual"> 
+              <input type="password" name="password" value="" placeholder="Nueva contraseña">  
+              <input type="password" name="password" value="" placeholder="Confirmar contraseña">                 
             </div>
           </div> 
-          <div class="btn__data">
-            <button type="submit" class="btn btn--light btn--small ">Guardar cambios</button>
+          <div class="btn__save">
+            <button type="submit" class="btn btn--orange btn--large ">Guardar cambios</button>
+          </div>
+        </form>
+
+        <form action="profile-miPerfil.php" method="post">
+          <div class="btn__close">
+            <button class="btn btn--light btn--medium" type="submit" name="close" id="close" value="close">Cerrar Sesión</button>
           </div>
         </form>
         

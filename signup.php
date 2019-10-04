@@ -1,139 +1,66 @@
 <?php
-/* 
-function encriptar($textoPlano) {
-    $encript = password_hash($textoPlano, PASSWORD_DEFAULT);
-    return $encript;
-}
-function aArray($unJSON) {
-  return json_decode($unJSON);
-}
-function encriptar($textoPlano) {
-    $encript = password_hash($textoPlano, PASSWORD_DEFAULT);
-    return $encript;
-}
-function aArray($unJSON) {
-    return json_decode($unJSON);
-} 
-function agregarUsuario($jsonUsuarios, $usuarioNuevo) {
-  $arrUsuarios = json_decode($jsonUsuarios, true);
-  array_push($arrUsuarios, $usuarioNuevo);
-  return json_encode($arrUsuarios);
-
-}*/
     include_once("head.php");
     include_once("header.php");
-    function validationEmpty(String $name) {
-        if($_POST) {
-            if(empty($_POST[$name])) {
-                ?>
-                <div class="error">
-                    <p class="error__msg">Por favor, ingrese su <?= $name ?>.</p>
-                </div>
-                <?php
-            } else {
-                return $_POST[$name];
-            }
-        }
-    }/* 
-    function validationRegistered() {
-        $usrs = file_get_contents("./js/users.json");
-        $usrsArr = json_decode($usrs, true);
-        foreach($usrsArr as $usrs) {
-            if($usrs["email"] === $_POST["email"]) {
-                ?>
-                <div class="error">
-                    <p class="error__msg">Por favor, ingrese su <?= $name ?>.</p>
-                </div>
-                <?php
-            }
-        }
-    } */
-    function usrCreate() {
-        if($_POST) {
-            $usrs = file_get_contents("./js/users.json");
-            $usrsArr = json_decode($usrs, true);
-            foreach($usrsArr as $usrs) {
-                if($usrs["email"] === $_POST["email"]) {
-                    $msg = "Este email ya se encuentra registrado.";
-                    return false;
-                }
-            }
-            if(!empty($_POST["nombre"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
-                $newUsr = [
-                    "nombre"=> $_POST["nombre"],
-                    "email"=> $_POST["email"],
-                    "contrasena"=> password_hash($_POST["password"], PASSWORD_DEFAULT)
-                ];
-                $_POST["nombre"] = "";
-                $_POST["email"] = "";
-                $_POST[""] = "";
-                $usrs = file_get_contents("./js/users.json");
-                $usrsArr = json_decode($usrs, true);
-                array_push($usrsArr, $newUsr);
-                $usrsNew = json_encode($usrsArr);
-                file_put_contents("./js/users.json", $usrsNew);
-            }
-            header('Location: ./profile-miPerfil.php');
-        }
-    }
-    usrCreate();
-    // profile-miPerfil.php
+    require("funciones.php");
+
+    $errores = errors();
+    $errorUser = register($errores);
+    loginRemember();
 ?>
 
 <section id="signup">
     <div class="users-background signup">
-        <div class="anotherOption signup">
+        <div class="another-option">
             <p>Ya tienes una cuenta?</p>
             <p>Ingresá <a href="login.php">acá</a></p>
         </div>
     </div>
-    <div class="users-signup">
-        <div>
-            <h2 class="users-title">Sign Up</h2>
-            <form action="signup.php" method="POST">
+    <div class="container-users-signup">
+        <div class="users-signup">
+            <h2 class="users-title">Registrarse</h2>
+
+            <form action="signup.php" method="post" enctype="multipart/form-data">
                 <div class="users-form">
                     <div>
-                        <input class="form-items" type="text" name="nombre" placeholder="Nombre y Apellido" value="<?php if(!$_POST) {
-                            echo "";
-                        } else {
-                            echo $_POST["nombre"];
-                        }?>">
+                        <input class="form-items" type="text" name="name" placeholder="Nombre y Apellido" value="<?php if(isset($_POST["name"]) && empty($errores["name"])) { echo $_POST["name"]; } ?>">
+                        <span class='error'>
+                            <?php if (isset($errores["name"])): ?>
+                                <p><?= $errores["name"]?></p>
+                            <?php endif ?>
+                        </span> 
                     </div>
-                    <?php validationEmpty("nombre");
-                    ?>
                     <div>
-                        <input class="form-items" type="email" name="email" placeholder="Email"  value="<?php if(!$_POST) {
-                            echo "";
-                        } else {
-                            echo $_POST["email"];
-                        }?>">
-                        
+                        <input class="form-items" type="email" name="email" placeholder="Email" value="<?php if(isset($_POST["email"]) && empty($errores["email"])) { echo $_POST["email"]; } ?>">
+                        <span class='error'>
+                            <?php if (isset($errores["email"])): ?>
+                                <p><?= $errores["email"]?></p>
+                            <?php endif ?>
+                        </span> 
                     </div>
-                    
-                    <div class="error">
-                        <p class="error__msg"></p>
-                    </div>
-                    <?php validationEmpty("email");
-                        if($_POST){
-
-                            
-                        }
-
-                    ?>
                     <div>
-                        <input class="form-items" type="password" name="password" placeholder="Contraseña"  value="<?php if(!$_POST) {
-                            echo "";
-                        } else {
-                            echo $_POST["password"];
-                        }?>">
+                        <input class="form-items" type="password" name="password" placeholder="Contraseña" value="<?php if(isset($_POST["password"]) && empty($errores["password"])) { echo $_POST["password"]; } ?>">
+                        <span class='error'>
+                            <?php if (isset($errores["password"])): ?>
+                                <p><?= $errores["password"]?></p>
+                            <?php endif ?>
+                        </span>
                     </div>
-                    <?php validationEmpty("password");
-                    ?>
+                    <div class="remember">
+                        <label for="remember">Recuerdame</label>
+						<input type="checkbox" name="remember" value="remember">
+                    </div>    
                     <div>
-                        <input class="btn btn--orange btn--large" type="submit" value="Sign Up">
+                        <span class='error'>
+                            <?php if (isset($errorUser["user"])): ?>
+                                <p><?= $errorUser["user"]?></p>
+                            <?php endif ?>
+                        </span>
+                    </div>                        
+                    <div>
+                        <input class="btn btn--orange btn--large" type="submit" value="Enviar">
                     </div>
-                </div>
             </form> 
+
         </div>
     </div>
     
@@ -141,4 +68,6 @@ function agregarUsuario($jsonUsuarios, $usuarioNuevo) {
 
 
 <?php 
-include_once("footer.php"); ?>
+    include_once("footer.php");
+
+?>

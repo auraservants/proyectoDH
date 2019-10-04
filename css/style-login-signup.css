@@ -3,7 +3,6 @@
     background-image: url("../image/imagen2.jpg");
     background-size: cover;
 }
-
 .users-background {
     position: absolute;
     top: 30%;
@@ -17,10 +16,10 @@
 .users-background.login {
     justify-content: flex-end;
 }
-.users-login {
+.container-users-login {
     position: absolute;
-    top: 26%;
-    bottom: 21%;
+    top: 22%;
+    bottom: 17%;
     right: 50%;
     left: 25%;
     background-color: rgb(255, 255, 255);
@@ -31,10 +30,14 @@
     justify-content: center;
     box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
 }
-.users-signup {
+.users-login {
+    width: 75%;
+    height: 75%;
+}
+.container-users-signup {
     position: absolute;
-    top: 26%;
-    bottom: 21%;
+    top: 22%;
+    bottom: 17%;
     right: 25%;
     left: 50%;
     background-color: rgb(255, 255, 255);
@@ -45,58 +48,57 @@
     justify-content: center;
     box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
 }
+.users-signup {
+    width: 75%;
+    height: 75%;
+}
 .users-title {
-    padding: 5px 0;
     text-transform: uppercase;
     color: rgba(245, 130, 32, 0.9);
 }
-.users-form div {
-    display: flex;
+.users-form {
+    padding-top: 20px;
 }
-.users-form .form-items {
+.users-form div {
+    width: 75%;
+}
+.form-items {
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     outline: none;
     padding: 12px 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+    margin-top: 10px;
     font-size: 20px;
-    color: rgba(0, 0, 0, 0.7);
-    transition: .3s;
     height: 45px;
 }
-.anotherOption.signup {
+.form-items:-internal-autofill-selected {
+    background-color: transparent !important;
+}
+.another-option {
     width: 50%;
     height: 100%;
     text-align: center;
     display: grid;
     align-content: center;
 }
-.anotherOption.login {
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    display: grid;
-    align-content: center;
-}
-.anotherOption p{
+.another-option p{
     color: white;
     font-size: 25px;
     font-family: Montserrat;
 }
-.anotherOption p a {
+.another-option a {
     text-decoration: none;
     color: rgba(245, 130, 32, 0.6);
 }
-.remember_login {
+.remember {
     display: flex;
     justify-content: end;
     padding: 12px 8px;
     margin-bottom: 10px;
     align-items: center;
 }
-.remember_login input {
-    margin-right: 10px;
+.remember input {
+    margin-left: 10px;
 }
 .forget_pass {
     padding-top: 10px;
@@ -108,4 +110,10 @@
 }
 .forget_pass a:hover {
     color:#000;
+}
+.form-items:focus::-webkit-input-placeholder { 
+    color:rgb(162, 162, 162); 
+}
+.form-items:hover::-webkit-input-placeholder { 
+    color:rgb(162, 162, 162); 
 }

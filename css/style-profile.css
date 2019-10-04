@@ -18,7 +18,7 @@
   transform: translate(-50%, -40%);
   height: 75vh;
   width: 75vw;
-  background-color: #bbbbbbcf;
+  background-color: #e5e5e5b8;
   border-radius: 4px;
   margin-top: 10px;
   box-shadow: 0 10px 20px rgba(0,0,0, .7);
@@ -31,7 +31,7 @@
   padding: 10px;
   width: 20%;
   border-radius: 10px;
-  background-color: var(--color5);
+  background-color: #2e2e2edb;
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.6);
 }
 .profile__userphoto img {
@@ -262,15 +262,21 @@
 
 }
 .selection__welcome {
-  font-size: 28px;
   padding: 30px;
   padding-bottom: 20px;
-}
-.selection__welcome span {
-  color: var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
 }
 .selection__welcome h1 {
-  color: #fff;
+}
+.selection__welcome h2 {
+  color: var(--color1);
+}
+
+.selection__welcome h1 {
+  color: #2e2e2edb;
 }
 .selection__dataUser {
   padding: 0 30px;
@@ -287,34 +293,31 @@
   align-items: flex-end;
   margin: 16px 0;
 }
-.container__password {
-  display: flex;
-  align-content: center;
-}
-
 .container__data p {
-  width: 38%;
-  color: #000;
-  font-size: 26px;
+  width: 23%;
+  font-size: 20px;
   font-weight: bold;
-}
-
-.container__data input {
+  display: flex;
   border-image: initial;
-  border: solid 1.5px var(--color1);
+  background-color: var(--color1);
+  border: solid 1px var(--color1);
+  color: #ffffffd6;
+  height: 40px;
+  align-items: center;
+  padding: 0 5px;
+}
+.container__data input {
+  border: solid 1px var(--color1);
   background-color: transparent;
   height: 40px;
   font-size: 20px;
   display: block;
-  width: 220px;
   padding: 10px;
   border-radius: 0 8px 8px 0;
 }
-.container__password input{
-  margin-top: 16px;
-  border-radius: 8px 8px 8px 8px;
+.container__data input:focus {
+  outline: none;  
 }
-
 .container__data label {
   width: 40px;
   background-color: var(--color1);
@@ -329,13 +332,43 @@
   color: #ffffffd6;
   font-size: 25px;
 }
-
-::-webkit-input-placeholder { color:#000; }
-
-.container__data input:focus {
-  outline: none;  
+.container__password {
+  display: flex;
+  align-items: end;
 }
-.btn__data {
-  text-align: center;
-  margin: 25px 0;
+.container__password p {
+  height: 120px;
+}
+.container__password label {
+  height: 120px;
+}
+.container__password input {
+  border: none; 
+  margin: 0 10px;
+  padding: 10px 0;
+  border-bottom: solid 1px var(--color1);
+  border-radius: 0;
+}
+.container__password input:last-child {
+  border: none;
+}
+.container__password div {
+  border: solid 1px var(--color1);
+  background-color: transparent;
+  height: 120px;
+  font-size: 20px;
+  display: block;
+  border-radius: 0 8px 8px 0;
+}
+
+.btn__save, .btn__close {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+.container__data input:focus::-webkit-input-placeholder { 
+  color:rgb(162, 162, 162); 
+}
+.container__data input:hover::-webkit-input-placeholder { 
+  color:rgb(162, 162, 162); 
 }

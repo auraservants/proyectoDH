@@ -1,4 +1,4 @@
-@import "error.css";
+@import "style-error.css";
 @import "style-contact.css";
 @import "style-faqs.css";
 @import "style-footer.css";
@@ -84,14 +84,14 @@ a {
     background-color: #f58220;
 }
 .btn--large {
-    padding: 10px 30px;
+    padding: 10px 12px;
     font-size: 22px;
 }
 .btn--medium {
-    padding: 8px 20px;
-    font-size: 18px;
+    padding: 9px 14px;
+    font-size: 16px;
 }
 .btn--small {
-    padding: 6px 10px;
-    font-size: 12px;
+    padding: 5px 13px;
+    font-size: 19px;
 }
