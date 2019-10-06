@@ -15,8 +15,10 @@
 
   if(!empty($_SESSION)){
       $users = getUsers();
+      $users = photoProfile($users);
       $user = searchUser($users);
   }
+ 
 ?>
 
 
@@ -24,9 +26,13 @@
   <section class="profile-container">
     <div class="profile">
       <div class="profile__card">
-        <div class="profile__userphoto">
-          <img src="image/avatar.png" alt="Foto usuario">
-        </div>
+
+        <form class="user_photo" <?php if(!empty($user["photo"])) { echo 'style="background-image: url(' . $user["photo"] . ');"'; } else { echo 'style="background-image: url(pictures/user.svg);"';} ?> action="profile-miPerfil.php" method="post" enctype="multipart/form-data">
+          <label for="photo"><i class="fas fa-camera"></i>Cambiar foto</label>
+          <input class="input_photo" type="file" name="photo" required id="photo" value=""/>
+          <input class="input_save" type="submit" name="photo" value="Guardar cambios">
+        </form> 
+
         <div class="profile__username">
           <h3 class="username"><?= $user["name"]?></h3>
         </div>

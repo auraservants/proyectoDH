@@ -85,11 +85,11 @@ a {
 }
 .btn--large {
     padding: 10px 12px;
-    font-size: 22px;
+    font-size: 18px;
 }
 .btn--medium {
-    padding: 9px 14px;
-    font-size: 16px;
+    padding: 9px 8px;
+    font-size: 15px;
 }
 .btn--small {
     padding: 5px 13px;

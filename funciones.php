@@ -162,4 +162,25 @@
             }        
         }   
     }
+    
+    function photoProfile($users){  
+        if($_FILES){
+            $file = $_FILES["photo"];
+            foreach($users as $clave => $valor2) {
+                foreach($valor2 as $clave2 => $valor){
+                    if($clave2 === "email"){
+                        if ($valor === $_SESSION["email"]) {
+                            $id = $valor2["id"];
+                            $users[$clave]["photo"] = "pictures/" . $id . ".jpg";
+                        }
+                    }
+                }           
+            } 
+            move_uploaded_file($file["tmp_name"], "pictures/" . $id . ".jpg"); 
+            $json = json_encode($users);
+            file_put_contents("js/users.json", $json);               
+        }
+        return $users;  
+    }
+
 ?> 
