@@ -38,7 +38,8 @@
                     $users[] = $user;
                     $json = json_encode($users);
                     file_put_contents("js/users.json", $json);  
-                    remember();                  
+                    remember();
+                    $_SESSION["login"] = true;                  
                     header("Location: profile-miPerfil.php"); 
                 } else {
                     $errorUser["user"] = "El usuario ya existe";
@@ -120,7 +121,11 @@
                 if(passwordUser($users) !== true){
                     $errores["password"] = "Tu contraseña es invalida";
                 } else {   
-                    remember();           
+                    remember();
+                    foreach($user as $clave => $valor){
+                        $_SESSION[$clave] = $valor;
+                    } 
+                    $_SESSION["login"] = true;              
                     header("Location: profile-miPerfil.php");
                 }
             }    
@@ -150,11 +155,16 @@
     }
     function loginRemember(){
         if(!empty($_COOKIE["email"])){
+            session_start();
             $users = getUsers();
             foreach($users as $user) {
                 foreach($user as $clave => $valor){
                     if($clave === "email"){
-                        if ($valor === $_COOKIE["email"]) {
+                        if ($valor === $_COOKIE["email"]) { 
+                            foreach($user as $clave => $valor){
+                                $_SESSION[$clave] = $valor;
+                            }  
+                            $_SESSION["login"] = true;
                             header("Location: profile-miPerfil.php"); 
                         }
                     }
@@ -183,4 +193,22 @@
         return $users;  
     }
 
+    function modifyData($users){  
+        if($_POST){
+            foreach($users as $clave => $valor2) {
+                foreach($valor2 as $clave2 => $valor){
+                    if($clave2 === "email"){
+                        if ($valor === $_SESSION["email"]) {
+                            $id = $valor2["id"];
+                            $users[$clave]["photo"] = "pictures/" . $id . ".jpg";
+                        }
+                    }
+                }           
+            } 
+            move_uploaded_file($file["tmp_name"], "pictures/" . $id . ".jpg"); 
+            $json = json_encode($users);
+            file_put_contents("js/users.json", $json);               
+        }
+        return $users;  
+    }
 ?> 

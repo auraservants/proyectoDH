@@ -4,123 +4,105 @@
 <main class="cart">
     <section class="steps_cart">
         <div class="options_steps_cart">
-            <p><a href="#">Compra</a></p>
+            <a href="#"><img src="image/cart/steps-cart1.png" alt=""></a>
         </div>
         <div class=line_steps_cart>
-            <p>➤</p>
         </div>
         <div class="options_steps_cart">
-            <p><a href="#">Pago</a></p>
+            <a href="#"><img src="image/cart/steps-cart2.png" alt=""></a>
         </div>
         <div class=line_steps_cart>
-            <p>➤</p>
         </div>
         <div class="options_steps_cart">
-            <p><a href="#">Entrega</a></p>
+            <a href="#"><img src="image/cart/steps-cart3.png" alt=""></a>
         </div>
     </section>
     <section class="buy_cart">
-        <div class="detail_cart">
-            <div class="title_products">
-                <p class="name_cart">Productos</p>
-                <p>Precio</p>
-            </div>
-            <div class="description_cart">
-                <img class="img_products" src="" alt="product">
-                <p class="detail_products">Descripción del producto</p>
-                <p class="amount_products">$ ...</p>
-                <p class="remove_products"><a href="#">✖</a></p>
-            </div>
-            <div class="description_cart">
-                <img class="img_products" src="" alt="product">
-                <p class="detail_products">Descripción del producto</p>
-                <p class="amount_products">$ ...</p>
-                <p class="remove_products"><a href="#">✖</a></p>
-            </div>
-            <div class="description_cart">
-                <img class="img_products" src="" alt="product">
-                <p class="detail_products">Descripción del producto</p>
-                <p class="amount_products">$ ...</p>
-                <p class="remove_products"><a href="#">✖</a></p>
-            </div>
-        </div>
-        
-
-        <div class="additional_cart">
-            <form action="page.php" method="post">
-                <div class="title_additional">
-                    <p class="name_cart">Adicionales</p>
+        <section class="container_buy_cart">
+            <div class="detail_cart">
+                <div class="title_products">
+                    <p class="name_cart">Productos</p>
                     <p>Precio</p>
                 </div>
-                <div>
-                    <div class="description_cart">
-                        <label class="detail_additional" for="aceiteOliva">Aceite de Oliva</label>
-                        <p class="amount_products">$...</p>
-                        <div class="detail_aggregates">
-                            <input id="aceiteOliva" type="checkbox" name="aceiteOliva" value="aceiteOliva">
-                        </div>
-                    </div>
-                    <div class="description_cart">
-                        <label class="detail_additional" for="limon">Limón</label>
-                        <p class="amount_products">$...</p>
-                        <div class="detail_aggregates">
-                            <input id="limon" type="checkbox" name="limon" value="limon">
-                        </div>
-                    </div>
-                    <div class="description_cart">
-                        <label class="detail_additional" for="barbacoa">Barbacoa</label>
-                        <p class="amount_products">$...</p>
-                        <div class="detail_aggregates">
-                            <input id="barbacoa" type="checkbox" name="barbacoa" value="barbacoa">
-                        </div>
-                    </div>
-                    <div class="description_cart">
-                        <label class="detail_additional" for="mayonesa">Mayonesa</label>
-                        <p class="amount_products">$...</p>
-                        <div class="detail_aggregates">
-                            <input id="mayonesa" type="checkbox" name="mayonesa" value="mayonesa">
-                        </div>
-                    </div>
-                    <div class="description_cart">
-                        <label class="detail_additional" for="ketchup">ketchup</label>
-                        <p class="amount_products">$...</p>
-                        <div class="detail_aggregates">
-                            <input id="ketchup" type="checkbox" name="ketchup" value="ketchup">
-                        </div>
-                    </div>
-                    <div class="description_cart">
-                        <label class="detail_additional" for="mostaza">Mostaza</label>
-                        <p class="amount_products">$...</p>
-                        <div class="detail_aggregates">
-                            <input id="mostaza" type="checkbox" name="mostaza" value="mostaza">
-                        </div>
-                    </div>
+                <div class="description_cart">
+                    <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
+                    <p class="detail_products">Descripción del producto</p>
+                    <p class="amount_products">$ ...</p>
+                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
                 </div>
-            </form>
-        </div>
-    </section>
-
-    <section>
-        <div class="envio_cart">
-            <p><a href="#">Calcular envio</a></p>
-        </div>
-        <form class="cupon_cart" action="validar.php" method="post">
-            <p>Canjear cupones</p>
-            <input type="text" name="cupon" placeholder="Ingresá el código de tu cupón">
-        </form>
+                <div class="description_cart">
+                    <div class="img_products"><img src="image/cart/product-cart2.png" alt="product"></div>
+                    <p class="detail_products">Descripción del producto</p>
+                    <p class="amount_products">$ ...</p>
+                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                </div>
+                <div class="description_cart">
+                    <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
+                    <p class="detail_products">Descripción del producto</p>
+                    <p class="amount_products">$ ...</p>
+                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                </div>
+                <div class="description_cart">
+                    <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
+                    <p class="detail_products">Descripción del producto</p>
+                    <p class="amount_products">$ ...</p>
+                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                </div>
+            </div>
         
+            <div class="additional_cart">
+                <form action="page.php" method="post">
+                    <div class="title_products">
+                        <p class="name_cart">Productos</p>
+                        <p>Precio</p>
+                    </div>
+                    <div class="description_cart">
+                        <div class="img_products"></div>
+                        <p class="detail_products">Descripción del producto</p>
+                        <p class="amount_products">$ ...</p>
+                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                    </div>
+                    <div class="description_cart">
+                        <div class="img_products"></div>
+                        <p class="detail_products">Descripción del producto</p>
+                        <p class="amount_products">$ ...</p>
+                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                    </div>
+                    <div class="description_cart">
+                        <div class="img_products"></div>
+                        <p class="detail_products">Descripción del producto</p>
+                        <p class="amount_products">$ ...</p>
+                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                    </div>
+                    <div class="description_cart">
+                        <div class="img_products"></div>
+                        <p class="detail_products">Descripción del producto</p>
+                        <p class="amount_products">$ ...</p>
+                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="container_options">
+            <form class="cupon_cart" action="validar.php" method="post">
+                <p>Ingresar Cupón</p>
+                <input type="text" name="cupon" placeholder="Ingresá el código">
+            </form>
+            <form class="update_cart" action="validar.php" method="post">
+                <input type="text" name="cupon" placeholder="Actualizar Carrito">
+            </form>  
+        </section>     
     </section>
 
-    <section class="buy_cart">
+    
+
+    <section class="buy_btn_cart">
         
         <div class="page_cart">
-            <div class="title_total">
-                <p class="name_cart">Total</p>
-                <p>$ ...</p>
-            </div>
-        </div>
-        <div class="btn_cart">
-			<input class= "btn btn--light btn--medium" type="submit" value="Elegir más productos">
+            <p class="name_cart">Total</p>
+            <input type="text">
+    
         </div>
         <div class="btn_cart">
             <input class="btn btn--orange btn--large" type="submit" value="Finalizar compra">

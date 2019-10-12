@@ -30,7 +30,7 @@
                         </span> 
                     </div>
                     <div>
-                        <input class="form-items" type="email" name="email" placeholder="Email" value="<?php if(isset($_POST["email"]) && empty($errores["email"])) { echo $_POST["email"]; } ?>">
+                        <input class="form-items" type="text" name="email" placeholder="Email" value="<?php if(isset($_POST["email"]) && empty($errores["email"])) { echo $_POST["email"]; } ?>">
                         <span class='error'>
                             <?php if (isset($errores["email"])): ?>
                                 <p><?= $errores["email"]?></p>
@@ -45,17 +45,18 @@
                             <?php endif ?>
                         </span>
                     </div>
-                    <div class="remember">
-                        <label for="remember">Recuerdame</label>
-						<input type="checkbox" name="remember" value="remember">
-                    </div>    
                     <div>
                         <span class='error'>
                             <?php if (isset($errorUser["user"])): ?>
                                 <p><?= $errorUser["user"]?></p>
                             <?php endif ?>
                         </span>
-                    </div>                        
+                    </div>   
+                    <div class="remember">
+                        <label for="remember">Recuerdame</label>
+						<input type="checkbox" name="remember" value="remember">
+                    </div>    
+                                         
                     <div>
                         <input class="btn btn--orange btn--large" type="submit" value="Enviar">
                     </div>
