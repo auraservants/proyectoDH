@@ -16,8 +16,8 @@
     display: flex;
     justify-content: center;
     box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.15);
-    background-color: rgba(232, 228, 228, 0.2);
     margin: 0 12px;
+    background-color: #fff;
 }
 .options_steps_cart a {
     width: 100%;
@@ -55,8 +55,9 @@
 .container_buy_cart{
     display: flex;
     width: 70%;
-    border: solid 1.5px rgba(0, 0, 0, 0.2);
+    border: solid 1.5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    background-color: #fff;
 }
 .detail_cart{
     width: 50%;
@@ -69,7 +70,7 @@
     align-items: center;
     justify-content: center;
     height: 55px;
-    border-bottom: solid 1.5px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 1.5px rgba(0, 0, 0, 0.1);
     font-weight: bolder;
     font-size: 20px;
     text-transform: uppercase;
@@ -79,7 +80,7 @@
     display: flex;
     height: 85px;
     align-items: center;
-    border-bottom: solid 1.5px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 1.5px rgba(0, 0, 0, 0.1);
 }
 .description_cart:last-child {
     border-bottom: none;
@@ -141,7 +142,7 @@
     display: flex;
     align-items: center;
 }
-.cupon_cart input, .update_cart input {
+.cupon_cart input, .update_cart {
     font-size: 15px;
     height: 30px;
     border: none;
@@ -152,10 +153,10 @@
     font-weight: bold;
     width: 170px;
 }
-.update_cart input {
+.update_cart {
     background-color: rgba(0, 0, 0, 0.3);
 }
-.update_cart input::-webkit-input-placeholder {
+.update_cart::-webkit-input-placeholder {
     color: rgb(106, 106, 106);
 }
 .buy_btn_cart {
@@ -172,7 +173,7 @@
     align-items: center;
     margin: 17px 0;
 }
-.page_cart p {
+.total_cart {
     font-weight: bolder;
     font-size: 20px;
     text-transform: uppercase;
@@ -182,12 +183,16 @@
     display: flex;
     align-items: flex-end;
 }
-.page_cart input {
+.bar_total_cart {
     border: none;
     border-bottom: solid 1.5px #f5822091;
     font-size: 20px;
     width: 155px;
     height: 100%;
+    background-color: transparent;
+}
+.page_cart input:focus {
+    outline: none;
 }
 .btn_cart .btn{
     border-radius: 20px;

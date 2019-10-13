@@ -53,7 +53,7 @@
             <div class="additional_cart">
                 <form action="page.php" method="post">
                     <div class="title_products">
-                        <p class="name_cart">Productos</p>
+                        <p class="name_cart">Adicionales</p>
                         <p>Precio</p>
                     </div>
                     <div class="description_cart">
@@ -89,9 +89,7 @@
                 <p>Ingresar Cupón</p>
                 <input type="text" name="cupon" placeholder="Ingresá el código">
             </form>
-            <form class="update_cart" action="validar.php" method="post">
-                <input type="text" name="cupon" placeholder="Actualizar Carrito">
-            </form>  
+            <button type="submit" class="update_cart" value="">Actualizar Carrito</button> 
         </section>     
     </section>
 
@@ -100,9 +98,8 @@
     <section class="buy_btn_cart">
         
         <div class="page_cart">
-            <p class="name_cart">Total</p>
-            <input type="text">
-    
+            <p class="total_cart">Total</p>
+            <p class="bar_total_cart"></p>
         </div>
         <div class="btn_cart">
             <input class="btn btn--orange btn--large" type="submit" value="Finalizar compra">
