@@ -21,7 +21,7 @@
 			<form action="login.php" method="post">
 				<div class="users-form">
 					<div>
-						<input class="form-items" type="email" name="email" value="<?php if(isset($_POST["email"]) && empty($errores["email"])) { echo $_POST["email"]; } ?>" placeholder="Email" >
+						<input class="form-items" type="text" name="email" value="<?php if(isset($_POST["email"]) && empty($errores["email"])) { echo $_POST["email"]; } ?>" placeholder="Email" >
 						<span class='error'>
 							<?php if (isset($errores["email"])): ?>
 								<p><?= $errores["email"]?></p>

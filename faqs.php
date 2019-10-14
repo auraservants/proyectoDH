@@ -1,68 +1,86 @@
 <?php require_once("head.php"); ?>
 <?php require_once("header.php"); ?>
-<div class="faqs">
-  <div class="faqs__title">
-    <h1>Preguntas Frecuentes</h1>
+
+<session class="faqs">
+  <div class="faqs__container__title">
+    <div class="faqs__title">
+      <h1>Cómo podemos ayudarte?</h1>
+    </div>
+    <div class="faqs__search">
+      <button><img src="image/faqs/search.png" alt=""></button>
+      <input type="text" placeholder="Describe tu pregunta">
+    </div> 
+    <img class="photo__title" src="image/faqs/img-faqs1.png" alt="">   
   </div>
+
+
   <div class="faqs__container">
     <div class="faqs__group">
-      <input type="checkbox" class="faqs__checkbox" id="answer-toggle">
-      <label for="answer-toggle" class="faqs__button">¿Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus?<span class="faqs__icon">&nbsp;</span></label>
-      
-      <div class="faqs__answer" id="answerBox">
+      <div class="faqs__question">
+        <p>¿Qué es Randfood?</p>
+        <img src="image/faqs/point-faqs.png" alt="">
+      </div>
+      <div class="faqs__reply">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam tempora libero perspiciatis soluta expedita blanditiis. Quo suscipit autem quia explicabo eum. Nam repudiandae, odit ipsam praesentium debitis consequuntur obcaecati</p>
       </div>
     </div>
     <div class="faqs__group">
-      <input type="checkbox" class="faqs__checkbox" id="answer-toggle1">  
-      <label for="answer-toggle1" class="faqs__button">¿Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus?<span class="faqs__icon">&nbsp;</span></label>
-      
-      <div class="faqs__answer">
+      <div class="faqs__question">
+        <p>¿Cómo usar Randfood?</p>
+        <img src="image/faqs/point-faqs.png" alt="">
+      </div>
+      <div class="faqs__reply">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam tempora libero perspiciatis soluta expedita blanditiis. Quo suscipit autem quia explicabo eum. Nam repudiandae, odit ipsam praesentium debitis consequuntur obcaecati</p>
       </div>
     </div>
     <div class="faqs__group">
-      <input type="checkbox" class="faqs__checkbox" id="answer-toggle2">  
-      <label for="answer-toggle2" class="faqs__button">¿Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus?<span class="faqs__icon">&nbsp;</span></label>
-      
-      <div class="faqs__answer">
+      <div class="faqs__question">
+        <p>¿Cómo funciona el método random?</p>
+        <img src="image/faqs/point-faqs.png" alt="">
+      </div>
+      <div class="faqs__reply">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam tempora libero perspiciatis soluta expedita blanditiis. Quo suscipit autem quia explicabo eum. Nam repudiandae, odit ipsam praesentium debitis consequuntur obcaecati</p>
       </div>
     </div>
     <div class="faqs__group">
-      <input type="checkbox" class="faqs__checkbox" id="answer-toggle3">  
-      <label for="answer-toggle3" class="faqs__button">¿Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus?<span class="faqs__icon">&nbsp;</span></label>
-      
-      <div class="faqs__answer">
+      <div class="faqs__question">
+        <p>Facturación, pago y mi cuenta</p>
+        <img src="image/faqs/point-faqs.png" alt="">
+      </div>
+      <div class="faqs__reply">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam tempora libero perspiciatis soluta expedita blanditiis. Quo suscipit autem quia explicabo eum. Nam repudiandae, odit ipsam praesentium debitis consequuntur obcaecati</p>
       </div>
     </div>
     <div class="faqs__group">
-      <input type="checkbox" class="faqs__checkbox" id="answer-toggle4">  
-      <label for="answer-toggle4" class="faqs__button">¿Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus?<span class="faqs__icon">&nbsp;</span></label>
-      
-      <div class="faqs__answer">
+      <div class="faqs__question">
+        <p>Mi perfil, promociones y puntos Randfood</p>
+        <img src="image/faqs/point-faqs.png" alt="">
+      </div>
+      <div class="faqs__reply">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam tempora libero perspiciatis soluta expedita blanditiis. Quo suscipit autem quia explicabo eum. Nam repudiandae, odit ipsam praesentium debitis consequuntur obcaecati</p>
       </div>
     </div>
     <div class="faqs__group">
-      <input type="checkbox" class="faqs__checkbox" id="answer-toggle5">  
-      <label for="answer-toggle5" class="faqs__button">¿Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus?<span class="faqs__icon">&nbsp;</span></label>
-      
-      <div class="faqs__answer">
+      <div class="faqs__question">
+        <p>¿Cuales son los métodos de pago?</p>
+        <img src="image/faqs/point-faqs.png" alt="">
+      </div>
+      <div class="faqs__reply">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam tempora libero perspiciatis soluta expedita blanditiis. Quo suscipit autem quia explicabo eum. Nam repudiandae, odit ipsam praesentium debitis consequuntur obcaecati</p>
       </div>
     </div>
     <div class="faqs__group">
-        <input type="checkbox" class="faqs__checkbox" id="answer-toggle6">  
-        <label for="answer-toggle6" class="faqs__button">¿Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus?<span class="faqs__icon">&nbsp;</span></label>
-      
-      <div class="faqs__answer">
+      <div class="faqs__question">
+        <p>¿Quién realiza la comida?</p>
+        <img src="image/faqs/point-faqs.png" alt="">
+      </div>
+      <div class="faqs__reply">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam tempora libero perspiciatis soluta expedita blanditiis. Quo suscipit autem quia explicabo eum. Nam repudiandae, odit ipsam praesentium debitis consequuntur obcaecati</p>
       </div>
     </div>
-    
   </div>
-</div>
+
+  
+</session>
 
 <?php require_once("footer.php"); ?>

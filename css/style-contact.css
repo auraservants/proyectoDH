@@ -1,63 +1,38 @@
 .contact {
-    padding-top: 6%;
-    background-image: url("../image/imagen4.jpg");
-    background-size: cover;
-}
-.background_title {
-    height: 110px;
-    background-color: #ffffff2e;
+    padding-top: 11%;
 }
 
 .background_contact {
     display: flex;
-    justify-content: space-evenly;
-    padding-top: 13px;
+    justify-content: center;
+    padding: 80px 0;
+    height: 620px;
 }
-.networks {
-    color:rgba(255, 255, 255, 0.781);
-    font-size: 43px;
-    margin-top: 260px;
-}
-.networks i {
-    margin: 10px 0;
-}
+
 .form_contact{
-    width: 50%;
-    padding: 35px;
+    width: 40%;
     text-align: center;
 }
 .contact__title {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
-    padding-top: 35px;
-    letter-spacing: 3px;
-}
-.contact__title::after {
-    content: '';
-    display: block;
-    margin: auto;
-    margin-top: 15px;
-    width: 127px;
-    height: 3px;
-    background: var(--color1);
-    margin-bottom: var(--margin-medium);
 }
 .contact__input {
-    background-color: #ffffffa1;
-    margin: 15px 0;
+    margin: 6px 0;
     width: 70%;
-    padding: 7px;
+    padding: 0 30px;
     font-size: 20px;
     border: none;
     outline: none;
-    height: 50px;
-    border-radius: 4px;
+    height: 60px;
+    border-radius: 21px;
     transition: all .3s;
-    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 9px 0px rgb(199, 199, 199);
+    font-family: "Montserrat", sans-serif;
 }
+.contact__input:visited {
+    background-color: transparent;
+} 
 .contact__input:hover {
     background-color: #ffffffd4;
     border: none;
@@ -67,53 +42,79 @@
     border: none;
 }
 .mensaje {
-    width: 70%;
     height: 165px;
-    resize: none;
-    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+}
+.container__bottonContact {
+    display: flex;
+    justify-content: center;
 }
 .bottonContact,
 .bottonContact:link,
 .bottonContact:visited {
     border: none;
     outline: none;
-    padding: 12px 38px;
+    padding: 0 21px;
     box-sizing: border-box;
-    font-size: 22px;
-    color: #fff;
-    border-radius: 3px;
-    margin-top: 15px;
-    background-color: rgba(245, 130, 32, 0.8);
-    box-shadow: 0 5px 7px rgba(0,0,0 , .5);
+    font-size: 17px;
+    color: rgba(245, 130, 32);
+    border-radius: 21px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 9px 0px rgb(199, 199, 199);
     transition: all .2s;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    height: 47px;
+    width: 233px;
+    justify-content: space-evenly;
 }
+
 .bottonContact:hover {
     transform: scale(1.01) translateY(-3px);
-    background-color: rgba(245, 130, 32, 0.9);
     box-shadow: 0 10px 12px rgba(0,0,0 , .2);
     cursor:pointer;
 }
 .bottonContact:active {
     transform: scale(1) translateY(-1px);
-    background-color: rgba(245, 130, 32, 0.9);
     box-shadow: 0 7px 9px rgba(0,0,0 , .3);
     cursor: pointer;
 }
+.bottonContact img {
+    width: 30px;
+}
 .data_randfood {
     width: 30%;
+    position: relative;
 }
 .data_randfood p {
     padding-top: 15px;
-    color:#fff;
+    color:#000;
 }
 .data_randfood i {
     margin-right: 15px;
-    color:rgba(255, 255, 255, 0.781);
+    color:#383838bd;
+}
+.data_randfood img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .maps_contact {
-    padding: 30px 0;
+    height: 380px;
 }
-.maps_contact iframe{
+.maps_contact iframe {
     width: 100%;
-    height: 300px;
+    height: 380px;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset, 0px 0px 9px 0px rgb(199, 199, 199);
+  transition: background-color 5000s ease-in-out 0s;
 }

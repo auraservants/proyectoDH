@@ -2,8 +2,8 @@
   require_once("head.php"); 
   require_once("header.php");
   require("funciones.php");
-
-  session_start();
+/* 
+  session_start(); */
   closeUser();
   
 
@@ -15,18 +15,30 @@
 
   if(!empty($_SESSION)){
       $users = getUsers();
+      $users = photoProfile($users);
       $user = searchUser($users);
   }
+ 
 ?>
 
 
 <div class="marco-profile-container">
+  <div class="hero">
+    <div class="hero__text">
+      <h1>Mi cuenta</h1>
+
+    </div>
+  </div>
   <section class="profile-container">
     <div class="profile">
       <div class="profile__card">
-        <div class="profile__userphoto">
-          <img src="image/avatar.png" alt="Foto usuario">
-        </div>
+
+        <form class="user_photo" <?php if(!empty($user["photo"])) { echo 'style="background-image: url(' . $user["photo"] . ');"'; } else { echo 'style="background-image: url(pictures/user.svg);"';} ?> action="profile-miPerfil.php" method="post" enctype="multipart/form-data">
+          <label for="photo"><i class="fas fa-camera"></i>Cambiar foto</label>
+          <input class="input_photo" type="file" name="photo" required id="photo" value=""/>
+          <input class="input_save" type="submit" name="photo" value="Guardar cambios">
+        </form> 
+
         <div class="profile__username">
           <h3 class="username"><?= $user["name"]?></h3>
         </div>
@@ -38,14 +50,21 @@
               <li class="user-nav__items favoritos-btn"><a href="profile-favoritos.php"> Favoritos</a></li>
               <li class="user-nav__items puntos-btn selected"><a href="profile-puntos.php"> Puntos</a></li>
             </ul>
+            <form action="profile-miPerfil.php" method="post">
+              <div class="btn-text">
+                <button class="btn-text__close" type="submit" name="close" id="close" value="close">Cerrar Sesión</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
     <div class="selection-container">
       <div class="selection__welcome">
+        <!--
         <h1>Hola <?= $user["name"]?>!</h1>
-        <h2>Tus Datos</h2>
+        -->
+        <h2>Mis Datos</h2>
       </div>
       <div class="selection__dataUser">
 
@@ -55,10 +74,10 @@
             <p><?= $user["name"]?></p>
             <input type="text" name="name" value="" placeholder="Modificar nombre">              
           </div>
-          <div class="container__data">
+          <div class="container__data" autocomplete="off">
             <label for="direction"><i class="fas fa-map-marker-alt"></i></label>
             <p>Lima 1111</p>
-            <input type="text" name="direction" value="" placeholder="Modificar dirección">              
+            <input autocomplete="off" type="text" name="direction" value="" placeholder="Modificar dirección">              
           </div>
           <div class="container__data">   
             <label for="phone"><i class="fas fa-phone-alt"></i></label>
@@ -67,7 +86,7 @@
           </div>
           <div class="container__data container__password">
             <label for="password"><i class="fas fa-lock"></i></label>
-            <p>Cambiar contraseña:</p>
+            <p>Cambiar contraseña</p>
             <div>
               <input type="password" name="password" value="" placeholder="Contraseña actual"> 
               <input type="password" name="password" value="" placeholder="Nueva contraseña">  
@@ -79,11 +98,7 @@
           </div>
         </form>
 
-        <form action="profile-miPerfil.php" method="post">
-          <div class="btn__close">
-            <button class="btn btn--light btn--medium" type="submit" name="close" id="close" value="close">Cerrar Sesión</button>
-          </div>
-        </form>
+        
         
 
       </div>
