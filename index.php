@@ -76,7 +76,7 @@
 					<img src="image/ingredients/2.jpg" alt="">
 					<h4>Salmon</h4>
 					<p>$1,00</p>
-					<div class="btn"><a href="#">Agregar</a></div>
+					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
 					<img src="image/ingredients/3.jpg" alt="">
@@ -100,7 +100,7 @@
 					<img src="image/ingredients/06.jpg" alt="">
 					<h4>Lomo</h4>
 					<p>$1,00</p>
-					<div class="btn"><a href="#">Agregar</a></div>
+					<a href="#">Agregar</a>
 				</div>
 				<div class="card-products ingredient">
 					<img src="image/ingredients/7.jpg" alt="">

@@ -2,46 +2,104 @@ footer {
     background-color: #f0f0f0;
     width: 100%;
     margin: 0;
+    padding: 0;
 }
   
-.footer-container{
-    margin-top:20px;
+.container-footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.footer-body{
+    display: flex;
     margin-bottom: 20px;
-}
-  
-footer .logo-footer img{
-    height: 100px;
-    padding: 20px;
-}
-  
-.social-icons img{
-    height: 25px;
-    margin-top: var(--margin-medium);
     justify-content: space-between;
-    align-items: center;
-    margin-right: 5px;
 }
-  
+
+.brand-footer{
+    max-width: 400px;
+    margin-left: 40px;
+}
+
+.brand-footer img{
+    height: 50px;
+    margin-top:30px;
+}
+
+.social-footer img{
+    height: 25px;
+    margin-top: 20px;   
+}
+
+.social-footer img:hover{
+   /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+   filter: gray; /* IE5+ */
+   -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+   -webkit-transition: all .8s ease-in-out; 
+}
+
+.links-footer{
+    max-width: 400px;
+    margin-top:30px;
+}
+.links-footer ul{
+    margin-top: 20px;
+}
+
+.links-footer ul li{
+    list-style: none;
+}
+
+.links-footer ul li a{
+    text-decoration: none;
+    color: #000;    
+}
+
+.links-footer ul li :hover{
+    color: #f58220;    
+}
+
+
+.newsletter-footer{
+    max-width: 400px;
+    margin-top:30px;
+    margin-right: 40px;
+}
+
+ .newsletter-items{
+    margin-top: 20px;
+}
+ .btn-footer{
+    background-color: #f58220;
+    color: #000;
+    padding: 5px;
+    margin-top: 15px;
+}
+.footer-divider hr{
+    opacity: 0.5;
+}
+
 .legal-info{
     width: 100%;
-    display: inline-block;
+    max-width: 1200px;
     display: flex;
-    overflow: hidden;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(22, 22, 22);
+    background-color: #f0f0f0;
     margin: 0;
-    padding: 10px;
+    padding: 30px;
 }
   
 .copyright-text{
     color: #000;
-    display: inline;
+    
 }
 
 .legal-info p{
-    color: #fafafa;
-    display: inline;
+    color: #000;
+    
     font-size:13px;
     margin-left: 40px;
     font-weight: 300;
