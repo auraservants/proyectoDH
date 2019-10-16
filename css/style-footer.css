@@ -14,7 +14,7 @@ footer {
 
 .footer-body{
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     justify-content: space-between;
 }
 
@@ -25,7 +25,14 @@ footer {
 
 .brand-footer img{
     height: 50px;
-    margin-top:30px;
+    margin-top:50px;
+    margin-bottom: 20px;
+}
+
+.brand-footer p{
+    font-size: 15px;
+    padding: 3px;
+    color: #686868;
 }
 
 .social-footer img{
@@ -42,7 +49,7 @@ footer {
 
 .links-footer{
     max-width: 400px;
-    margin-top:30px;
+    margin-top:50px;
 }
 .links-footer ul{
     margin-top: 20px;
@@ -54,29 +61,67 @@ footer {
 
 .links-footer ul li a{
     text-decoration: none;
-    color: #000;    
+    color: #686868; 
+    font-size: 15px;   
+    transition: 0s;
+
 }
 
-.links-footer ul li :hover{
-    color: #f58220;    
+.links-footer ul li a:hover{
+    color: #f58220;
+      
+}
+
+.links-footer ul li a:hover::before{
+    content: '— ';
+
 }
 
 
 .newsletter-footer{
     max-width: 400px;
-    margin-top:30px;
+    margin-top:50px;
     margin-right: 40px;
+    justify-content: center;
+    
 }
-
- .newsletter-items{
+.newsletter-footer p{
+    font-size: 15px;
+    padding: 3px;
+    margin-top: 20px;   
+    color: #686868;
+}
+ .email-box{
+    display: flex;
+    height: 40px;
+    border-radius: 5px;
+    justify-content: center;
     margin-top: 20px;
 }
- .btn-footer{
-    background-color: #f58220;
-    color: #000;
-    padding: 5px;
-    margin-top: 15px;
+
+.email-box i{
+    background: #f58220;
+    width: 40px;
+    line-height: 40px;
+    color: #fff;
 }
+
+ .text-box,.btn-newsletter{
+    outline: none;
+    border: none;  
+}
+
+.text-box{
+    width: 260px;
+    padding: 0 10px;
+}
+
+.btn-newsletter{
+    background: #f58220;
+    cursor: pointer;
+}
+
+
 .footer-divider hr{
     opacity: 0.5;
 }
@@ -93,12 +138,12 @@ footer {
 }
   
 .copyright-text{
-    color: #000;
+    color: #686868;
     
 }
 
 .legal-info p{
-    color: #000;
+    color: #686868;
     
     font-size:13px;
     margin-left: 40px;
