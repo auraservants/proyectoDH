@@ -38,6 +38,9 @@
   height: 100%;
   width: 10%;
 }
+.faqs__search button:focus {
+  outline: none;
+}
 .faqs__search button img {
   height: 100%;
   padding: 14px;
@@ -47,6 +50,9 @@
   font-size: 18px;
   height: 100%;
   width: 80%;
+}
+.faqs__search input:focus {
+  outline: none;
 }
 .faqs__title h1 {
   font-weight: 300;
