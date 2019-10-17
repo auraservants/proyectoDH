@@ -77,12 +77,19 @@
 .content-card{
     width: 31%;
     box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
-    overflow: hidden;
     height: 400px;
 }
 
-.steps{
+.steps-img{
     height: 80%;
+    overflow: hidden;
+}
+.steps-img img{
+    transition: transform .5s ease;
+}
+.steps-img img:hover{
+    transform: scale(1.5);
+
 }
 
 .content-card img{

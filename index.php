@@ -19,7 +19,7 @@ require_once("head.php");
 		<p class="after">Sigue estos pasos para armar tu plato</p>
 		<div class="card">
 			<div class="content-card">
-				<div class="steps">
+				<div class="steps-img">
 					<img src="image/step1.jpg" alt="">
 				</div>
 				<div class="steps-text">
@@ -28,7 +28,7 @@ require_once("head.php");
 				</div>
 			</div>
 			<div class="content-card">
-				<div class="steps">
+				<div class="steps-img">
 					<img src="image/step2.jpg" alt="">
 				</div>
 				<div class="steps-text">
@@ -37,7 +37,7 @@ require_once("head.php");
 				</div>
 			</div>
 			<div class="content-card">
-				<div class="steps">
+				<div class="steps-img">
 					<img src="image/step3.jpg" alt="">
 				</div>
 				<div class="steps-text">
