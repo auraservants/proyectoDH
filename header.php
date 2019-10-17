@@ -1,4 +1,5 @@
 
+
 <header>
     <nav id="nav" class="nav1">
         <div class="container-nav">
@@ -16,14 +17,7 @@
             <div class="header-nav-options">
                 <ul>    
                     <li><a href="cart.php" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
-                    <li><a href="login.php" id="link-signin" class="btn-header"><?php if(!empty($_SESSION["login"]) && $_SESSION["login"] == true) { echo $_SESSION["name"]; } else { echo "<i class='fas fa-user'></i>Ingresar";}?></a></li>                  
-                   
-                    <!--
-                        <li><a href="#" class="icon" id="open">&#9776;</a></li>
-                         <i class="fas fa-user"></i> Ingresar
-                         
-                    -->
-                    
+                    <li><a href="login.php" id="link-signin" class="btn-header"><?php if(!empty($_SESSION["login"]) && $_SESSION["login"] == true) { echo "<i class='fas fa-user-cog'></i>" . $_SESSION["name"]; } else { echo "<i class='fas fa-user'></i>Ingresar";}?></a></li>                  
                 </ul>    
             </div>
             

@@ -1,7 +1,9 @@
 <?php
 session_start();
-
+require_once("funciones.php");
+loginRemember();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

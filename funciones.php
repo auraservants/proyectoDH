@@ -1,4 +1,5 @@
 <?php
+
     function errors(){
         $errores = [];
         if(!empty($_POST)) {    
@@ -109,7 +110,6 @@
     function checkUser(){
         $errores = [];
         if(!empty($_POST)) {
-            session_start();
             foreach($_POST as $clave => $valor){
                 $_SESSION[$clave] = $valor;
             }           
@@ -155,7 +155,6 @@
     }
     function loginRemember(){
         if(!empty($_COOKIE["email"])){
-            session_start();
             $users = getUsers();
             foreach($users as $user) {
                 foreach($user as $clave => $valor){
@@ -165,7 +164,6 @@
                                 $_SESSION[$clave] = $valor;
                             }  
                             $_SESSION["login"] = true;
-                            header("Location: profile-miPerfil.php"); 
                         }
                     }
                 }           

@@ -1,9 +1,7 @@
 <?php 
   require_once("head.php"); 
-  require_once("header.php");
-  require("funciones.php");
-/* 
-  session_start(); */
+  include_once("header.php");
+  require_once("funciones.php");
   closeUser();
   
 

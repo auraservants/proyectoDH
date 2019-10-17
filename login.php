@@ -1,10 +1,12 @@
 <?php 
 	include_once("head.php"); 
 	include_once("header.php");
-	require("funciones.php");
+	require_once("funciones.php");
 
 	$errores = checkUser();
-	loginRemember();
+	if(isset($_SESSION["login"]) && $_SESSION["login"] == true) {
+		header("Location: profile-miPerfil.php");
+	}
 ?>
 
 

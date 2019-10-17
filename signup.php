@@ -1,11 +1,14 @@
 <?php
     include_once("head.php");
     include_once("header.php");
-    require("funciones.php");
+    require_once("funciones.php");
 
     $errores = errors();
     $errorUser = register($errores);
-    loginRemember();
+    
+    if(isset($_SESSION["login"]) && $_SESSION["login"] == true) {
+		header("Location: profile-miPerfil.php");
+	}
 ?>
 
 <section id="signup">
