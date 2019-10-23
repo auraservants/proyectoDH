@@ -48,16 +48,18 @@
 /****************/
 .buy_cart {
     display: flex;
+    padding: 0 30px;
     padding-top: 50px;
     flex-direction: column;
     align-items: center; 
 }
 .container_buy_cart{
     display: flex;
-    width: 70%;
     border: solid 1.5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     background-color: #fff;
+    width: 100%;
+    max-width: 1080px;
 }
 .detail_cart{
     width: 50%;

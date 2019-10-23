@@ -6,6 +6,9 @@
             <div class="nav-logo">
                 <a href="index.php"><img src="image/randfood.png" alt="randfood"></a>
             </div>
+            <div class="nav-logo-movile">
+                <a href="index.php"><img src="image/randfood-movile.png" alt="randfood"></a>
+            </div>
             <div class="header-nav-links">
                 <ul>
                     <li><a href="index.php" id="link-home" class="btn-header">Inicio</a></li>
