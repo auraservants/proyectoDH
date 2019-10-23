@@ -1,6 +1,26 @@
+.products{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 200px 0 150px 0;
+}
+
+.products__title {
+    display: flex;
+    align-self: center;
+    margin: 0 auto;
+    justify-content: center;
+  }
+.products__title h1{
+    font-weight: 300;
+    font-size: 32px;
+    margin-top: 5px;
+}
+
 .products-container {
-    padding-top: 250px;
-    padding-bottom: 250px;
+    padding-top: 90px;
+    padding-bottom: 100px;
 }
 
 #ingredients{
@@ -11,18 +31,19 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    padding-bottom: 100px;
+    padding-bottom: 0px;
 }
 
 #ingredients .ingredient{
     width: 200px;
     height: 350;
     border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.2);
     overflow: hidden;
     margin: 10px;
     text-align:center;
     transition: all 0.25s;
+    
 }
 
 #ingredients .ingredient:hover{
@@ -37,21 +58,37 @@
     object-fit: cover;
 }
 
+
 #ingredients .ingredient h4{
     font-weight: 600;
+    font-size: 17px;
+    color: #585858;
 }
 
 #ingredients .ingredient p{
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 500;
     color: rgb(9, 211, 100);
+    margin-top: 8px;
+}
+#ingredients .ingredient .cart-button{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    text-transform: uper;
+    text-transform: uppercase;
+    color: #f58220;
+    font-size: 16px;
+    font-weight: 600;
 }
 
+#ingredients .ingredient .cart-button:hover{
+    color: #c7c7c7;
+}
 
-#ingredients .ingredient a{
-    font-weight: 400;
-    text-decoration: none;
-    color: #f58220;
+#ingredients .ingredient .cart-button a{
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
 }
 
 .ingredient .btn{
