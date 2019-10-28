@@ -1,5 +1,5 @@
 footer {
-    background-color: #171717;
+    background-color: #171717ed;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -32,7 +32,7 @@ footer {
 .brand-footer p{
     font-size: 15px;
     padding: 3px;
-    color: #fff;
+    color: #a5a5a5;
 }
 
 .social-footer img{
@@ -128,10 +128,9 @@ footer {
 }
 
 
-.footer-divider hr{
-    opacity: 0.5;
-    border-color: #575757;
-
+.footer-divider {
+    border: none;
+    border-bottom: solid 1px #484848;
 }
 
 .legal-info{
@@ -140,7 +139,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #171717;
+    background-color: transparent;
     margin: 0;
     padding: 30px;
 }
