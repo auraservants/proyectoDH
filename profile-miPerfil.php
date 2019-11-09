@@ -35,7 +35,7 @@
       <div class="profile__nav">
         <ul>
           <li class="user-nav__items"><a href="#myData"> Mis Datos</a></li>
-          <li class="user-nav__items"><a href="#shopping"> Compras</a></li>
+          <li class="user-nav__items"><a href="#shopping"> Mis Pedidos</a></li>
           <li class="user-nav__items"><a href="#favorites"> Favoritos</a></li>
           <li class="user-nav__items"><a href="#points"> Puntos</a></li>
         </ul>
@@ -49,19 +49,28 @@
 
     <section class="profile__container__categories">
       <div class="profile__categories selection__myProfile">
-        <form class="user_photo" <?php if(!empty($user["photo"])) { echo 'style="background-image: url(' . $user["photo"] . ');"'; } else { echo 'style="background-image: url(pictures/user.svg);"';} ?> action="profile-miPerfil.php" method="post" enctype="multipart/form-data">
-          <label for="photo"><i class="fas fa-camera"></i>Cambiar foto</label>
-          <input class="input_photo" type="file" name="photo" required id="photo" value=""/>
-          <input class="input_save" type="submit" name="photo" value="Guardar cambios">
-        </form>         
-        <div class="selection__welcome">
-          <h2>Hola <?= $user["name"]?>!</h2>
-          <p>No eres <?= $user["name"]?>? <button class="btn-text__close" type="submit" name="close" id="close" value="close">Cerrar Sesión</button></p>          
+
+        <div>
+          <div class="selection__welcome">
+            <h2>Hola <?= $user["name"]?>!</h2>
+            <p>No eres <?= $user["name"]?>? <button class="btn-text__close" type="submit" name="close" id="close" value="close">Cerrar Sesión</button></p>          
+          </div>
+          <div class="selection__detail">
+            <p>Desde su cuenta puede ver y actualizar sus datos, acceder a sus pedidios anteriores y a los detalles de sus compras</p>
+          </div>          
         </div>
-        <div class="selection__detail">
-          <p>Desde su cuenta puede ver sus pedidos reciente, administrar sus direcciones de envío y facturación y editar sus datos y los detalles de su cuenta</p>
-        </div>
+        <div>
+          <form class="user_photo" <?php if(!empty($user["photo"])) { echo 'style="background-image: url(' . $user["photo"] . ');"'; } else { echo 'style="background-image: url(pictures/user.svg);"';} ?> action="profile-miPerfil.php" method="post" enctype="multipart/form-data">
+            <label for="photo"><i class="fas fa-camera"></i>Cambiar foto</label>
+            <input class="input_photo" type="file" name="photo" required id="photo" value=""/>
+            <input class="input_save" type="submit" name="photo" value="Guardar cambios">
+          </form>   
+        </div>       
+         
       </div>
+
+
+      
 
         <div class="profile__categories selection__myData" id="myData">
           <h2>Mis datos</h2>
@@ -103,7 +112,7 @@
         </div>
 
         <div class="profile__categories selection__shopping" id="shopping">
-          <h2>Compras</h2>
+          <h2>Pedidos</h2>
           <div class="detail_total_shopping">
               <div class="title_shopping">
                   <p class="name_shopping">Productos</p>

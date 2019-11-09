@@ -28,7 +28,6 @@
         $errorUser = [];
         if(!empty($_POST)) {
             if(empty($errores)) {
-                session_start();
                 foreach($_POST as $clave => $valor){
                     $_SESSION[$clave] = $valor;
                 }               

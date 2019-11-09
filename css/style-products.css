@@ -3,94 +3,287 @@
   display:flex;
   flex-direction: column;
   width: 100%;
-  padding: 200px 0 150px 0;
+  padding-top: 150px;
+  padding-bottom: 70px;
 }
-
-.products__title {
+.container__products__title {
+    background-image: url(../image/productos/fondo-products.png);
+    height: calc(100vh - 150px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
     display: flex;
-    align-self: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.products__title {
     margin: 0 auto;
-    justify-content: center;
+    max-width: 1080px;
+    width: 100%;
+    text-align: center;
   }
-.products__title h1{
+.products__title h1 {
     font-weight: 300;
     font-size: 32px;
-    margin-top: 5px;
 }
-
-.products-container {
-    padding-top: 90px;
-    padding-bottom: 100px;
+.products__title h1 span {
+    color: var(--color1);
 }
-
-#ingredients{
+.products__title p {
+    padding-top: 20px;
+    font-size: 20px;
+}
+.products__title p span {
+    color: var(--color2);
+}
+.container__products__title img {
+    width: 350px;
+    margin: 0 auto;
+}
+.ingredients__choice {
+    margin: 0 auto;
+    max-width: 1080px;
     width: 100%;
-    max-width: 1200px;
+    text-align: center;
+    color: var(--color2);
+    font-size: 25px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.ingredients__selected__container {
+    margin: 0px auto;
+    max-width: 1080px;
+    width: 100%; 
+    margin-top: 20px;    
+}
+.ingredients__selected__title {
+    color: rgb(155, 155, 155);
+    padding: 7px;
+}
+.ingredients__selected {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.ingredients__selected button {
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc9c96b;
+    margin: 7px;
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    align-items: center;
+    font-size: 17px;
+    color: #393939;
+}
+.ingredients__selected button i {
+    display: none;
+}
+.ingredients__selected button:hover i {
+    display: flex;
+}
+.ingredients__selected button:focus {
+    outline: none;
+}
+
+
+.container__products__config {
+    margin: 0 auto;
+    max-width: 1080px;
+    width: 100%;
+    height: 90px;
+    display: flex;
+}
+.products__progress {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+.line__progress__bottom {
+    height: 9px;
+    background-color: rgba(181, 181, 181, 0.86);
+    border-radius: 5px;
+    max-width: 350px;
+}
+.line__progress__top {
+    height: 9px;
+    background-color: rgba(108, 198, 141, 0.86);
+    border-radius: 5px;
+    max-width: 350px;
+    width: 80%;
+}
+.detail__line__progress {
+    color: rgb(155, 155, 155);
+    font-size: 13px;
+    padding-top: 7px;
+}
+.products__categories {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.products__categories select {
+    font-size: 20px;
+    padding: 5px 10px;
+    border: solid 1px rgb(155, 155, 155);
+    color: rgb(155, 155, 155);
+}
+.products__categories label {
+    color: rgb(155, 155, 155);
+}
+.container__ingredients {
+    width: 100%;
+    max-width: 1080px;
     height: 100%;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    padding-bottom: 0px;
+    position: relative;
+    margin: 20px auto;
 }
-
-#ingredients .ingredient{
-    width: 200px;
-    height: 350;
-    border-radius: 8px;
+.card__ingredients {
+    width: 15%;
+    border-radius: 21px;
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.2);
-    overflow: hidden;
-    margin: 10px;
-    text-align:center;
+    text-align: center;
     transition: all 0.25s;
-    
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    border: none;
+    background: transparent;
 }
-
-#ingredients .ingredient:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
-
+.card__ingredients img{
+    width: 90%;
+    height: auto;
 }
+.card__ingredients p {
+    position: absolute;
+    display: none;    
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    color: #393939;
+    font-size: 18px;
+    font-weight: 600;
+}
+.card__ingredients:hover p {
+    display: flex;
+    transition: 0.1s;
+}
+.card__ingredients:hover img{
+    opacity: 43%;
+    transition: .1s;
+}
+.card__ingredients:focus {
+    outline: none;
+} 
 
-#ingredients .ingredient img{
+.arrow__left__ingredients {
+    position: absolute;
+    top: 45%;
+    left: -7%;
+    border: solid 2px var(--color1);
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow__right__ingredients {
+    position: absolute;
+    top: 45%;
+    right: -7%;
+    border: solid 2px var(--color1);
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow__left__ingredients i, .arrow__right__ingredients i {
+    font-size: 20px;
+}
+.container__plates {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    max-width: 1080px;
+    height: 100%;
+    margin: 20px auto;
+}
+.plates__choice {
+    margin: 0 auto;
+    max-width: 1080px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 25px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.container__card__plates {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 35px 0;
+}
+.card__plates {
+    width: 20%;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: all 0.25s;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.plates__image {
+    height: 67%;
+    background-image: url(../image/productos/plate1.jpg);
+    background-size: cover;
+}
+.card__plates img{
+    width: 90%;
+    height: auto;
 }
 
-
-#ingredients .ingredient h4{
+.card__plates h4{
     font-weight: 600;
     font-size: 17px;
-    color: #585858;
+    color: #f58220;
 }
 
-#ingredients .ingredient p{
-    font-size: 13px;
+.card__plates p{
+    font-size: 15px;
     font-weight: 500;
     color: rgb(9, 211, 100);
     margin-top: 8px;
 }
-#ingredients .ingredient .cart-button{
-    margin-top: 8px;
-    margin-bottom: 8px;
-    text-transform: uper;
+.card__plates .cart-button{
+    margin: 8px 0;
     text-transform: uppercase;
-    color: #f58220;
-    font-size: 16px;
+    color: #c7c7c7;
+    font-size: 18px;
     font-weight: 600;
 }
 
-#ingredients .ingredient .cart-button:hover{
-    color: #c7c7c7;
+.card__plates .cart-button:hover{
+    color: #f58220;
 }
 
-#ingredients .ingredient .cart-button a{
+.card__plates .cart-button a{
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;
 }
 
-.ingredient .btn{
-    padding: 5px;
-}
+

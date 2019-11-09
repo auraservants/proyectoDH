@@ -2,132 +2,204 @@
 <?php include_once("header.php"); ?>
 
 <section class="products">
-	<div class="products__title">
-	<h1>Elige tus ingredientes!</h1>
+	<div class="container__products__title">
+		<div class="products__title">
+			<h1>Armá tu <span>plato!</span></h1>
+			<p>Elige algún ingrediente que desees que lleve tu plato... ó elige varios! </br> y mirá los <span>platos disponibles</span> con los ingredientes que elegiste!</p>
+		</div>
+		<img src="image/productos/plate-title.png" alt="">
+		<p class="ingredients__choice">Elegí los ingredientes de tu plato!</p>
+	</div>
+	<div class="ingredients__selected__container">
+		<p class="ingredients__selected__title">Ingredientes elegidos:</p>
+		<div class="ingredients__selected">
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+			<button type="submit">
+				<p>Tomate</p>
+				<i class="fas fa-times"></i>
+			</button>
+		</div>	
+	</div>
+	
+	<div class="container__products__config">
+		<div class="products__progress">
+			<div class="line__progress__bottom">
+				<div class="line__progress__top">
+				</div>
+			</div>
+			<p class="detail__line__progress">Podes elegir 85 de nuestros 100 ingredientes</p>
+		</div>
+		<div class="products__categories">
+			<form action="" method="POST">
+				<label for="">Filtrar por categoria:</label>
+				<select name="categorias">
+					<option>Categorias</option> 
+					<option value="categoria1">categoria 1</option> 
+					<option value="categoria2">categoria 2</option>
+					<option value="categoria3">categoria 3</option>
+				</select>	
+			</form>
+		</div>
+	</div>
+	<div class="container__ingredients">
+		<div class="arrow__left__ingredients">
+			<i class="fas fa-chevron-left"></i>
+		</div>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<button type="submit" class="card__ingredients">
+			<img src="image/ingredients/1.jpg" alt="">
+			<p>Agregar</p>
+		</button>
+		<div class="arrow__right__ingredients">
+			<i class="fas fa-chevron-right"></i>
+		</div>
 	</div>
 
-<div class="products-container" id="ingredients">
-	<div class="card-products ingredient">
-		<img src="image/ingredients/1.jpg" alt="">
-		<h4>Tomato</h4>
-		<p>$5,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+	<div class="container__plates">
+		<p class="plates__choice">Agregá el plato que prefieras al carrito y listo!</p>
+		<div class="container__products__config">
+			<div class="products__progress">
+				<div class="line__progress__bottom">
+					<div class="line__progress__top">
+					</div>
+				</div>
+				<p class="detail__line__progress">Podes elegir 15 de nuestros 50 platos</p>
+			</div>
+			<div class="products__categories">
+				<form action="" method="POST">
+					<label for="">Filtrar por categoria:</label>
+					<select name="categorias">
+						<option>Categorias</option> 
+						<option value="categoria1">categoria 1</option> 
+						<option value="categoria2">categoria 2</option>
+						<option value="categoria3">categoria 3</option>
+					</select>	
+				</form>
+			</div>
+		</div>
+		<div class="container__card__plates">
+			<div class="arrow__left__ingredients">
+				<i class="fas fa-chevron-left"></i>
+			</div>
+			<div class="card__plates">
+				<div class="plates__image"></div>
+				<div>
+					<h4>Ensalada griega</h4>
+					<p>$5,00</p>
+					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+				</div>
+			</div>
+			<div class="card__plates">
+				<div class="plates__image"></div>
+				<div>
+					<h4>Ensalada griega</h4>
+					<p>$5,00</p>
+					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+				</div>
+			</div>
+			<div class="card__plates">
+				<div class="plates__image"></div>
+				<div>
+					<h4>Ensalada griega</h4>
+					<p>$5,00</p>
+					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+				</div>
+			</div>
+			<div class="card__plates">
+				<div class="plates__image"></div>
+				<div>
+					<h4>Ensalada griega</h4>
+					<p>$5,00</p>
+					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+				</div>
+			</div>
+			<div class="arrow__right__ingredients">
+				<i class="fas fa-chevron-right"></i>
+			</div>					
+		</div>
+		
 	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/2.jpg" alt="">
-		<h4>Salmon</h4>
-		<p>$1,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/3.jpg" alt="">
-		<h4>Huevo</h4>
-		<p>$8,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/4.jpg" alt="">
-		<h4>Palta</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/05.jpg" alt="">
-		<h4>Naranja</h4>
-		<p>$5,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/06.jpg" alt="">
-		<h4>Lomo</h4>
-		<p>$1,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/7.jpg" alt="">
-		<h4>Mozzarella</h4>
-		<p>$8,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/10.jpg" alt="">
-		<h4>Morrón</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/8.jpg" alt="">
-		<h4>Hongos</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/9.jpg" alt="">
-		<h4>Pollo</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/1.jpg" alt="">
-		<h4>Tomato</h4>
-		<p>$5,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/2.jpg" alt="">
-		<h4>Salmon</h4>
-		<p>$1,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/3.jpg" alt="">
-		<h4>Huevo</h4>
-		<p>$8,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/4.jpg" alt="">
-		<h4>Palta</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/05.jpg" alt="">
-		<h4>naranja</h4>
-		<p>$5,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/06.jpg" alt="">
-		<h4>Lomo</h4>
-		<p>$1,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/7.jpg" alt="">
-		<h4>Mozzarella</h4>
-		<p>$8,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/10.jpg" alt="">
-		<h4>Morrón</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/8.jpg" alt="">
-		<h4>Hongos</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>
-	<div class="card-products ingredient">
-		<img src="image/ingredients/9.jpg" alt="">
-		<h4>Pollo</h4>
-		<p>$30,00</p>
-		<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-	</div>   
-</div>
+
+
+
 </section>
 
 <?php include_once("footer.php"); ?>

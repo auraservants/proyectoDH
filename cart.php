@@ -19,69 +19,36 @@
     </section>
     <section class="buy_cart">
         <section class="container_buy_cart">
-            <div class="detail_cart">
-                <div class="title_products">
-                    <p class="name_cart">Productos</p>
-                    <p>Precio</p>
-                </div>
-                <div class="description_cart">
-                    <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
-                    <p class="detail_products">Descripción del producto</p>
-                    <p class="amount_products">$ ...</p>
-                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                </div>
-                <div class="description_cart">
-                    <div class="img_products"><img src="image/cart/product-cart2.png" alt="product"></div>
-                    <p class="detail_products">Descripción del producto</p>
-                    <p class="amount_products">$ ...</p>
-                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                </div>
-                <div class="description_cart">
-                    <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
-                    <p class="detail_products">Descripción del producto</p>
-                    <p class="amount_products">$ ...</p>
-                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                </div>
-                <div class="description_cart">
-                    <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
-                    <p class="detail_products">Descripción del producto</p>
-                    <p class="amount_products">$ ...</p>
-                    <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                </div>
+
+            <div class="title_products">
+                <p class="name_cart">Platos</p>
+                <p>Precio</p>
             </div>
-        
-            <div class="additional_cart">
-                <form action="page.php" method="post">
-                    <div class="title_products">
-                        <p class="name_cart">Adicionales</p>
-                        <p>Precio</p>
-                    </div>
-                    <div class="description_cart">
-                        <div class="img_products"></div>
-                        <p class="detail_products">Descripción del producto</p>
-                        <p class="amount_products">$ ...</p>
-                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                    </div>
-                    <div class="description_cart">
-                        <div class="img_products"></div>
-                        <p class="detail_products">Descripción del producto</p>
-                        <p class="amount_products">$ ...</p>
-                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                    </div>
-                    <div class="description_cart">
-                        <div class="img_products"></div>
-                        <p class="detail_products">Descripción del producto</p>
-                        <p class="amount_products">$ ...</p>
-                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                    </div>
-                    <div class="description_cart">
-                        <div class="img_products"></div>
-                        <p class="detail_products">Descripción del producto</p>
-                        <p class="amount_products">$ ...</p>
-                        <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
-                    </div>
-                </form>
+            <div class="description_cart">
+                <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
+                <p class="detail_products">Descripción del plato</p>
+                <p class="amount_products">$ ...</p>
+                <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
             </div>
+            <div class="description_cart">
+                <div class="img_products"><img src="image/cart/product-cart2.png" alt="product"></div>
+                <p class="detail_products">Descripción del plato</p>
+                <p class="amount_products">$ ...</p>
+                <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+            </div>
+            <div class="description_cart">
+                <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
+                <p class="detail_products">Descripción del plato</p>
+                <p class="amount_products">$ ...</p>
+                <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+            </div>
+            <div class="description_cart">
+                <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
+                <p class="detail_products">Descripción del plato</p>
+                <p class="amount_products">$ ...</p>
+                <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+            </div>
+
         </section>
 
         <section class="container_options">
