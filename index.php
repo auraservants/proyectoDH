@@ -32,8 +32,8 @@ require_once("head.php");
 					<img src="image/step2.jpg" alt="">
 				</div>
 				<div class="steps-text">
-					<h4>Elige los condimentos</h4>
-					<p>Los que prefieras.</p>
+					<h4>Descubre los platos disponibles</h4>
+					<p>Con tus ingredientes.</p>
 				</div>
 			</div>
 			<div class="content-card">
@@ -41,98 +41,32 @@ require_once("head.php");
 					<img src="image/step3.jpg" alt="">
 				</div>
 				<div class="steps-text">
-					<h4>Ya tienes tu plato!</h4>
-					<p>Espera para deleitarte.</p>
+					<h4>Selecciona tu plato!</h4>
+					<p>Y espera para deleitarte.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section class="about container" id="about">
 		<h3>Que es Randfood?</h3>
-		<p class="after">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		<p class="after">Es la medida perfecta entre tradición e innovación.</p>
 		<div class="content-about">
 			<div class="about-img">
 				<img src="image/about.jpg" alt="">
 			</div>
 			<div class="about-text">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquam quos hic facere amet, voluptas eum unde natus corrupti culpa consequuntur non temporibus excepturi laborum placeat sunt recusandae doloribus libero.
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae nemo voluptas, id asperiores accusantium, labore consequatur corporis cumque ipsam officia reprehenderit praesentium est obcaecati temporibus architecto magni amet non molestiae.
-				</p>
+				<p>Es el método que diseñamos para poder escucharte y ofrecerte lo que realmente te gusta, 
+				permitiendote a su vez conocer cosas nuevas.</p></br>
+				<p>Elegis ingredientes que sabes que te gustan,</p>
+				<p>y seleccionas tu plato o...</p>
+				<p class="about-text-orange">Te arriegas y probas Randfood!</p>
 			</div>
 		</div>
 	</section>
 	<section class="ingredients container" id="products">
-
-
-		<section class="ingredients container" id="products">
-			<h3>Ingredientes destacados</h3>
-			<p class="after">Elige el tuyo!</p>
-			<div id="ingredients">
-				<div class="card-products ingredient">
-					<img src="image/ingredients/1.jpg" alt="">
-					<h4>Tomate</h4>
-					<p>$5,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/2.jpg" alt="">
-					<h4>Salmon</h4>
-					<p>$1,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/3.jpg" alt="">
-					<h4>Huevo</h4>
-					<p>$8,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/4.jpg" alt="">
-					<h4>Palta</h4>
-					<p>$30,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/05.jpg" alt="">
-					<h4>Naranja</h4>
-					<p>$5,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/06.jpg" alt="">
-					<h4>Lomo</h4>
-					<p>$1,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/7.jpg" alt="">
-					<h4>Mozzarella</h4>
-					<p>$8,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/10.jpg" alt="">
-					<h4>Morrón</h4>
-					<p>$30,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/8.jpg" alt="">
-					<h4>Hongos</h4>
-					<p>$30,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>
-				</div>
-				<div class="card-products ingredient">
-					<img src="image/ingredients/9.jpg" alt="">
-					<h4>Pollo</h4>
-					<p>$30,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div> 
-				</div>
-			</div>
-		</section>
 		
 	<section class="features container" id="features">
-		<div class="container">
+		<div>
 			<h3>En Randfood te aseguramos</h3>
 			<p class="after">lorem ipsum dolom.</p>
 			<div class="features">

@@ -1,6 +1,23 @@
 <?php include_once("head.php"); ?>
 <?php include_once("header.php"); ?>
 
+<?php
+$dsn = 'mysql:dbname=randfood;host=localhost;port=3306';
+$username = 'root';
+$password = '';
+$error = null;
+
+try {
+    $db = new PDO($dsn, $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $query = $db->prepare("SELECT * FROM plates");
+    $query->execute();
+    $plates = $query->fetchAll(PDO::FETCH_ASSOC);
+} catch (Exception $e) {
+    $error = $e->getMessage();
+}
+?>
+
 <section class="products">
 	<div class="container__products__title">
 		<div class="products__title">
@@ -159,38 +176,21 @@
 			<div class="arrow__left__ingredients">
 				<i class="fas fa-chevron-left"></i>
 			</div>
-			<div class="card__plates">
-				<div class="plates__image"></div>
-				<div>
-					<h4>Ensalada griega</h4>
-					<p>$5,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+			<?php foreach($plates as $plate): ?>
+				<div class="card__plates">
+					<div class="plates__description">
+						<p><i class="fas fa-info-circle"></i><?=$plate["description"]?></p>
+						<div class="plates__image"></div>
+					</div>
+					<div class="plates__data">
+						<h4><?=$plate["name"]?></h4>
+						<p>$ <?=$plate["price"]?></p>
+						<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+					</div>
 				</div>
-			</div>
-			<div class="card__plates">
-				<div class="plates__image"></div>
-				<div>
-					<h4>Ensalada griega</h4>
-					<p>$5,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
-				</div>
-			</div>
-			<div class="card__plates">
-				<div class="plates__image"></div>
-				<div>
-					<h4>Ensalada griega</h4>
-					<p>$5,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
-				</div>
-			</div>
-			<div class="card__plates">
-				<div class="plates__image"></div>
-				<div>
-					<h4>Ensalada griega</h4>
-					<p>$5,00</p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
-				</div>
-			</div>
+
+
+			<?php endforeach ?>
 			<div class="arrow__right__ingredients">
 				<i class="fas fa-chevron-right"></i>
 			</div>					

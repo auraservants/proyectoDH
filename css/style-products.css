@@ -37,7 +37,7 @@
     color: var(--color2);
 }
 .container__products__title img {
-    width: 350px;
+    max-width: 810px;
     margin: 0 auto;
 }
 .ingredients__choice {
@@ -246,23 +246,52 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.plates__image {
+.plates__description {
     height: 67%;
+    position: relative;    
+}
+.plates__image {
+    height: 100%;
     background-image: url(../image/productos/plate1.jpg);
     background-size: cover;
 }
-.card__plates img{
-    width: 90%;
-    height: auto;
+.plates__description p {
+    display: none;
+    position: absolute;
+    text-align: left;
+    padding: 0 10px;
+    font-size: 14px;
+}
+.plates__description i {
+    font-size: 60px;
+    color: #3331319c;
+    padding-bottom: 10px;
+}
+.plates__description:hover .plates__image {
+    opacity: 14%;
+    transition: .1s;
+}
+.plates__description:hover p {
+    display: flex;
+    transition: .3s;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    flex-direction: column;
 }
 
-.card__plates h4{
+
+
+
+.plates__data h4{
     font-weight: 600;
     font-size: 17px;
     color: #f58220;
 }
 
-.card__plates p{
+.plates__data p{
     font-size: 15px;
     font-weight: 500;
     color: rgb(9, 211, 100);
