@@ -2,7 +2,7 @@
 <?php include_once("header.php"); ?>
 <main class="contact">
 	<div>
-		<h2 class="contact__title">Contactanos</h2>
+		<h1 class="contact__title">Contactanos</h2>
 	</div>
 	<div class="background_contact">
 

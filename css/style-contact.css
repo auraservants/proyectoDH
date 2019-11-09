@@ -21,8 +21,9 @@
     max-width: 400px;
 }
 .contact__title {
-    font-size: 28px;
+    font-size: 32px;
     text-align: center;
+    font-weight: 300;
 }
 .contact__input {
     margin: 6px 0;

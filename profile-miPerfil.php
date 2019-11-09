@@ -114,34 +114,29 @@
         <div class="profile__categories selection__shopping" id="shopping">
           <h2>Pedidos</h2>
           <div class="detail_total_shopping">
-              <div class="title_shopping">
-                  <p class="name_shopping">Productos</p>
-                  <p>Precio</p>
-                  <p>Volver a comprar</p>
-              </div>
               <div class="description_shopping">
                   <div class="img_shopping"><img src="image/cart/product-cart1.png" alt="product"></div>
                   <p class="detail_shopping">Descripción del producto</p>
                   <p class="amount_shopping">$ ...</p>
-                  <p class="remove_products"><a href="#">+</a></p>
+                  <p class="remove_products_orders"><a href="#">+</a><span>Volver a comprar</span></p>
               </div>
               <div class="description_shopping">
                   <div class="img_shopping"><img src="image/cart/product-cart2.png" alt="product"></div>
                   <p class="detail_shopping">Descripción del producto</p>
                   <p class="amount_shopping">$ ...</p>
-                  <p class="remove_products"><a href="#">+</a></p>
+                  <p class="remove_products_orders"><a href="#">+</a><span>Volver a comprar</span></p>
               </div>
               <div class="description_shopping">
                   <div class="img_shopping"><img src="image/cart/product-cart1.png" alt="product"></div>
                   <p class="detail_shopping">Descripción del producto</p>
                   <p class="amount_shopping">$ ...</p>
-                  <p class="remove_products"><a href="#">+</a></p>
+                  <p class="remove_products_orders"><a href="#">+</a><span>Volver a comprar</span></p>
               </div>
               <div class="description_shopping">
                   <div class="img_shopping"><img src="image/cart/product-cart1.png" alt="product"></div>
                   <p class="detail_shopping">Descripción del producto</p>
                   <p class="amount_shopping">$ ...</p>
-                  <p class="remove_products"><a href="#">+</a></p>
+                  <p class="remove_products_orders"><a href="#">+</a><span>Volver a comprar</span></p>
               </div>
           </div>
         </div>
@@ -153,6 +148,14 @@
 
         <div class="profile__categories selection__points" id="points">
           <h2>Puntos</h2>
+          <div class="points__description">
+            <p>Con tus compras obtenes puntos que te servirán </br>para aplicarles descuentos a tus próximas compras</p>
+          </div>
+          <div class="points__user">
+            <p>Tus puntos: <span>Aun no has ganado ningún punto</span></p>
+
+          </div>
+          
 
         </div>
 

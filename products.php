@@ -22,7 +22,7 @@ try {
 	<div class="container__products__title">
 		<div class="products__title">
 			<h1>Armá tu <span>plato!</span></h1>
-			<p>Elige algún ingrediente que desees que lleve tu plato... ó elige varios! </br> y mirá los <span>platos disponibles</span> con los ingredientes que elegiste!</p>
+			<p>Elegí algún ingrediente que desees que lleve tu plato... ó elegí varios! </br> y mirá los <span>platos disponibles</span> con los ingredientes que elegiste!</p>
 		</div>
 		<img src="image/productos/plate-title.png" alt="">
 		<p class="ingredients__choice">Elegí los ingredientes de tu plato!</p>
