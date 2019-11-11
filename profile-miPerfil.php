@@ -36,7 +36,6 @@
         <ul>
           <li class="user-nav__items"><a href="#myData"> Mis Datos</a></li>
           <li class="user-nav__items"><a href="#shopping"> Mis Pedidos</a></li>
-          <li class="user-nav__items"><a href="#favorites"> Favoritos</a></li>
           <li class="user-nav__items"><a href="#points"> Puntos</a></li>
         </ul>
         <form action="profile-miPerfil.php" method="post">
@@ -141,10 +140,6 @@
           </div>
         </div>
 
-        <div class="profile__categories selection__favorites" id="favorites">
-          <h2>Favoritos</h2>
-
-        </div>
 
         <div class="profile__categories selection__points" id="points">
           <h2>Puntos</h2>

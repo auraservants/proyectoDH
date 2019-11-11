@@ -21,6 +21,7 @@
                 <ul>    
                     <li><a href="cart.php" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> Carrito</a></li>
                     <li><a href="login.php" id="link-signin" class="btn-header"><?php if(!empty($_SESSION["login"]) && $_SESSION["login"] == true) { echo "<i class='fas fa-user-cog'></i>" . $_SESSION["name"]; } else { echo "<i class='fas fa-user'></i>Ingresar";}?></a></li>                  
+                    <li><a href="admin-orders.php"><i class="fas fa-cog"></i></a></li>
                 </ul>    
             </div>
             
