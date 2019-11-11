@@ -15,6 +15,25 @@ try {
 } catch (Exception $e) {
   $error = $e->getMessage();
 }
+if($_POST) {
+  try {
+    $name = $_POST["name"];
+    $image = $_POST["image"];
+    $price = $_POST["price"];
+    $description = $_POST["description"];
+    $categoryId = $_POST["categories"];
+    $script = $db->prepare("INSERT INTO plates VALUES (default, '$name', '$image', '$price', '$description')");
+    $script->execute();
+    $query = $db->prepare("SELECT MAX(id) FROM plates");
+    $query->execute();
+    $idPlate = $query->fetch(PDO::FETCH_ASSOC);
+    $lastId = $idPlate['id'];
+    $script = $db->prepare("INSERT INTO plates_platescategories VALUES ('$lastId','$categoryId')");
+    header("Location: admin-edit-ingredients.php");
+  } catch(Exception $e) {
+    $error = $e->getMessage();
+  }
+}
 ?>
 
 <main id="main">
@@ -32,14 +51,14 @@ try {
 
       <div class="container_add_products">
             <h2>Agregar platos</h2>
-            <form action="" class="add_products">
+            <form action="admin-add-plates.php" method="post" class="add_products">
                     <div class="add_products_options">
                         <label for="name">Nombre</label>
                         <input type="text" name="name">
                     </div>
                     <div class="add_products_options">
-                        <label for="name">precio</label>
-                        <input type="text" name="name">
+                        <label for="price">precio</label>
+                        <input type="text" name="price">
                     </div>
                     <div class="add_products_image">
                         <label for="image">Imagen</label>
@@ -47,11 +66,12 @@ try {
                         <input type="file" name="image" id="image">
                     </div>              
                     <div>
-                        <label for="">Categorias</label>
+                        <label for="categories">Categorias</label>
                         <select name="categories" id="">
                             <option>Categorias</option>
-                            <option value="carnes">Carnes</option>
-                            <option value="vegetales">Vegetales</option>
+                            <?php foreach($categories as $category) :?>
+                            <option value="<?=$category["id"]?>"><?= $category["name"]?></option>
+                            <?php endforeach; ?>
                         </select> 
                     </div>
                     <div>

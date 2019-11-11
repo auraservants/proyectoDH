@@ -15,6 +15,19 @@ try {
 } catch (Exception $e) {
   $error = $e->getMessage();
 }
+if($_POST) {
+  try {
+    $name = $_POST["name"];
+    $image = $_POST["image"];
+    $stock = $_POST["stock"];
+    $category_id = $_POST["categories"];
+    $script = $db->prepare("INSERT INTO ingredients VALUES (default, '$name', '$image', '$stock', '$category_id')");
+    $script->execute();
+    header("Location: admin-edit-ingredients.php");
+  } catch(Exception $e) {
+    $error = $e->getMessage();
+  }
+}
 
 ?>
 
@@ -33,7 +46,7 @@ try {
 
       <div class="container_add_products">
         <h2>Agregar ingredientes</h2>
-        <form action="" class="add_products">
+        <form action="admin-add-ingredients.php" method="post" class="add_products">
               <div class="add_products_options">
                   <label for="name">Nombre</label>
                   <input type="text" name="name">
@@ -52,7 +65,7 @@ try {
                   <select name="categories" id="">
                       <option>Categorias</option>
                       <?php foreach ($categories as $category): ?>
-                        <option value="<?=$category["name"]?>"><?=$category["name"]?></option>
+                        <option value="<?=$category["id"]?>"><?=$category["name"]?></option>
                       <?php endforeach ?>
                   </select> 
               </div>
