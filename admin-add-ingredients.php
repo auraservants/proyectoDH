@@ -33,32 +33,33 @@ try {
 
       <div class="container_add_products">
         <h2>Agregar ingredientes</h2>
-        <form action="" class="add_products">
-              <div class="add_products_options">
-                  <label for="name">Nombre</label>
-                  <input type="text" name="name">
-              </div>
-              <div class="add_products_image">
-                  <label for="image">Imagen</label>
-                  <label class="add_input" for="image">Subir imagen</label>
-                  <input type="file" name="image" id="image">
-              </div>
-              <div class="add_products_options">
-                  <label for="stock">Stock</label>
-                  <input type="text" name="stock">
-              </div>                
-              <div>
-                  <label for="">Categorias</label>
-                  <select name="categories" id="">
-                      <option>Categorias</option>
-                      <?php foreach ($categories as $category): ?>
-                        <option value="<?=$category["name"]?>"><?=$category["name"]?></option>
-                      <?php endforeach ?>
-                  </select> 
-              </div>
-              <button type="submit">Agregar ingrediente</button> 
-        </form>
-
+        <div class="add_products_border">
+          <form action="" class="add_products">
+            <div class="add_products_options">
+                <label for="name">Nombre</label>
+                <input type="text" name="name">
+            </div>
+            <div class="add_products_image">
+                <label for="image">Imagen</label>
+                <label class="add_input" for="image">Subir imagen</label>
+                <input type="file" name="image" id="image">
+            </div>
+            <div class="add_products_options">
+                <label for="stock">Stock</label>
+                <input type="text" name="stock">
+            </div>                
+            <div>
+                <label for="">Categorias</label>
+                <select name="categories" id="">
+                    <option>Categorias</option>
+                    <?php foreach ($categories as $category): ?>
+                      <option value="<?=$category["name"]?>"><?=$category["name"]?></option>
+                    <?php endforeach ?>
+                </select> 
+            </div>
+            <button type="submit">Agregar ingrediente</button> 
+          </form>
+        </div>
       </div>
 
   </section>
