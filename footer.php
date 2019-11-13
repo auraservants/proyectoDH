@@ -16,28 +16,25 @@
 				</div>
 					
 				<div class="links-footer">
-					<h3 class="Links">Navegación</h3>
-						<ul>
-							<li><a href="index.php" id="link-home" class="btn-header">Inicio</a></li>
-                    		<li><a href="products.php" id="link-shop" class="btn-header">Shop</a></li>
-                    		<li><a href="faqs.php" id="link-us" class="btn-header">Faqs</a></li>
-							<li><a href="contact.php" id="link-contact" class="btn-header">Contacto</a></li>
-						</ul>
-				</div>
-
-				<div class="links-footer">
-					<h3 class="Links">Información</h3>
-						<ul>
-							<li><a href="index.php" id="link-home" class="btn-header">Mi cuenta</a></li>
-                    		<li><a href="products.php" id="link-shop" class="btn-header">Carrito</a></li>
-                    		<li><a href="faqs.php" id="link-us" class="btn-header">Ofertas</a></li>
-							<li><a href="contact.php" id="link-contact" class="btn-header">Garantía</a></li>
-						</ul>
+					<ul>
+						<h3 class="Links">Navegación</h3>	
+						<li><a href="index.php" id="link-home" class="btn-header">Inicio</a></li>
+						<li><a href="products.php" id="link-shop" class="btn-header">Shop</a></li>
+						<li><a href="faqs.php" id="link-us" class="btn-header">Faqs</a></li>
+						<li><a href="contact.php" id="link-contact" class="btn-header">Contacto</a></li>
+					</ul>
+					<ul>
+						<h3 class="Links">Navegación</h3>
+						<li><a href="index.php" id="link-home" class="btn-header">Mi cuenta</a></li>
+						<li><a href="products.php" id="link-shop" class="btn-header">Carrito</a></li>
+						<li><a href="faqs.php" id="link-us" class="btn-header">Ofertas</a></li>
+						<li><a href="contact.php" id="link-contact" class="btn-header">Garantía</a></li>
+					</ul>
 				</div>
 
 				<div class="newsletter-footer">
 					<h3 class="Newsletter">Suscribete al newsletter</h3>
-					<p>Enterate primero de todas las novedades!</p>
+					<p>Enterate de todas las novedades!</p>
 					<form action="" method="">
 					<div class="email-box">
 						<input class="text-box" type="email" name="" value="" placeholder="Ingresa tu e-mail">

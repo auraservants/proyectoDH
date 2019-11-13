@@ -14,19 +14,22 @@ footer {
 
 .footer-body{
     display: flex;
-    margin-bottom: 10px;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: baseline;
+    min-height: 300px;
+    margin: 0 20px;
+}
+.brand-footer {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
 }
 
-.brand-footer{
-    max-width: 400px;
-    margin-left: 40px;
-}
 
 .brand-footer img{
     height: 50px;
-    margin-top:50px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .brand-footer p{
@@ -47,14 +50,13 @@ footer {
    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
    -webkit-transition: all .8s ease-in-out; 
 }
-
-.links-footer{
-    max-width: 400px;
-    margin-top:50px;
-}
-.links-footer ul{
-    margin-top: 20px;
-}
+.links-footer {
+    display: flex;
+    max-width: 250px;
+    width: 100%;
+    justify-content: space-between;
+    height: 200px;
+}    
 
 .links-footer ul li{
     list-style: none;
@@ -68,6 +70,8 @@ footer {
 }
 .links-footer h3{
     color: #fff;
+    margin-bottom: 20px;
+
 }
 
 .links-footer ul li a:hover{
@@ -79,14 +83,8 @@ footer {
     content: '— ';
 
 }
-
-
-.newsletter-footer{
-    max-width: 400px;
-    margin-top:50px;
-    margin-right: 40px;
-    justify-content: center;
-    
+.newsletter-footer {
+    height: 200px;
 }
 .newsletter-footer p{
     font-size: 15px;
@@ -125,6 +123,7 @@ footer {
 .btn-newsletter{
     background: #f58220;
     cursor: pointer;
+    display: flex;
 }
 
 
@@ -141,24 +140,40 @@ footer {
     align-items: center;
     background-color: transparent;
     margin: 0;
-    padding: 30px;
 }
   
 .copyright-text{
     color: #686868;
+    height: 60px;
+    display: flex;
+    align-items: center;
     
 }
 
 .legal-info p{
-    color: #686868;
-    
+    color: #686868;    
     font-size:13px;
-    margin-left: 40px;
     font-weight: 300;
 }    
   
 .payment-logos img{
     height: 22px;
     margin-right: 20px;
+}
+.payment-logos {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 850px) {
+
+.footer-body {
+    flex-direction: column;
+    align-items: center;        
+}
+.legal-info {
+    flex-direction: column;
+}
+
 
 }
