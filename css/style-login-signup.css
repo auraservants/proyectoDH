@@ -3,25 +3,28 @@
     background-image: url("../image/imagen2.jpg");
     background-size: cover;
 }
+.container-users {
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+}
 .users-background {
-    position: absolute;
-    top: 30%;
-    bottom: 25%;
-    right: 20%;
-    left: 20%;
     background-color: #272931de;
     border-radius: 3px;
     display: flex;
+    height: 350px;
+    width: 100%;
+    margin: 0 25px;
 }
 .users-background.login {
     justify-content: flex-end;
 }
 .container-users-login {
     position: absolute;
-    top: 22%;
-    bottom: 17%;
-    right: 50%;
-    left: 25%;
     background-color: rgb(255, 255, 255);
     border-radius: 3px;
     z-index: 1;
@@ -29,6 +32,9 @@
     align-items: center;
     justify-content: center;
     box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
+    height: 450px;
+    width: 390px;
+    left: 60px;
 }
 .users-login {
     width: 75%;
@@ -36,10 +42,6 @@
 }
 .container-users-signup {
     position: absolute;
-    top: 22%;
-    bottom: 17%;
-    right: 25%;
-    left: 50%;
     background-color: rgb(255, 255, 255);
     border-radius: 3px;
     z-index: 1;
@@ -47,6 +49,9 @@
     align-items: center;
     justify-content: center;
     box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
+    height: 450px;
+    width: 390px;
+    right: 60px;
 }
 .users-signup {
     width: 75%;
@@ -57,7 +62,7 @@
     color: rgba(245, 130, 32, 0.9);
 }
 .users-form {
-    padding-top: 20px;
+    padding: 20px 0;
 }
 .form-items {
     border: none;
@@ -72,6 +77,7 @@
 .form-items:-internal-autofill-selected {
     background-color: transparent !important;
 }
+
 .another-option {
     width: 50%;
     height: 100%;
@@ -79,14 +85,25 @@
     display: grid;
     align-content: center;
 }
-.another-option p{
+.another-option-web p{
     color: white;
     font-size: 25px;
+    font-family: Montserrat;
+}
+.another-option-movile p{
+    color: #000;
+    font-size: 17px;
     font-family: Montserrat;
 }
 .another-option a {
     text-decoration: none;
     color: rgba(245, 130, 32, 0.6);
+}
+.another-option-web {
+    display: grid;
+}
+.another-option-movile {
+    display: none;
 }
 .remember {
     display: flex;
@@ -114,4 +131,25 @@
 }
 .form-items:hover::-webkit-input-placeholder { 
     color:rgb(162, 162, 162); 
+}
+
+
+@media (max-width: 850px) {
+.container-users {
+    max-width: 510px;
+}
+.another-option-web {
+    display: none;
+}
+.another-option-movile {
+    display: inline;
+}
+}
+@media (max-width: 550px) {
+.container-users {
+    max-width: 450px;
+}
+.container-users-signup, .container-users-login{
+    width: 330px;    
+}
 }
