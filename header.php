@@ -8,7 +8,7 @@
                 <a href="index.php"><img src="image/randfood.png" alt="randfood"></a>
             </div>
             
-            <button type="submit"><i class="fas fa-bars"></i></button>  
+            <button class="menu-movile" type="submit"><i class="fas fa-bars"></i></button>  
 
             <ul class="header-nav-links">
                 <li><a href="index.php" id="link-home" class="btn-header">Inicio</a></li>

@@ -23,6 +23,7 @@
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 .profile__container__nav {
   position: relative;
@@ -54,7 +55,7 @@
 .user-nav__items a:link,
 .user-nav__items a:visited {
   display: inline-flex;
-  padding: 15px;
+  padding: 15px 10px;
   color: rgb(63, 63, 63);
   transition: all 0.2s;
   text-transform: uppercase;
@@ -323,4 +324,43 @@
 }
 .points__user span {
   color: var(--color4);
+}
+
+
+
+@media (max-width: 850px) {
+
+.container__profile {
+  display: inline-block;
+}
+.profile__nav {
+  height: auto;
+  float: none;
+  display: flex;
+  align-items: center;
+  flex-direction: initial;
+}
+.profile__nav ul {
+  display: inline-flex;
+}
+.profile__container__categories{
+  margin-left: 0;
+}
+.selection__myProfile {
+  padding-top: 15px;
+  height: auto;
+}
+}
+
+@media (max-width: 550px) {
+.user_photo {
+  width: 130px;
+  height: 130px;
+}  
+.selection__detail p {
+  font-size: 18px;
+}
+.profile__nav {
+  flex-direction: column;
+}
 }

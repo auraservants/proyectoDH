@@ -25,7 +25,7 @@
     color: #000;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
-.home .nav1 button {
+.home .nav1 .menu-movile {
     color: #fff;
 }
 .nav-container {
@@ -42,14 +42,14 @@
 .nav-logo-movile img {
     height: 50px;    
 }
-button {
+.menu-movile {
     background-color: transparent;
     border: none;
     color: #000;
     font-size: 30px;
     display: none;
 }
-button:focus {
+.menu-movile:focus {
     outline: none;
 }
 .header-nav-links {
@@ -101,7 +101,7 @@ button:focus {
 
 @media (max-width: 850px) {
 
-button {
+.menu-movile {
     display: block;
     order: 4;
 }
@@ -144,7 +144,7 @@ button {
     border-top: solid 1.5px #eaeaeac2; 
 }
 
-button:focus + .header-nav-links {
+.menu-movile:focus + .header-nav-links {
     display: block;
 }
 .header-nav-links:hover {
