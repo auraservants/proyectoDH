@@ -1,0 +1,148 @@
+.container_admin {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+.nav_admin{
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+    box-shadow: 0px 3px 8px -8px #484848;
+}
+.nav_admin ul {
+    display: flex;
+    justify-content: center;
+}
+.container_admin h2 {
+    color: var(--color2);
+    margin: 30px 0;
+    text-align: center;
+}
+.ingredients_admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.detail_ingredients_admin {
+    margin-bottom: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%; 
+}
+.detail_ingredients_admin tr {
+    height: 50px;
+}
+.detail_ingredients_admin th {
+    text-align: initial;
+    padding: 15px;
+}
+.detail_ingredients_admin td {
+    padding: 12px;    
+    border-left: solid 0.5px #fff;
+}
+.detail_ingredients_admin td:first-child {
+    border: none;
+}
+.detail_ingredients_admin tr:nth-child(even) {background: rgb(245, 245, 245)}
+.detail_ingredients_admin tr:nth-child(odd) {background: rgb(222, 222, 222);}
+.detail_ingredients_admin tr:first-child {
+    background-color: #f58220ab;
+    color: #fff;
+}
+.ingredients_title {
+    width: 250px;
+}
+.ingredients_title a {
+    color: #000;
+}
+.ingredients_title i {
+    display: none;
+    padding-left: 5px;
+}
+.ingredients_title a:hover {
+    color: #f58220ab;
+}
+.ingredients_title a:hover i {
+    display: inline;
+}
+
+.detail_plates {
+    max-width: 1080px;
+    width: 100%;
+}
+.container_add_products {
+    max-width: 530px;
+    margin: 50px auto;
+}
+.add_products_border {
+    background-color: #f582208f;
+    border-radius: 4px;
+    padding: 15px;
+}
+.add_products {
+    border-radius: 4px;
+    padding: 40px;
+    border: solid 2px #ffffff63;
+}
+.add_products div {
+    padding-bottom: 20px;
+    display: flex;
+}
+.add_products label {
+    max-width: 160px;
+    width: 100%;
+    font-size: 20px;
+    color: #fff;
+}
+.add_products_options input {
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    max-width: 250px;
+    width: 100%;
+}
+.add_products button {
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 0 10px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #7b7b7b;
+    font-size: 15px;
+}
+.add_products select {
+    border: none;
+    height: 30px;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 11px;
+    font-family: montserrat;
+}
+.add_products_image input {
+    display: none;
+}
+.add_products_image .add_input {
+    border: none;
+    height: 30px;
+    border-radius: 4px;
+    padding: 0 10px;
+    background-color: #fff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    box-shadow: 1px 1px 8px 1px #ffffff3b;
+    color: #000;
+}
+.add_products textarea {
+    max-width: 250px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+}
+

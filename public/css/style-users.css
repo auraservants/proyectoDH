@@ -1,0 +1,155 @@
+#login, #signup{
+    height: 100vh;
+    background-image: url("../image/imagen2.jpg");
+    background-size: cover;
+}
+.container-users {
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+}
+.users-background {
+    background-color: #272931de;
+    border-radius: 3px;
+    display: flex;
+    height: 350px;
+    width: 100%;
+    margin: 0 25px;
+}
+.users-background.login {
+    justify-content: flex-end;
+}
+.container-users-login {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
+    height: 450px;
+    width: 390px;
+    left: 60px;
+}
+.users-login {
+    width: 75%;
+    height: 75%;
+}
+.container-users-signup {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.6);
+    height: 450px;
+    width: 390px;
+    right: 60px;
+}
+.users-signup {
+    width: 75%;
+    height: 75%;
+}
+.users-title {
+    text-transform: uppercase;
+    color: rgba(245, 130, 32, 0.9);
+}
+.users-form {
+    padding: 20px 0;
+}
+.form-items {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    outline: none;
+    padding: 12px 8px;
+    margin-top: 10px;
+    font-size: 20px;
+    height: 45px;
+    width: 100%;
+}
+.form-items:-internal-autofill-selected {
+    background-color: transparent !important;
+}
+
+.another-option {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    align-content: center;
+}
+.another-option-web p{
+    color: white;
+    font-size: 25px;
+    font-family: Montserrat;
+}
+.another-option-movile p{
+    color: #000;
+    font-size: 17px;
+    font-family: Montserrat;
+}
+.another-option a {
+    text-decoration: none;
+    color: rgba(245, 130, 32, 0.6);
+}
+.another-option-web {
+    display: grid;
+}
+.another-option-movile {
+    display: none;
+}
+.remember {
+    display: flex;
+    justify-content: end;
+    padding: 12px 8px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.remember input {
+    margin-left: 10px;
+}
+.forget_pass {
+    padding-top: 10px;
+    font-size: 14px;
+    color: rgba(245, 130, 32, 0.6);
+}
+.forget_pass a {
+    color: rgb(245, 130, 32);
+}
+.forget_pass a:hover {
+    color:#000;
+}
+.form-items:focus::-webkit-input-placeholder { 
+    color:rgb(162, 162, 162); 
+}
+.form-items:hover::-webkit-input-placeholder { 
+    color:rgb(162, 162, 162); 
+}
+
+
+@media (max-width: 850px) {
+.container-users {
+    max-width: 510px;
+}
+.another-option-web {
+    display: none;
+}
+.another-option-movile {
+    display: inline;
+}
+}
+@media (max-width: 550px) {
+.container-users {
+    max-width: 450px;
+}
+.container-users-signup, .container-users-login{
+    width: 330px;    
+}
+}

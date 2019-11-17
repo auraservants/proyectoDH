@@ -1,0 +1,160 @@
+/* MAIN */
+
+.fotoDeFondo {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-image: url("../image/home.jpg");
+    background-blend-mode: color;
+    background-position: center; 
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    background-attachment: fixed;
+}
+
+.text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 50px;
+}
+.text h1 span {
+    color: var(--color1);
+}
+
+.text h2 {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 25px;
+}
+
+.container {
+    margin: auto;
+    padding: var(--margin-x-large) 0;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container h3{
+    font-size: 33px;
+    color: var(--color1);
+    margin-bottom: var(--margin-medium);
+}
+
+.container p {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.after::after{
+    content: '';
+    display: block;
+    margin: auto;
+    margin-top: var(--margin-medium);
+    width: 100px;
+    height: 2px;
+    background: var(--color2);
+    margin-bottom: var(--margin-medium);
+}
+
+.card{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content-card{
+    width: 31%;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+    height: 400px;
+}
+
+.steps-img{
+    height: 80%;
+    overflow: hidden;
+}
+.steps-img img{
+    transition: transform .5s ease;
+}
+.steps-img img:hover{
+    transform: scale(1.5);
+
+}
+
+.content-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.steps-text{
+    height: 20%;
+    width: 100%;
+    padding: var(--padding-medium) 0;
+}
+
+.content-about{
+    width: 100%;
+    display: inline-flex;
+}
+
+.about-img img{
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 50px;
+    margin-left: 90px;
+}
+
+.about-text{
+    width: 450px;
+    margin-top: 90px;
+    text-align: justify;
+    margin-left: 75px;
+}
+.about-text p {
+    font-size: 20px;
+}
+.about-text-orange {
+    color: var(--color1);
+}
+
+
+/* FEATURES */
+
+
+.features{
+    overflow: hidden;
+    width: 100%;
+}
+
+.div-features{
+    float: left;
+    width: 25%;
+    margin-top: var(--margin-medium);
+}
+
+.div-features img{
+    margin-bottom: var(--margin-medium);
+}
+
+.div-features h4{
+    color: var(--color1);
+    font-size: 20px;
+}
+
+.div-features p{
+    color: rgb(92, 92, 92);
+    font-size: 13px;
+}
