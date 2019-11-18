@@ -17,12 +17,15 @@ Route::get('/', function () {
 Route::get('/login', function() {
     return view('login');
 });
+Route::post('/login', 'UsersController@login');
+
 Route::get('/signup', function() {
     return view('signup');
 });
-Route::get('/profile', function() {
-    return view('profile');
-});
+Route::post('/signup', 'UsersController@signup');
+
+Route::get('/profile/{id}','UsersController@profile');
+
 Route::get('/products', function() {
     return view('products');
 });

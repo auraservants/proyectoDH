@@ -12,57 +12,54 @@
         <div class="container-users-signup">
             <div class="users-signup">
                 <h2 class="users-title">Registrarse</h2>
-                <form action="signup.php" method="post" enctype="multipart/form-data">
+                <form action="/signup" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="users-form">
                         <div>
-                            <input class="form-items" type="text" name="name" placeholder="Nombre y Apellido" value="<?php if(isset($_POST["name"]) && empty($errores["name"])) { echo $_POST["name"]; } ?>">
+                            <input class="form-items" type="text" name="name" placeholder="Nombre y Apellido" value="{{ old('name') }}">
                             <span class='error'>
-                                <?php if (isset($errores["name"])): ?>
-                                    <p><?= $errores["name"]?></p>
-                                <?php endif ?>
+                                @if($errors)                                
+                                    @foreach($errors->get('name') as $error) 
+                                        {{ $error }}
+                                    @endforeach
+                                @endif                              
                             </span> 
                         </div>
                         <div>
-                            <input class="form-items" type="text" name="email" placeholder="Email" value="<?php if(isset($_POST["email"]) && empty($errores["email"])) { echo $_POST["email"]; } ?>">
+                            <input class="form-items" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
                             <span class='error'>
-                                <?php if (isset($errores["email"])): ?>
-                                    <p><?= $errores["email"]?></p>
-                                <?php endif ?>
+                                @if($errors)                                
+                                    @foreach($errors->get('email') as $error) 
+                                        {{ $error }}
+                                    @endforeach
+                                @endif   
                             </span> 
                         </div>
                         <div>
-                            <input class="form-items" type="password" name="password" placeholder="Contraseña" value="<?php if(isset($_POST["password"]) && empty($errores["password"])) { echo $_POST["password"]; } ?>">
+                            <input class="form-items" type="password" name="password" placeholder="Contraseña" value="{{ old('password') }}">
                             <span class='error'>
-                                <?php if (isset($errores["password"])): ?>
-                                    <p><?= $errores["password"]?></p>
-                                <?php endif ?>
+                                @if($errors)                                
+                                    @foreach($errors->get('password') as $error) 
+                                        {{ $error }}
+                                    @endforeach
+                                @endif   
                             </span>
-                        </div>
-                        <div>
-                            <span class='error'>
-                                <?php if (isset($errorUser["user"])): ?>
-                                    <p><?= $errorUser["user"]?></p>
-                                <?php endif ?>
-                            </span>
-                        </div>   
+                        </div> 
                         <div class="remember">
                             <label for="remember">Recuerdame</label>
                             <input type="checkbox" name="remember" value="remember">
-                        </div>    
-                                            
+                        </div>                       
                         <div>
                             <input class="btn btn--orange btn--large" type="submit" value="Enviar">
-                        </div>
-                       
+                        </div>           
                     </div>
                 </form> 
                 <div class="another-option another-option-movile">
                     <p>Ya tienes una cuenta?</p>
-                    <p>Ingresá <a href="login.php">acá</a></p>
+                    <p>Ingresá <a href="/login">acá</a></p>
                 </div>                 
             </div>
         </div>
-
     </section>
 </main>
 @endsection

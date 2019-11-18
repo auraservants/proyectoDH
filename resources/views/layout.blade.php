@@ -14,13 +14,13 @@
             <div class="nav-container">
                 
                 <div class="nav-logo">
-                    <a href="index.php"><img src="image/randfood.png" alt="randfood"></a>
+                    <a href="/"><img src="/image/randfood.png" alt="randfood"></a>
                 </div>
                 
                 <button class="menu-movile" type="submit"><i class="fas fa-bars"></i></button>  
 
                 <ul class="header-nav-links">
-                    <li><a href="index" id="link-home" class="btn-header">Inicio</a></li>
+                    <li><a href="/" id="link-home" class="btn-header">Inicio</a></li>
                     <li><a href="products" id="link-shop" class="btn-header">Shop</a></li>
                     <li><a href="faqs" id="link-us" class="btn-header">Faqs</a></li>
                     <li><a href="contact" id="link-contact" class="btn-header">Contacto</a></li>
@@ -42,32 +42,32 @@
         <div class="container-footer">
             <div class="footer-body">
                 <div class="brand-footer">
-                    <img src="image/randfood.png" alt="logo-footer">
+                    <img src="/image/randfood.png" alt="logo-footer">
                     <p>Av. Callao 335, CABA, Argentina.</p>
                     <p>Teléfono: 0800 – 123 456 78</p>
                     <p>Email: info@randfood.com</p>
                     <div class="social-footer">
-                    <a href="www.google.com"><img src="image/facebook.png" alt=""></a>
-                    <a href="www.google.com"><img src="image/instagram.png" alt=""></a>
-                    <a href="www.google.com"><img src="image/twitter.png" alt=""></a>
-                    <a href="www.google.com"><img src="image/whatsapp.png" alt=""></a>
+                    <a href="www.google.com"><img src="/image/facebook.png" alt=""></a>
+                    <a href="www.google.com"><img src="/image/instagram.png" alt=""></a>
+                    <a href="www.google.com"><img src="/image/twitter.png" alt=""></a>
+                    <a href="www.google.com"><img src="/image/whatsapp.png" alt=""></a>
                     </div>
                 </div>
                     
                 <div class="links-footer">
                     <ul>
                         <h3 class="Links">Navegación</h3>	
-                        <li><a href="index.php" id="link-home" class="btn-header">Inicio</a></li>
-                        <li><a href="products.php" id="link-shop" class="btn-header">Shop</a></li>
-                        <li><a href="faqs.php" id="link-us" class="btn-header">Faqs</a></li>
-                        <li><a href="contact.php" id="link-contact" class="btn-header">Contacto</a></li>
+                        <li><a href="index" id="link-home" class="btn-header">Inicio</a></li>
+                        <li><a href="products" id="link-shop" class="btn-header">Shop</a></li>
+                        <li><a href="faqs" id="link-us" class="btn-header">Faqs</a></li>
+                        <li><a href="contact" id="link-contact" class="btn-header">Contacto</a></li>
                     </ul>
                     <ul>
                         <h3 class="Links">Navegación</h3>
-                        <li><a href="index.php" id="link-home" class="btn-header">Mi cuenta</a></li>
-                        <li><a href="products.php" id="link-shop" class="btn-header">Carrito</a></li>
-                        <li><a href="faqs.php" id="link-us" class="btn-header">Ofertas</a></li>
-                        <li><a href="contact.php" id="link-contact" class="btn-header">Garantía</a></li>
+                        <li><a href="index" id="link-home" class="btn-header">Mi cuenta</a></li>
+                        <li><a href="products" id="link-shop" class="btn-header">Carrito</a></li>
+                        <li><a href="faqs" id="link-us" class="btn-header">Ofertas</a></li>
+                        <li><a href="contact" id="link-contact" class="btn-header">Garantía</a></li>
                     </ul>
                 </div>
 
@@ -91,7 +91,7 @@
                     <p>Copyright © 2019 Randfood. Todos los derechos reservados.</p>
                 </div>
             <div class="payment-logos">
-                <img src="image/payment.png" alt="">
+                <img src="/image/payment.png" alt="">
             </div>
             </div> 
         </div>
