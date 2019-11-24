@@ -57,15 +57,15 @@
                 <div class="links-footer">
                     <ul>
                         <h3 class="Links">Navegación</h3>	
-                        <li><a href="index" id="link-home" class="btn-header">Inicio</a></li>
+                        <li><a href="/" id="link-home" class="btn-header">Inicio</a></li>
                         <li><a href="products" id="link-shop" class="btn-header">Shop</a></li>
                         <li><a href="faqs" id="link-us" class="btn-header">Faqs</a></li>
                         <li><a href="contact" id="link-contact" class="btn-header">Contacto</a></li>
                     </ul>
                     <ul>
                         <h3 class="Links">Navegación</h3>
-                        <li><a href="index" id="link-home" class="btn-header">Mi cuenta</a></li>
-                        <li><a href="products" id="link-shop" class="btn-header">Carrito</a></li>
+                        <li><a href="profile" id="link-home" class="btn-header">Mi cuenta</a></li>
+                        <li><a href="cart" id="link-shop" class="btn-header">Carrito</a></li>
                         <li><a href="faqs" id="link-us" class="btn-header">Ofertas</a></li>
                         <li><a href="contact" id="link-contact" class="btn-header">Garantía</a></li>
                     </ul>
