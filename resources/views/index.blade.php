@@ -2,7 +2,6 @@
 
 @section('main')
 
-	
 <main>
 	<section class="fotoDeFondo">
 		<div class="text">

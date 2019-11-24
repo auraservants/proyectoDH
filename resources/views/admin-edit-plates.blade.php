@@ -6,11 +6,11 @@
 
       <div class="nav_admin">
         <ul>
-          <li class="user-nav__items"><a href="admin-orders.php">Pedidos</a></li>
-          <li class="user-nav__items"><a href="admin-ingredients.php">Ingregientes</a></li>
-          <li class="user-nav__items"><a href="admin-add-ingredients.php">Agregar ingredientes</a></li>
-          <li class="user-nav__items"><a href="admin-plates.php">Platos</a></li>
-          <li class="user-nav__items"><a href="admin-add-plates.php">Agregar platos</a></li>
+          <li class="user-nav__items"><a href="/admin-orders">Pedidos</a></li>
+          <li class="user-nav__items"><a href="/admin-ingredients">Ingregientes</a></li>
+          <li class="user-nav__items"><a href="/admin-add-ingredients">Agregar ingredientes</a></li>
+          <li class="user-nav__items"><a href="/admin-plates">Platos</a></li>
+          <li class="user-nav__items"><a href="/admin-add-plates">Agregar platos</a></li>
         </ul>
       </div>    
 

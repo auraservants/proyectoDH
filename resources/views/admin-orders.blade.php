@@ -6,11 +6,11 @@
 
       <div class="nav_admin">
         <ul>
-          <li class="user-nav__items"><a href="admin-orders.php">Pedidos</a></li>
-          <li class="user-nav__items"><a href="admin-ingredients.php">Ingregientes</a></li>
-          <li class="user-nav__items"><a href="admin-add-ingredients.php">Agregar ingredientes</a></li>
-          <li class="user-nav__items"><a href="admin-plates.php">Platos</a></li>
-          <li class="user-nav__items"><a href="admin-add-plates.php">Agregar platos</a></li>
+          <li class="user-nav__items"><a href="/admin-orders">Pedidos</a></li>
+          <li class="user-nav__items"><a href="/admin-ingredients">Ingregientes</a></li>
+          <li class="user-nav__items"><a href="/admin-add-ingredients">Agregar ingredientes</a></li>
+          <li class="user-nav__items"><a href="/admin-plates">Platos</a></li>
+          <li class="user-nav__items"><a href="/admin-add-plates">Agregar platos</a></li>
         </ul>
       </div>    
 
@@ -25,20 +25,19 @@
             <th>Estado</th>
             <th>Cambiar estado</th>
           </tr>
-          <?php foreach ($orders as $order): ?>
+          @foreach($orders as $order)
             <tr>
-              <td><?=$order["name"]?></td>
+              <td>{{ $order->user->name }}</td>
               <td></td>
-              <td><?=$order["date"]?></td>
-              <td>$<?=$order["price"]?></td>
-              <td><?=$order["state"]?></td>
+              <td>{{ $order->date }}</td>
+              <td>$ {{ $order->price }}</td>
+              <td>{{ $order->state }}</td>
               <td>
                 <input type="checkbox">
                 <label for="">Enviado</label>
               </td>
-
             </tr>
-          <?php endforeach ?>
+          @endforeach
         </table>
       </div> 
 

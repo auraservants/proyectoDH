@@ -44,9 +44,8 @@ Route::get('/admin-plates', function() {
 Route::get('/admin-ingredients', function() {
     return view('admin-ingredients');
 });
-Route::get('/admin-orders', function() {
-    return view('admin-orders');
-});
+Route::get('/admin-orders', 'OrdersController@orders');
+
 Route::get('/admin-add-plates', function() {
     return view('admin-add-plates');
 });
@@ -59,3 +58,6 @@ Route::get('/admin-edit-ingredients', function() {
 Route::get('/admin-edit-plates', function() {
     return view('admin-edit-plates');
 });
+
+
+

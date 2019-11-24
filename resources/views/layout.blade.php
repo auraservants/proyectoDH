@@ -9,29 +9,24 @@
         <link rel="stylesheet" href="/css/style.css">
         <title>Document</title>
     </head>
-    <header>
+    <header @if(Request::is('/')) class="home" @endif>
         <nav id="nav" class="nav1">
             <div class="nav-container">
-                
                 <div class="nav-logo">
                     <a href="/"><img src="/image/randfood.png" alt="randfood"></a>
-                </div>
-                
+                </div>   
                 <button class="menu-movile" type="submit"><i class="fas fa-bars"></i></button>  
-
                 <ul class="header-nav-links">
                     <li><a href="/" id="link-home" class="btn-header">Inicio</a></li>
-                    <li><a href="products" id="link-shop" class="btn-header">Shop</a></li>
-                    <li><a href="faqs" id="link-us" class="btn-header">Faqs</a></li>
-                    <li><a href="contact" id="link-contact" class="btn-header">Contacto</a></li>
+                    <li><a href="/products" id="link-shop" class="btn-header">Shop</a></li>
+                    <li><a href="/faqs" id="link-us" class="btn-header">Faqs</a></li>
+                    <li><a href="/contact" id="link-contact" class="btn-header">Contacto</a></li>
                 </ul>
-
                 <ul class="header-nav-options">    
-                    <li><a href="cart" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> <span>Carrito</span> </a></li>
-                    <li><a href="login" id="link-signin" class="btn-header"><?php if(!empty($_SESSION["login"]) && $_SESSION["login"] == true) { echo "<i class='fas fa-user-cog'></i>" . $_SESSION["name"]; } else { echo "<i class='fas fa-user'></i>  <span>Ingresar</span>";}?></a></li>                  
-                    <li><a href="admin-orders"><i class="fas fa-cog"></i></a></li>
-                </ul>    
-                        
+                    <li><a href="/cart" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> <span>Carrito</span> </a></li>
+                    <li><a href="/login" id="link-signin" class="btn-header"><?php if(!empty($_SESSION["login"]) && $_SESSION["login"] == true) { echo "<i class='fas fa-user-cog'></i>" . $_SESSION["name"]; } else { echo "<i class='fas fa-user'></i>  <span>Ingresar</span>";}?></a></li>                  
+                    <li><a href="/admin-orders"><i class="fas fa-cog"></i></a></li>
+                </ul>           
             </div>
         </nav>
     </header>
@@ -52,25 +47,23 @@
                     <a href="www.google.com"><img src="/image/twitter.png" alt=""></a>
                     <a href="www.google.com"><img src="/image/whatsapp.png" alt=""></a>
                     </div>
-                </div>
-                    
+                </div> 
                 <div class="links-footer">
                     <ul>
                         <h3 class="Links">Navegación</h3>	
-                        <li><a href="index" id="link-home" class="btn-header">Inicio</a></li>
-                        <li><a href="products" id="link-shop" class="btn-header">Shop</a></li>
-                        <li><a href="faqs" id="link-us" class="btn-header">Faqs</a></li>
-                        <li><a href="contact" id="link-contact" class="btn-header">Contacto</a></li>
+                        <li><a href="/index" id="link-home" class="btn-header">Inicio</a></li>
+                        <li><a href="/products" id="link-shop" class="btn-header">Shop</a></li>
+                        <li><a href="/faqs" id="link-us" class="btn-header">Faqs</a></li>
+                        <li><a href="/contact" id="link-contact" class="btn-header">Contacto</a></li>
                     </ul>
                     <ul>
                         <h3 class="Links">Navegación</h3>
-                        <li><a href="index" id="link-home" class="btn-header">Mi cuenta</a></li>
-                        <li><a href="products" id="link-shop" class="btn-header">Carrito</a></li>
-                        <li><a href="faqs" id="link-us" class="btn-header">Ofertas</a></li>
-                        <li><a href="contact" id="link-contact" class="btn-header">Garantía</a></li>
+                        <li><a href="/index" id="link-home" class="btn-header">Mi cuenta</a></li>
+                        <li><a href="/products" id="link-shop" class="btn-header">Carrito</a></li>
+                        <li><a href="/faqs" id="link-us" class="btn-header">Ofertas</a></li>
+                        <li><a href="/contact" id="link-contact" class="btn-header">Garantía</a></li>
                     </ul>
                 </div>
-
                 <div class="newsletter-footer">
                     <h3 class="Newsletter">Suscribete al newsletter</h3>
                     <p>Enterate de todas las novedades!</p>
@@ -82,10 +75,7 @@
                     </form>
                 </div>
             </div>
-
-
             <hr class="footer-divider">
-
             <div class="legal-info">
                 <div class="copyright-text">
                     <p>Copyright © 2019 Randfood. Todos los derechos reservados.</p>
@@ -97,8 +87,6 @@
         </div>
     </footer>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
-
-
+    <script src="/js/jquery.js"></script>
+    <script src="/js/main.js"></script>
 </html>

@@ -12,13 +12,13 @@ class UsersController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
-         ];
-         $mensajes = [
+        ];
+        $mensajes = [
             'required' => 'No ingresaste tu :attribute',
             'email' => 'Tu email es invalido',
             'unique' => 'El email ya esta registrado',
             'min' => 'Tu :attribute debe tener 8 caracteres o más'
-         ];             
+        ];             
         $this->validate($req, $reglas, $mensajes);
         $user = new User();
         $user->name = $req['name'];

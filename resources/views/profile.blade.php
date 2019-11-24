@@ -25,7 +25,7 @@
       <div class="profile__categories selection__myProfile">
         <div>
           <div class="selection__welcome">
-            <h2>Hola {{ $user['name'] }} !</h2>
+            <h2>Hola {{ $user->name }} !</h2>
             <p>No eres <?= $user["name"]?>? <button class="btn-text__close" type="submit" name="close" id="close" value="close">Cerrar Sesión</button></p>          
           </div>
           <div class="selection__detail">
