@@ -19,8 +19,9 @@
         <table class="nth detail_ingredients_admin" cellspacing="0">
           <tr>
             <th>Nombre</th>
-            <th>Dirección</th>
             <th>Fecha</th>
+            <th>Dirección</th>
+            <th>Platos</th>
             <th>Precio</th>
             <th>Estado</th>
             <th>Cambiar estado</th>
@@ -28,10 +29,15 @@
           @foreach($orders as $order)
             <tr>
               <td>{{ $order->user->name }}</td>
-              <td></td>
               <td>{{ $order->date }}</td>
-              <td>$ {{ $order->price }}</td>
-              <td>{{ $order->state }}</td>
+              <td>{{ $order->address->fullAddress() }}</td>
+              <td>
+                @foreach($order->plates as $order->plate)
+                  <li>{{ $order->plate->name }}</li>
+                @endforeach
+              </td>
+              <td>${{ $order->price }}</td>
+              <td>{{ $order->state->description }}</td>
               <td>
                 <input type="checkbox">
                 <label for="">Enviado</label>

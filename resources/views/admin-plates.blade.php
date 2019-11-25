@@ -25,24 +25,25 @@
             <th>Descripción</th>
             <th>Ingredientes</th>
           </tr>
-          <?php foreach ($plates as $plate): ?>
+          @foreach ($plates as $plate)
             <tr>
-              <td class="ingredients_title"><a href="admin-edit-plates.php"><?=$plate["name"]?><i class="fas fa-wrench"></i></a></td>
-              <td><?=$plate["price"]?></td>
-              <td><?=$plate["image"]?></td>
-              <td><?=$plate["category"]?></td>
-              <td><?=$plate["description"]?></td>
+              <td class="ingredients_title"><a href="admin-edit-plates.php">{{ $plate->name }}<i class="fas fa-wrench"></i></a></td>
+              <td>{{ $plate->price }}</td>
+              <td>{{ $plate->image }}</td>
               <td>
-                <?php foreach($ingredients as $ingredient): ?>
-
-                  <?php if($ingredient["plate"] == $plate["name"]): ?>
-                    <?= $ingredient["ingredients"]?>.
-                  <?php endif ?>
-
-                <?php endforeach ?>
+                @foreach($plate->platescategories as $plate->platescategory)
+                  <li>{{ $plate->platescategory->name }}</li>
+                @endforeach
+              </td>
+              <td>{{ $plate->description }}</td>
+              <td>
+                @foreach($plate->ingredients as $plate->ingredient)
+                  <span>{{$plate->ingredient->name}}. </span>
+              
+                @endforeach
               </td>
             </tr>
-          <?php endforeach ?>
+          @endforeach 
         </table>
       </div> 
  

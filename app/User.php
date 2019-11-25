@@ -8,13 +8,13 @@ class User extends Model
 {
     public $guarded = [];
 
-    public function order() {
+    public function orders() {
         return $this->hasMany('App\Order', 'user_id');
     }
-    public function address() {
-        return $this->hasMany('App\Address', 'user_id');
+    public function addresses() {
+        return $this->belongsToMany('App\Address', 'users_address', 'user_id', 'address_id');
     }
-    public function card() {
+    public function cards() {
         return $this->hasMany('App\Card', 'user_id');
     }
 }

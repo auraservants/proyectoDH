@@ -38,20 +38,20 @@ Route::get('/contact', function() {
 Route::get('/cart', function() {
     return view('cart');
 });
-Route::get('/admin-plates', function() {
-    return view('admin-plates');
-});
-Route::get('/admin-ingredients', function() {
-    return view('admin-ingredients');
-});
+Route::get('/admin-plates', 'ProductsController@plates');
+
+Route::get('/admin-ingredients', 'ProductsController@ingredients');
+
 Route::get('/admin-orders', 'OrdersController@orders');
 
-Route::get('/admin-add-plates', function() {
-    return view('admin-add-plates');
-});
-Route::get('/admin-add-ingredients', function() {
-    return view('admin-add-ingredients');
-});
+Route::get('/admin-add-plates', 'ProductsController@addPlate');
+
+Route::post('/admin-add-plates', 'ProductsController@newPlate');
+
+Route::get('/admin-add-ingredients', 'ProductsController@addIngredient');
+
+Route::post('/admin-add-ingredients', 'ProductsController@newIngredient');
+
 Route::get('/admin-edit-ingredients', function() {
     return view('admin-edit-ingredients');
 });

@@ -23,14 +23,14 @@
             <th>Stock</th>
             <th>Categoria</th>
           </tr>
-          <?php foreach ($ingredients as $ingredient): ?>
+          @foreach ($ingredients as $ingredient)
             <tr>
-              <td class="ingredients_title"><a href="/admin-edit-ingredients"><?=$ingredient["name"]?><i class="fas fa-wrench"></i></a></td>
-              <td><?=$ingredient["image"]?></td>
-              <td><?=$ingredient["stock"]?></td>
-              <td><?=$ingredient["category"]?></td>
+              <td class="ingredients_title"><a href="/admin-edit-ingredients">{{ $ingredient->name }}<i class="fas fa-wrench"></i></a></td>
+              <td>{{ $ingredient->image }}</td>
+              <td>{{ $ingredient->stock }}</td>
+              <td>{{ $ingredient->ingredientscategory->name }}</td>
             </tr>
-          <?php endforeach ?>
+          @endforeach
         </table>
       </div> 
 

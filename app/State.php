@@ -10,7 +10,7 @@ class State extends Model
     public $guarded = [];
 
     
-    public function order() {
+    public function orders() {
         return $this->hasMany('App\Order', 'state_id');
     }
 }
