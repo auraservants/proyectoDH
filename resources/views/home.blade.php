@@ -1,5 +1,6 @@
 @extends('layout')
 @section('main')
+
 <main>
   <div class="hero">
     <div class="hero__text">
@@ -16,7 +17,14 @@
         </ul>
         <form action="profile" method="post">
           <div class="btn-text">
-            <button class="btn-text__close" type="submit" name="close" id="close" value="close">Cerrar Sesión</button>
+            <a class="btn-text__close" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+              {{ __('Cerrar sesión') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+              @csrf
+            </form>
           </div>
         </form>
       </div>    
@@ -25,62 +33,83 @@
       <div class="profile__categories selection__myProfile">
         <div>
           <div class="selection__welcome">
-            <h2>Hola {{ $user->name }} !</h2>
-            <p>No eres <?= $user["name"]?>? <button class="btn-text__close" type="submit" name="close" id="close" value="close">Cerrar Sesión</button></p>          
+            <h2>Hola {{ Auth::user()->name }} !</h2>
+            <p>No eres {{ Auth::user()->name }}? 
+              <a class="btn-text__close" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                {{ __('Cerrar sesión') }}
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+              </form>
+            </p>          
           </div>
           <div class="selection__detail">
             <p>Desde su cuenta puede ver y actualizar sus datos, acceder a sus pedidios anteriores y a los detalles de sus compras</p>
           </div>          
         </div>
         <div>
-          <form class="user_photo" <?php if(!empty($user["photo"])) { echo 'style="background-image: url(' . $user["photo"] . ');"'; } else { echo 'style="background-image: url(/image/user.svg);"';} ?> action="profile-miPerfil.php" method="post" enctype="multipart/form-data">
-            <label for="photo"><i class="fas fa-camera"></i>Cambiar foto</label>
-            <input class="input_photo" type="file" name="photo" required id="photo" value=""/>
-            <input class="input_save" type="submit" name="photo" value="Guardar cambios">
+          <form class="user_photo" action="/home" method="POST" enctype="multipart/form-data" 
+          @if(Auth::user()->image)
+            style="background-image: url(/storage/{{ Auth::user()->image }});"
+          @else
+            style="background-image: url(/image/user.svg);"
+          @endif>
+            @csrf
+            <label for="image"><i class="fas fa-camera"></i>Cambiar foto</label>
+            <input class="input_photo" type="file" name="image" required id="image" value=""/>
+            <input class="input_save" type="submit" name="image" value="Guardar cambios">
           </form>   
         </div>           
       </div>
-
       <div class="profile__categories selection__myData" id="myData">
         <h2>Mis datos</h2>
-        <form action="profile" method="post">
-          <div class="container__data">
-            <label for="name"><i class="fas fa-user"></i></label>
-            <p>{{ $user->name }} </p>
-            <input type="text" name="name" value="" placeholder="Modificar nombre">              
+
+        <form action="/home" method="POST">
+          @csrf  
+          <div class="container-data">
+            <label for="name">
+              <i class="fas fa-user"></i>
+              <div>
+                <p>Nombre</p>
+                <input type="text" name="name" value="{{ Auth::user()->name }}">
+              </div>
+            </label>                 
           </div>
-          <div class="container__data" autocomplete="off">
-            <label for="direction"><i class="fas fa-map-marker-alt"></i></label>
-            <p>Lima 1111</p>
-            <input autocomplete="off" type="text" name="direction" value="" placeholder="Modificar dirección">              
+          <div class="container-data">
+            <label for="phone">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <p>Teléfono</p>
+                <input type="text" name="phone" value="@if(Auth::user()->phone){{ Auth::user()->phone }}@else No tenes @endif">
+              </div>
+            </label>                 
           </div>
-          <div class="container__data">   
-            <label for="phone"><i class="fas fa-phone-alt"></i></label>
-            @if($user->phone)
-              <p>{{ $user->phone }}</p>
-              @else <p>No tienes</p> 
-            @endif
-            <input type="text" name="phone" value="" placeholder="Modificar teléfono">              
+   
+          <div class="container-data container-data-address">
+            <label for="address">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="address-user">
+                <p>Direcciones</p>
+                  @foreach(Auth::user()->addresses as $address)
+                  <div>
+                    <input class="address-neighborhood" name="address[{{$address->id}}]['neighborhood']" type="text" value="{{$address['neighborhood']}}">
+                    <input class="address-street" name="address[{{$address->id}}]['street']" type="text" value="{{$address['street']}}">
+                    <input class="address-number" name="address[{{$address->id}}]['number']" type="text" value="{{$address['number']}}">
+                    <input class="address-floor" name="address[{{$address->id}}]['floor']" type="text" value="{{$address['floor']}}">
+                    <input class="address-apartment" name="address[{{$address->id}}]['apartment']" type="text" value="{{$address['apartment']}}">                    
+                  </div>
+                  @endforeach    
+              </div>
+            </label>                 
           </div>
-          <div class="container__data">   
-            <label for="password"><i class="fas fa-lock"></i></label>
-            <p>Contraseña actual</p>
-            <input type="password" name="password" value="" placeholder="Contraseña actual">              
-          </div>
-          <div class="container__data">   
-            <label for="password"><i class="fas fa-lock"></i></label>
-            <p>Nueva contraseña</p>
-            <input type="password" name="password" value="" placeholder="Nueva contraseña">              
-          </div>
-          <div class="container__data">   
-            <label for="password"><i class="fas fa-lock"></i></label>
-            <p>Confirmar contraseña</p>
-            <input type="password" name="password" value="" placeholder="Confirmar contraseña">              
-          </div>
+
           <div class="btn__save">
-            <button type="submit" class="btn btn--orange btn--large ">Guardar cambios</button>
-          </div>
+            <button type="submit" class="btn btn--orange btn--medium ">Guardar cambios</button>
+          </div>       
         </form>
+
       </div>
 
       <div class="profile__categories selection__shopping" id="shopping">

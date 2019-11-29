@@ -16,44 +16,59 @@
 
       <div class="container_add_products">
             <h2>Editar plato</h2>
+            <div class="add_products_border">
             <form action="" class="add_products">
-                    <div class="add_products_options">
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name">
-                    </div>
-                    <div class="add_products_options">
-                        <label for="name">precio</label>
-                        <input type="text" name="name">
-                    </div>
-                    <div class="add_products_image">
-                        <label for="image">Imagen</label>
-                        <label class="add_input" for="image">Subir imagen</label>
-                        <input type="file" name="image" id="image">
-                    </div>              
-                    <div>
-                        <label for="">Categorias</label>
-                        <select name="categories" id="">
-                            <option>Categorias</option>
-                            <option value="carnes">Carnes</option>
-                            <option value="vegetales">Vegetales</option>
-                        </select> 
-                    </div>
-                    <div>
-                        <label for="">Descripción</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <div>
-                        <label for="">Ingredientes</label>
-                        <select name="categories" id="">
-                            <option>Ingredientes</option>
-                            <option value="carnes">Morrón</option>
-                            <option value="vegetales">Carne</option>
-                        </select> 
-                    </div>
-
-                    <button type="submit">Gardar cambios</button> 
+            {{@csrf_field()}}
+            <div class="add_products_options add_products_container">
+                <label for="name">Nombre</label>
+                <div>
+                  <input type="text" name="name">
+                </div> 
+            </div>
+            <div class="add_products_options add_products_container">
+                <label for="price">precio</label>
+                <div>
+                  <input type="text" name="price">
+                </div>
+            </div>
+            <div class="add_products_image add_products_container">
+                <label for="image">Imagen</label>
+                <label class="add_input" for="image">Subir imagen</label>
+                <div>
+                  <input type="file" name="image" id="image">
+                </div>
+            </div> 
+            <div class="add_products_container">
+                <label for="description">Descripción</label>
+                <div>
+                  <textarea name="description" cols="30" rows="10"></textarea>            
+                </div>
+            </div>             
+            <div class="add_products_container">
+              <label for="category[]">Categorias</label>  
+              <div> 
+                @foreach ($categories as $category)
+                  <div>
+                    <input type="checkbox" name="category[]" value="{{$category->id}}" id="{{$category->id}}">
+                    <label for="{{$category->id}}">{{$category->name}}</label>
+                  </div>
+                @endforeach
+              </div> 
+            </div>
+            <div class="add_products_container">
+              <label for="ingredient[]">Ingredientes</label>
+              <div>     
+                @foreach ($ingredients as $ingredient)
+                  <div>
+                    <input type="checkbox" name="ingredient[]" value="{{$ingredient->id}}" id="{{$ingredient->id}}">
+                    <label for="{{$ingredient->id}}">{{$ingredient->name}}</label>                   
+                  </div>
+                @endforeach
+              </div> 
+            </div>
+            <button type="submit">Guardar cambios</button> 
             </form>
-
+        </div>
       </div>
 
   </section>

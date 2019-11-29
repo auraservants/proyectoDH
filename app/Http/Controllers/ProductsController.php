@@ -79,4 +79,10 @@ class ProductsController extends Controller
         $plate->ingredients()->attach($req["ingredient"]);
         return redirect('admin-plates');
     }  
+    public function editPlate() {
+        $ingredients = Ingredient::all();
+        $categories = PlatesCategory::all();
+        $vac = compact('ingredients', 'categories');
+        return view('admin-edit-plates', $vac);
+    }
 }

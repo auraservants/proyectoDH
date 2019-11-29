@@ -14,18 +14,6 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/login', function() {
-    return view('login');
-});
-Route::post('/login', 'UsersController@login');
-
-Route::get('/signup', function() {
-    return view('signup');
-});
-Route::post('/signup', 'UsersController@signup');
-
-Route::get('/profile/{id}','UsersController@profile');
-
 Route::get('/products', function() {
     return view('products');
 });
@@ -38,6 +26,7 @@ Route::get('/contact', function() {
 Route::get('/cart', function() {
     return view('cart');
 });
+
 Route::get('/admin-plates', 'ProductsController@plates');
 
 Route::get('/admin-ingredients', 'ProductsController@ingredients');
@@ -55,9 +44,10 @@ Route::post('/admin-add-ingredients', 'ProductsController@newIngredient');
 Route::get('/admin-edit-ingredients', function() {
     return view('admin-edit-ingredients');
 });
-Route::get('/admin-edit-plates', function() {
-    return view('admin-edit-plates');
-});
+Route::get('/admin-edit-plates', 'ProductsController@editPlate');
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/home', 'HomeController@storeData');

@@ -27,7 +27,7 @@
           </tr>
           @foreach ($plates as $plate)
             <tr>
-              <td class="ingredients_title"><a href="admin-edit-plates.php">{{ $plate->name }}<i class="fas fa-wrench"></i></a></td>
+              <td class="ingredients_title"><a href="admin-edit-plates">{{ $plate->name }}<i class="fas fa-wrench"></i></a></td>
               <td>{{ $plate->price }}</td>
               <td>{{ $plate->image }}</td>
               <td>

@@ -24,7 +24,33 @@
                 </ul>
                 <ul class="header-nav-options">    
                     <li><a href="/cart" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> <span>Carrito</span> </a></li>
-                    <li><a href="/login" id="link-signin" class="btn-header"><?php if(!empty($_SESSION["login"]) && $_SESSION["login"] == true) { echo "<i class='fas fa-user-cog'></i>" . $_SESSION["name"]; } else { echo "<i class='fas fa-user'></i>  <span>Ingresar</span>";}?></a></li>                  
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="home" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>                                
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    @endguest                    
                     <li><a href="/admin-orders"><i class="fas fa-cog"></i></a></li>
                 </ul>           
             </div>
