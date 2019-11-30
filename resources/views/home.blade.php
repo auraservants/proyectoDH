@@ -140,9 +140,60 @@
             <button type="submit" class="btn btn--orange btn--medium ">Guardar cambios</button>
           </div>       
         </form>
+
+        <div>
+          @if (session('error'))
+              <div class="alert alert-danger">
+                  {{ session('error') }}
+              </div>
+          @endif
+              @if (session('success'))
+                  <div class="alert alert-success">
+                      {{ session('success') }}
+                  </div>
+              @endif
+          <form class="form-horizontal" method="POST" action="{{ route('changePassword') }}">
+          {{ csrf_field() }}
+            <div class="container-data container-data-address">
+              <label for="address">
+                <i class="fas fa-unlock-alt"></i>
+                <div class="addresses-user password-user">
+                  <p>Cambiar contraseña</p>
+                  <div class="address-user">
+                    <div class="{{ $errors->has('current-password') ? ' has-error' : '' }}">
+                        <p>Contraseña actual</p><input id="current-password" type="password" name="current-password" required>
+                        @if ($errors->has('current-password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('current-password') }}</strong>
+                            </span>
+                        @endif                
+                    </div>
+                    <div class="{{ $errors->has('new-password') ? ' has-error' : '' }}">
+                      <p>Nueva contraseña</p><input id="new-password" type="password" name="new-password" required>
+                        @if ($errors->has('new-password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('new-password') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    <div>
+                        <p>Confirmar contraseña</p><input id="new-password-confirm" type="password" name="new-password_confirmation" required>         
+                    </div>
+                  </div>
+                </div>
+              </label>                 
+            </div>
+            <div class="btn__save">
+                <button type="submit" class="btn btn--orange btn--medium">
+                    Guardar Contraseña
+                </button>
+            </div>
+          </form>
+        </div>
+
       </div>
 
-      
+ 
       <div class="profile__categories selection__shopping" id="shopping">
         <h2>Pedidos</h2>
         <div class="detail_total_shopping">
