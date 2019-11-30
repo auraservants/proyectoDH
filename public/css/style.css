@@ -30,6 +30,9 @@ ul {
 li {
     list-style: none;
 }
+button:focus, input:focus {
+    outline: none;  
+}
 
 :root {
 --color1: #f58220;

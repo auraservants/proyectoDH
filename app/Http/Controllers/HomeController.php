@@ -28,53 +28,63 @@ class HomeController extends Controller
     }
     public function storeData(Request $req)
     {
-        $user = auth()->user();
-        $addresses = $req->address;
-        foreach($addresses as $clave=>$address) {
-            $address_id = $clave;
-            $add = Address::find($address_id);
-            var_dump($req->address); exit; 
-
-
-            foreach($address as $c=>$a){
-                 
-                if($c === "neighborhood"){
-                  
-                    $address->neighborhood = $req->address["neighborhood"];
-                }                
-            }
-
-            
-            if($req->address->street){
-                $address->street = $req->address["street"];
-            }
-            if($req->address->number){
-                $address->number = $req->address["number"];
-            }
-            if($req->address->floor){
-                $address->floor = $req->address["floor"];
-            }
-            if($req->address->apartment){
-                $address->apartment = $req->address["apartment"];
-            }              
+        
+        if(!empty($req->delete)){
+            $addresses = $req->delete;
+            foreach($addresses as $clave => $address) {
+                $address_id = $clave;
+                $address = Address::find($address_id);
+                $address->delete(); 
+            }  
+            return redirect('home');              
         }
-        $address->save();              
 
-        if($req->name){
+        $user = auth()->user();
+        if($req->name) {
             $user->name = $req["name"];
         }
-        if($req->phone){
+        if($req->phone) {
             $user->phone = $req["phone"];
         }
-        if($req->image){
+        if($req->image) {
             $ruta = $req->file('image')->store('public');
             $image = basename($ruta);
-            $user->image = $image;
+            $user->image = $image;            
+        }  
+        $user->save(); 
+
+        if(!empty($req->add)) {
+            $address = new Address();
+            $address->neighborhood = $req->add['neighborhood'];
+            $address->street = $req->add['street'];
+            $address->number = $req->add['number'];
+            $address->floor = $req->add['floor'];
+            $address->apartment = $req->add['apartment'];
+            $address->user_id = $user->id;
+            $address->save();     
         }
 
+        if(!empty($req->address)) {
+            $addresses = $req->address;
+            foreach($addresses as $clave => $address) {
+                $address_id = $clave;
+                $add = Address::find($address_id);            
+                $add->neighborhood = $address['neighborhood'];
+                $add->street = $address['street'];
+                $add->number = $address['number'];
+                $add->floor = $address['floor'];
+                $add->apartment = $address['apartment'];
+                $add->save();             
+            }         
+        }
 
-        $user->save(); 
         return redirect('home');
+
     }
+
+
+
+              
 }
+
 

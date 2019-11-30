@@ -65,53 +65,84 @@
       </div>
       <div class="profile__categories selection__myData" id="myData">
         <h2>Mis datos</h2>
-
         <form action="/home" method="POST">
           @csrf  
           <div class="container-data">
             <label for="name">
               <i class="fas fa-user"></i>
-              <div>
+              <div class="addresses-user">
                 <p>Nombre</p>
                 <input type="text" name="name" value="{{ Auth::user()->name }}">
+                @error('name')
+                  <p>{{$message}}</p>
+                @enderror     
               </div>
             </label>                 
           </div>
           <div class="container-data">
             <label for="phone">
               <i class="fas fa-phone-alt"></i>
-              <div>
+              <div class="addresses-user">
                 <p>Teléfono</p>
-                <input type="text" name="phone" value="@if(Auth::user()->phone){{ Auth::user()->phone }}@else No tenes @endif">
+                <input type="text" name="phone" value="{{ Auth::user()->phone }}" placeholder="Agregar">
+                @error('phone')
+                  <p>{{$message}}</p>
+                @enderror     
               </div>
             </label>                 
           </div>
-   
           <div class="container-data container-data-address">
             <label for="address">
               <i class="fas fa-map-marker-alt"></i>
-              <div class="address-user">
+              <div class="addresses-user">
                 <p>Direcciones</p>
-                  @foreach(Auth::user()->addresses as $address)
+                @forelse(Auth::user()->addresses as $address)
+                <div class="address-user">
                   <div>
-                    <input class="address-neighborhood" name="address[{{$address->id}}]['neighborhood']" type="text" value="{{$address['neighborhood']}}">
-                    <input class="address-street" name="address[{{$address->id}}]['street']" type="text" value="{{$address['street']}}">
-                    <input class="address-number" name="address[{{$address->id}}]['number']" type="text" value="{{$address['number']}}">
-                    <input class="address-floor" name="address[{{$address->id}}]['floor']" type="text" value="{{$address['floor']}}">
-                    <input class="address-apartment" name="address[{{$address->id}}]['apartment']" type="text" value="{{$address['apartment']}}">                    
+                    <p>Barrio</p><input name="address[{{$address->id}}][neighborhood]" type="text" value="{{$address['neighborhood']}}" placeholder="Agregar">
+                    @error('neighborhood')
+                      <p>{{$message}}</p>
+                    @enderror                
                   </div>
-                  @endforeach    
+                  <div>
+                    <p>Calle</p><input name="address[{{$address->id}}][street]" type="text" value="{{$address['street']}}" placeholder="Agregar">                                           
+                  </div>
+                  <div class="address-data">
+                    <p>N°</p><input name="address[{{$address->id}}][number]" type="text" value="{{$address['number']}}" placeholder="Agregar">
+                    <p>Piso</p><input name="address[{{$address->id}}][floor]" type="text" value="{{$address['floor']}}" placeholder="Agregar">
+                    <p>Depto</p><input name="address[{{$address->id}}][apartment]" type="text" value="{{$address['apartment']}}" placeholder="Agregar">                        
+                  </div> 
+                  <div class="delete">
+                    <button type="submit" name="delete[{{$address->id}}]"><i class="fas fa-trash"></i></button>     
+                  </div>                         
+                </div>
+                @empty 
+                  <p class="address-message">Aun no tienes direcciones registradas</p>
+                @endforelse
+                <div class="address-user">
+                  <p class="address-message">Agrega una nueva dirección</p>
+                  <div>
+                    <p>Barrio</p><input class="address-neighborhood" name="add[neighborhood]" type="text" value="" placeholder="Agregar">                      
+                  </div>
+                  <div>
+                    <p>Calle</p><input name="add[street]" type="text" value="" placeholder="Agregar">                                            
+                  </div>
+                  <div class="address-data">
+                    <p>N°</p><input name="add[number]" type="text" value="" placeholder="Agregar">   
+                    <p>Piso</p><input name="add[floor]" type="text" value="" placeholder="Agregar">
+                    <p>Depto</p><input name="add[apartment]" type="text" value="" placeholder="Agregar">                            
+                  </div>               
+                </div> 
               </div>
             </label>                 
           </div>
-
           <div class="btn__save">
             <button type="submit" class="btn btn--orange btn--medium ">Guardar cambios</button>
           </div>       
         </form>
-
       </div>
 
+      
       <div class="profile__categories selection__shopping" id="shopping">
         <h2>Pedidos</h2>
         <div class="detail_total_shopping">
