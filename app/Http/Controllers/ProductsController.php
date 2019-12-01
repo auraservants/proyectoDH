@@ -85,4 +85,14 @@ class ProductsController extends Controller
         $vac = compact('ingredients', 'categories');
         return view('admin-edit-plates', $vac);
     }
+
+    public function products() {
+        $ingredients = Ingredient::all();
+        $plates = Plate::all();
+        $categories = PlatesCategory::all();
+
+        $vac = compact('ingredients', 'plates', 'categories');
+        //dd($vac);
+        return view('products', $vac);
+    }
 }

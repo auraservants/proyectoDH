@@ -160,21 +160,19 @@
 			<div class="arrow__left__ingredients">
 				<i class="fas fa-chevron-left"></i>
 			</div>
-			<?php foreach($plates as $plate): ?>
+			@foreach($plates as $plate): ?>
 				<div class="card__plates">
 					<div class="plates__description">
-						<p><i class="fas fa-info-circle"></i><?=$plate["description"]?></p>
+						<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>
 						<div class="plates__image"></div>
 					</div>
 					<div class="plates__data">
-						<h4><?=$plate["name"]?></h4>
-						<p>$ <?=$plate["price"]?></p>
+						<h4>{{ $plate["name"] }}</h4>
+						<p>$ {{ $plate["price"] }}</p>
 						<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
 					</div>
 				</div>
-
-
-			<?php endforeach ?>
+			@endforeach
 			<div class="arrow__right__ingredients">
 				<i class="fas fa-chevron-right"></i>
 			</div>					
