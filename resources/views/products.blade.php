@@ -69,10 +69,10 @@
 			<form action="" method="POST">
 				<label for="">Filtrar por categoria:</label>
 				<select name="categorias">
-					<option>Categorias</option> 
-					<option value="categoria1">categoria 1</option> 
-					<option value="categoria2">categoria 2</option>
-					<option value="categoria3">categoria 3</option>
+					<option>Categorias</option>
+					@for($i=0; $i < count($ingredientsCategories); $i++)
+					<option value="$i: $ingredientsCategories[$i]['name']">{{ $ingredientsCategories[$i]["name"] }}</option>
+					@endfor
 				</select>	
 			</form>
 		</div>
@@ -148,10 +148,10 @@
 				<form action="" method="POST">
 					<label for="">Filtrar por categoria:</label>
 					<select name="categorias">
-						<option>Categorias</option> 
-						<option value="categoria1">categoria 1</option> 
-						<option value="categoria2">categoria 2</option>
-						<option value="categoria3">categoria 3</option>
+						<option>Categorias</option>
+						@for($i=0; $i < count($categories); $i++)
+						<option value="$i: $categories[$i]['name']">{{ $categories[$i]["name"] }}</option>
+						@endfor
 					</select>	
 				</form>
 			</div>

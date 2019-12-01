@@ -90,8 +90,9 @@ class ProductsController extends Controller
         $ingredients = Ingredient::all();
         $plates = Plate::all();
         $categories = PlatesCategory::all();
+        $ingredientsCategories = IngredientsCategory::all();
 
-        $vac = compact('ingredients', 'plates', 'categories');
+        $vac = compact('ingredients', 'plates', 'categories', 'ingredientsCategories');
         //dd($vac);
         return view('products', $vac);
     }
