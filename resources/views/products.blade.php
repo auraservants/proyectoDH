@@ -81,54 +81,12 @@
 		<div class="arrow__left__ingredients">
 			<i class="fas fa-chevron-left"></i>
 		</div>
+		@for($i=0;$i < count($ingredients); $i++)
 		<button type="submit" class="card__ingredients">
 			<img src="image/ingredients/1.jpg" alt="">
 			<p>Agregar</p>
 		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
+		@endfor
 		<div class="arrow__right__ingredients">
 			<i class="fas fa-chevron-right"></i>
 		</div>
