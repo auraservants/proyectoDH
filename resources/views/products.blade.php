@@ -160,7 +160,7 @@
 			<div class="arrow__left__ingredients">
 				<i class="fas fa-chevron-left"></i>
 			</div>
-			@foreach($plates as $plate): ?>
+			@foreach($plates as $plate)
 				<div class="card__plates">
 					<div class="plates__description">
 						<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>

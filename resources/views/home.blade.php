@@ -99,18 +99,30 @@
                 @forelse(Auth::user()->addresses as $address)
                 <div class="address-user">
                   <div>
-                    <p>Barrio</p><input name="address[{{$address->id}}][neighborhood]" type="text" value="{{$address['neighborhood']}}" placeholder="Agregar">
-                    @error('neighborhood')
+                    <p>Barrio</p><input name="address[{{$address->id}}][neighborhood]" type="text" value="{{$address['neighborhood']}}">
+                    @error('address.' . $address->id . '.neighborhood')
                       <p>{{$message}}</p>
                     @enderror                
                   </div>
                   <div>
-                    <p>Calle</p><input name="address[{{$address->id}}][street]" type="text" value="{{$address['street']}}" placeholder="Agregar">                                           
+                    <p>Calle</p><input name="address[{{$address->id}}][street]" type="text" value="{{$address['street']}}">  
+                    @error('address.' . $address->id . '.street')
+                      <p>{{$message}}</p>
+                    @enderror                                          
                   </div>
                   <div class="address-data">
-                    <p>N°</p><input name="address[{{$address->id}}][number]" type="text" value="{{$address['number']}}" placeholder="Agregar">
-                    <p>Piso</p><input name="address[{{$address->id}}][floor]" type="text" value="{{$address['floor']}}" placeholder="Agregar">
-                    <p>Depto</p><input name="address[{{$address->id}}][apartment]" type="text" value="{{$address['apartment']}}" placeholder="Agregar">                        
+                    <p>N°</p><input name="address[{{$address->id}}][number]" type="text" value="{{$address['number']}}">
+                    @error('address.' . $address->id . '.number')
+                      <p>{{$message}}</p>
+                    @enderror  
+                    <p>Piso</p><input name="address[{{$address->id}}][floor]" type="text" value="{{$address['floor']}}">
+                    @error('address.' . $address->id . '.floor')
+                      <p>{{$message}}</p>
+                    @enderror 
+                    <p>Depto</p><input name="address[{{$address->id}}][apartment]" type="text" value="{{$address['apartment']}}"> 
+                    @error('address.' . $address->id . '.apartment')
+                      <p>{{$message}}</p>
+                    @enderror                        
                   </div> 
                   <div class="delete">
                     <button type="submit" name="delete[{{$address->id}}]"><i class="fas fa-trash"></i></button>     
@@ -122,15 +134,30 @@
                 <div class="address-user">
                   <p class="address-message">Agrega una nueva dirección</p>
                   <div>
-                    <p>Barrio</p><input class="address-neighborhood" name="add[neighborhood]" type="text" value="" placeholder="Agregar">                      
+                    <p>Barrio</p><input class="address-neighborhood" name="add[neighborhood]" type="text" value="">   
+                    @error('add.neighborhood')
+                      <p>{{$message}}</p>
+                    @enderror                     
                   </div>
                   <div>
-                    <p>Calle</p><input name="add[street]" type="text" value="" placeholder="Agregar">                                            
+                    <p>Calle</p><input name="add[street]" type="text" value="">  
+                    @error('add.street')
+                      <p>{{$message}}</p>
+                    @enderror                                            
                   </div>
                   <div class="address-data">
-                    <p>N°</p><input name="add[number]" type="text" value="" placeholder="Agregar">   
-                    <p>Piso</p><input name="add[floor]" type="text" value="" placeholder="Agregar">
-                    <p>Depto</p><input name="add[apartment]" type="text" value="" placeholder="Agregar">                            
+                    <p>N°</p><input name="add[number]" type="text" value="">  
+                    @error('add.number')
+                      <p>{{$message}}</p>
+                    @enderror   
+                    <p>Piso</p><input name="add[floor]" type="text" value="">
+                    @error('add.floor')
+                      <p>{{$message}}</p>
+                    @enderror  
+                    <p>Depto</p><input name="add[apartment]" type="text" value=""> 
+                    @error('add.apartment')
+                      <p>{{$message}}</p>
+                    @enderror                             
                   </div>               
                 </div> 
               </div>
