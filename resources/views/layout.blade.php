@@ -115,4 +115,19 @@
 
     <script src="/js/jquery.js"></script>
     <script src="/js/main.js"></script>
+    <script>
+        
+        function myFunction(id) {
+            var btnIngredient = document.getElementById('ingredient' + id);
+            btnIngredient.classList.toggle('selected');
+            var containerIngredientsSelected = document.querySelector('.ingredients__selected');    
+            var containerIngredients = document.querySelector('.container__ingredients');   
+            if(btnIngredient.classList.contains('selected')){
+                containerIngredientsSelected.append(btnIngredient);
+            } else {
+                containerIngredients.append(btnIngredient);
+            }
+        }
+
+    </script>
 </html>

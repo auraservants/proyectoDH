@@ -14,47 +14,9 @@
 	<div class="ingredients__selected__container">
 		<p class="ingredients__selected__title">Ingredientes elegidos:</p>
 		<div class="ingredients__selected">
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-			<button type="submit">
-				<p>Tomate</p>
-				<i class="fas fa-times"></i>
-			</button>
-		</div>	
+
+		</div>
+
 	</div>
 	
 	<div class="container__products__config">
@@ -81,12 +43,13 @@
 		<div class="arrow__left__ingredients">
 			<i class="fas fa-chevron-left"></i>
 		</div>
-		@for($i=0;$i < count($ingredients); $i++)
-		<button type="submit" class="card__ingredients">
-			<img src="image/ingredients/1.jpg" alt="">
-			<p>Agregar</p>
-		</button>
-		@endfor
+		@foreach ($ingredients as $ingredient)
+			<button type="submit" id="ingredient{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
+				{{$ingredient->name}}
+				<p>Agregar</p>
+				<i class="fas fa-times"></i>
+			</button>			
+		@endforeach
 		<div class="arrow__right__ingredients">
 			<i class="fas fa-chevron-right"></i>
 		</div>
@@ -118,6 +81,7 @@
 			<div class="arrow__left__ingredients">
 				<i class="fas fa-chevron-left"></i>
 			</div>
+			
 			@foreach($plates as $plate)
 				<div class="card__plates">
 					<div class="plates__description">

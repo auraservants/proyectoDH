@@ -23,8 +23,9 @@ window.onload = function() {
     });
 
     var cardIngredients = document.getElementsByClassName('card__ingredients');
+    /*
     var muestra;
-    console.log(data);
+    
     var tope;//
     var restult;// = floor(cardIngredients.length / tope);
     var resto;// = cardIngredients.length % tope;
@@ -32,8 +33,8 @@ window.onload = function() {
     var eleArr=[];
     var outerArray=[];
     tope=12;
-    console.log(cardIngredients);
-    for(var i = 0; i < cardIngredients.length; i++) {
+    
+    /*for(var i = 0; i < cardIngredients.length; i++) {
         eleArr.push(cardIngredients[i]);
     }
 
@@ -52,7 +53,12 @@ window.onload = function() {
         }
         outerArray.push(eleArr.slice(j));
     }
-    console.log(outerArray);
-    index = outerArray.length;
+    
+    index = outerArray.length;*/
+
+
+
+
 
 }
+

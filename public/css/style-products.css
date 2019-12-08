@@ -71,7 +71,7 @@
     border-radius: 5px;
     background-color: #ccc9c96b;
     margin: 7px;
-    width: 140px;
+    width: 180px;
     display: flex;
     justify-content: space-between;
     padding: 0 12px;
@@ -88,7 +88,9 @@
 .ingredients__selected button:focus {
     outline: none;
 }
-
+.ingredients__selected button p {
+    display: none;
+}
 
 .container__products__config {
     margin: 0 auto;
@@ -147,7 +149,7 @@
     position: relative;
     margin: 20px auto;
 }
-.card__ingredients {
+.container__ingredients button{
     width: 15%;
     border-radius: 21px;
     box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.2);
@@ -161,11 +163,11 @@
     border: none;
     background: transparent;
 }
-.card__ingredients img{
+.container__ingredients button img{
     width: 90%;
     height: auto;
 }
-.card__ingredients p {
+.container__ingredients button p {
     position: absolute;
     display: none;    
     text-transform: uppercase;
@@ -174,15 +176,18 @@
     font-size: 18px;
     font-weight: 600;
 }
-.card__ingredients:hover p {
+.container__ingredients button i {
+    display: none;
+}
+.container__ingredients button:hover p {
     display: flex;
     transition: 0.1s;
 }
-.card__ingredients:hover img{
+.container__ingredients button:hover img{
     opacity: 43%;
     transition: .1s;
 }
-.card__ingredients:focus {
+.container__ingredients button:focus {
     outline: none;
 } 
 
