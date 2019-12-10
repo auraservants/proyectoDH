@@ -50,6 +50,12 @@
     background-color: #f58220ab;
     color: #fff;
 }
+.detail_ingredients_admin .img-products {
+    text-align: center;
+}
+.detail_ingredients_admin .img-products img {
+    width: 90px;
+}
 .ingredients_title {
     width: 250px;
 }

@@ -25,8 +25,8 @@
           </tr>
           @foreach ($ingredients as $ingredient)
             <tr>
-              <td class="ingredients_title"><a href="/admin-edit-ingredients">{{ $ingredient->name }}<i class="fas fa-wrench"></i></a></td>
-              <td>{{ $ingredient->image }}</td>
+              <td class="ingredients_title"><a href="/admin-edit-ingredients/{{$ingredient->id}}">{{ $ingredient->name }}<i class="fas fa-wrench"></i></a></td>
+              <td class="img-products"><img src="/storage/{{ $ingredient->image }}" alt=""></td>
               <td>{{ $ingredient->stock }}</td>
               <td>{{ $ingredient->ingredientscategory->name }}</td>
             </tr>

@@ -20,6 +20,12 @@ class ProductsController extends Controller
         $vac = compact('categories');
         return view('admin-add-ingredients', $vac);
     }
+    public function editIngredient($id) {
+        $ingredient = Ingredient::find($id);
+        $categories = IngredientsCategory::all();
+        $vac = compact('ingredient', 'categories');
+        return view('admin-edit-ingredients', $vac);
+    }
     public function newIngredient(Request $req) {
         $reglas = [
             'name' => 'required|string|unique:ingredients',
@@ -39,6 +45,30 @@ class ProductsController extends Controller
         $ingredient->name = $req['name'];
         $ingredient->stock = $req['stock'];
         $ingredient->image = $image;
+        $ingredient->category_id = $req['category'];
+        $ingredient->save();
+        return redirect('admin-ingredients');
+    }
+    public function editedIngredient(Request $req, $id) {
+        $reglas = [
+            'name' => 'required|string',
+            'stock' => 'required|integer',
+            'image' => 'file'
+        ];
+        $mensajes = [
+            'required' => 'El campo es obligatorio',
+            'string' => 'El campo debe ser una palabra',
+            'integer' => 'El campo debe ser un numero',
+        ];
+        $this->validate($req, $reglas, $mensajes);
+        $ingredient = Ingredient::find($id);
+        if($req->image) {
+            $ruta = $req->file('image')->store('public');
+            $image = basename($ruta);
+            $ingredient->image = $image;            
+        }  
+        $ingredient->name = $req['name'];
+        $ingredient->stock = $req['stock'];
         $ingredient->category_id = $req['category'];
         $ingredient->save();
         return redirect('admin-ingredients');
@@ -79,13 +109,39 @@ class ProductsController extends Controller
         $plate->ingredients()->attach($req["ingredient"]);
         return redirect('admin-plates');
     }  
-    public function editPlate() {
+    public function editPlate($id) {
+        $plate = Plate::find($id);
         $ingredients = Ingredient::all();
         $categories = PlatesCategory::all();
-        $vac = compact('ingredients', 'categories');
+        $vac = compact('plate', 'ingredients', 'categories');
         return view('admin-edit-plates', $vac);
     }
-
+    public function editedPlate(Request $req, $id) {
+        $reglas = [
+            'name' => 'required|string',
+            'price' => 'required|numeric',
+            'image' => 'file'
+        ];
+        $mensajes = [
+            'required' => 'El campo es obligatorio',
+            'string' => 'El campo debe ser una palabra',
+            'numeric' => 'El campo debe ser un numero',
+        ];
+        $this->validate($req, $reglas, $mensajes);
+        $plate = Plate::find($id);
+        if($req->image) {
+            $ruta = $req->file('image')->store('public');
+            $image = basename($ruta);
+            $plate->image = $image;            
+        }  
+        $plate->name = $req['name'];
+        $plate->price = $req['price'];
+        $plate->description = $req['description'];
+        $plate->save();   
+        $plate->platescategories()->sync($req["category"]);
+        $plate->ingredients()->sync($req["ingredient"]);
+        return redirect('admin-plates');
+    }
     public function products() {
         $ingredients = Ingredient::all();
         $plates = Plate::all();
@@ -96,4 +152,12 @@ class ProductsController extends Controller
         //dd($vac);
         return view('products', $vac);
     }
+
+    public function fetchPlates(Request $req) {
+        $idIngredient = explode(',', $req->get('ingredientsId'));
+      
+        
+        return json_encode($idIngredient);
+    }
 }
+

@@ -15,59 +15,71 @@
       </div>    
 
       <div class="container_add_products">
-            <h2>Editar plato</h2>
-            <div class="add_products_border">
-            <form action="" class="add_products">
-            {{@csrf_field()}}
-            <div class="add_products_options add_products_container">
-                <label for="name">Nombre</label>
+        <h2>Editar plato</h2>
+        <div class="add_products_border">
+        <form action="/admin-edit-plates/{{$plate->id}}" class="add_products" method="POST" enctype="multipart/form-data">
+          {{@csrf_field()}}
+          <div class="add_products_options add_products_container">
+              <label for="name">Nombre</label>
+              <div>
+                <input type="text" name="name" value="{{$plate->name}}">
+                @error('name')
+                  <p style="color:red">{{$message}}</p>
+                @enderror
+              </div> 
+          </div>
+          <div class="add_products_options add_products_container">
+              <label for="price">precio</label>
+              <div>
+                <input type="text" name="price" value="{{$plate->price}}">                  
+                @error('price')
+                  <p style="color:red">{{$message}}</p>
+                @enderror
+              </div>
+          </div>
+          <div class="add_products_image add_products_container">
+              <label for="image">Imagen</label>
+              <label class="add_input" for="image">Subir imagen</label>
+              <div>
+                <input type="file" name="image" id="image" value="{{$plate->image}}">
+              </div>
+          </div> 
+          <div class="add_products_container">
+              <label for="description">Descripción</label>
+              <div>
+                <textarea name="description" cols="30" rows="10">{{$plate->description}}</textarea>            
+              </div>
+          </div>             
+          <div class="add_products_container">
+            <label for="category[]">Categorias</label>  
+            <div> 
+              @foreach ($categories as $category)
                 <div>
-                  <input type="text" name="name">
-                </div> 
-            </div>
-            <div class="add_products_options add_products_container">
-                <label for="price">precio</label>
-                <div>
-                  <input type="text" name="price">
+                  <input type="checkbox" name="category[]" @foreach($plate->platescategories as $cat) @if($category->id == $cat->pivot->category_id) checked @endif @endforeach value="{{$category->id}}" id="{{$category->id}}">
+                  <label for="{{$category->id}}">{{$category->name}}</label>
+                  @error('category[]')
+                    <p style="color:red">{{$message}}</p>
+                  @enderror
                 </div>
-            </div>
-            <div class="add_products_image add_products_container">
-                <label for="image">Imagen</label>
-                <label class="add_input" for="image">Subir imagen</label>
-                <div>
-                  <input type="file" name="image" id="image">
-                </div>
+              @endforeach
             </div> 
-            <div class="add_products_container">
-                <label for="description">Descripción</label>
+          </div>
+          <div class="add_products_container">
+            <label for="ingredient[]">Ingredientes</label>
+            <div>     
+              @foreach ($ingredients as $ingredient)
                 <div>
-                  <textarea name="description" cols="30" rows="10"></textarea>            
+                  <input type="checkbox" name="ingredient[]" @foreach($plate->ingredients as $ing) @if($ingredient->id == $ing->pivot->ingredient_id) checked @endif @endforeach value="{{$ingredient->id}}" id="{{$ingredient->id}}">
+                  <label for="{{$ingredient->id}}">{{$ingredient->name}}</label>  
+                  @error('ingredient[]')
+                    <p style="color:red">{{$message}}</p>
+                  @enderror                   
                 </div>
-            </div>             
-            <div class="add_products_container">
-              <label for="category[]">Categorias</label>  
-              <div> 
-                @foreach ($categories as $category)
-                  <div>
-                    <input type="checkbox" name="category[]" value="{{$category->id}}" id="{{$category->id}}">
-                    <label for="{{$category->id}}">{{$category->name}}</label>
-                  </div>
-                @endforeach
-              </div> 
-            </div>
-            <div class="add_products_container">
-              <label for="ingredient[]">Ingredientes</label>
-              <div>     
-                @foreach ($ingredients as $ingredient)
-                  <div>
-                    <input type="checkbox" name="ingredient[]" value="{{$ingredient->id}}" id="{{$ingredient->id}}">
-                    <label for="{{$ingredient->id}}">{{$ingredient->name}}</label>                   
-                  </div>
-                @endforeach
-              </div> 
-            </div>
-            <button type="submit">Guardar cambios</button> 
-            </form>
+              @endforeach
+            </div> 
+          </div>
+          <button type="submit">Guardar cambios</button> 
+        </form>
         </div>
       </div>
 

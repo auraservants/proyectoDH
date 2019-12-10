@@ -44,7 +44,7 @@
 			<i class="fas fa-chevron-left"></i>
 		</div>
 		@foreach ($ingredients as $ingredient)
-			<button type="submit" id="ingredient{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
+			<button type="submit" id="{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
 				{{$ingredient->name}}
 				<p>Agregar</p>
 				<i class="fas fa-times"></i>

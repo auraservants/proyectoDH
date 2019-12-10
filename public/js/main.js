@@ -56,6 +56,15 @@ window.onload = function() {
     
     index = outerArray.length;*/
 
+  
+    /*var idIngredients = [];
+    for(ingredient of fetchElement) {
+        var id = ingredient.getAttribute('id');
+        idIngredients.push(id);
+    }
+    console.log(idIngredients);
+        */
+
 
 
 

@@ -116,18 +116,40 @@
     <script src="/js/jquery.js"></script>
     <script src="/js/main.js"></script>
     <script>
-        
+        var idIngredientsSelected = [];
+
         function myFunction(id) {
-            var btnIngredient = document.getElementById('ingredient' + id);
+            var btnIngredient = document.getElementById(id);
             btnIngredient.classList.toggle('selected');
             var containerIngredientsSelected = document.querySelector('.ingredients__selected');    
             var containerIngredients = document.querySelector('.container__ingredients');   
             if(btnIngredient.classList.contains('selected')){
                 containerIngredientsSelected.append(btnIngredient);
+                var id = btnIngredient.getAttribute('id');
+                idIngredientsSelected.push(id);
             } else {
                 containerIngredients.append(btnIngredient);
             }
+            fetchPlates(idIngredientsSelected);
+
         }
+
+        function fetchPlates(idIngredientsSelected) {
+            var idIngredients = idIngredientsSelected.join(',');
+            fetch('/api/products?ingredientsId=' + idIngredients, {
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data2) {
+                console.log(data2);
+            })
+            .catch(function(error) {
+                console.log(JSON.stringify(data));
+                console.log("The error was: " + error);
+            });
+        }
+        
 
     </script>
 </html>

@@ -16,7 +16,7 @@ class Plate extends Model
         return $this->belongsToMany("App\Ingredient", "plates_ingredients", "plate_id", "ingredient_id");
     }
 
-    public function platescategories() {
+    public function platescategories() {      
         return $this->belongsToMany("App\PlatesCategory", "plates_platescategories", "plate_id", "category_id");
     }
 }

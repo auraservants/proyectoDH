@@ -27,9 +27,9 @@
           </tr>
           @foreach ($plates as $plate)
             <tr>
-              <td class="ingredients_title"><a href="admin-edit-plates">{{ $plate->name }}<i class="fas fa-wrench"></i></a></td>
+              <td class="ingredients_title"><a href="admin-edit-plates/{{$plate->id}}">{{ $plate->name }}<i class="fas fa-wrench"></i></a></td>
               <td>{{ $plate->price }}</td>
-              <td>{{ $plate->image }}</td>
+              <td class="img-products"><img src="/storage/{{ $plate->image }}" alt=""></td>
               <td>
                 @foreach($plate->platescategories as $plate->platescategory)
                   <li>{{ $plate->platescategory->name }}</li>
@@ -37,8 +37,8 @@
               </td>
               <td>{{ $plate->description }}</td>
               <td>
-                @foreach($plate->ingredients as $plate->ingredient)
-                  <span>{{$plate->ingredient->name}}. </span>
+                @foreach($plate->ingredients as $ingredient)
+                  <span>{{$ingredient->name}}. </span>
               
                 @endforeach
               </td>

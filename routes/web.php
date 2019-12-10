@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/products', 'ProductsController@products');
+Route::get('/api/products', 'ProductsController@fetchPlates');
+
 Route::get('/faqs', function() {
     return view('faqs');
 });
@@ -39,10 +41,13 @@ Route::get('/admin-add-ingredients', 'ProductsController@addIngredient');
 
 Route::post('/admin-add-ingredients', 'ProductsController@newIngredient');
 
-Route::get('/admin-edit-ingredients', function() {
-    return view('admin-edit-ingredients');
-});
-Route::get('/admin-edit-plates', 'ProductsController@editPlate');
+Route::get('/admin-edit-ingredients/{id}', 'ProductsController@editIngredient');
+
+Route::post('/admin-edit-ingredients/{id}', 'ProductsController@editedIngredient');
+
+Route::get('/admin-edit-plates/{id}', 'ProductsController@editPlate');
+
+Route::post('/admin-edit-plates/{id}', 'ProductsController@editedPlate');
 
 Auth::routes();
 
