@@ -135,8 +135,50 @@
                     }
                 }
             }
-            fetchPlates(idIngredientsSelected);
+            var platesFilter = fetchPlates(idIngredientsSelected);
+            console.log(platesFilter);
+            
+            
 
+        /*for(var plate of platesFilter) {
+            var cardPlates = document.querySelector('.card__plates')
+            var platesDescription = document.createElement('div');
+            var pPlatesDescription = document.createElement('p');
+            var iPlatesDescription = document.createElement('i'); 
+            var platesImage = document.createElement('div');   
+            var platesData = document.createElement('div');
+            var h4PlatesData = document.createElement('h4');
+            var pPlatesData = document.createElement('p');
+            var cardButton = document.createElement('div');
+            var aCardButton = document.createElement('a');
+            var iCardButton = document.createElement('i');
+            
+
+            platesDescription.classList.add('plates__description');
+            platesImage.classList.add('plates__image');
+            platesData.classList.add('plates__data');
+            divPlatesData.classList.add('cart-button');
+            iPlatesDescription.classList.add('fas fa-info-circle');      
+            iCardButton.classList.add('fas fa-shopping-basket');
+
+            cardPlates.append(platesDescription);
+            cardPlates.append(platesData);
+            platesDescription.append(pPlatesDescription);
+            platesDescription.append(platesImage);
+            pPlatesDescription.append(iPlatesDescription);
+            platesData.append(h4PlatesData);
+            platesData.append(pPlatesData);
+            platesData.append(cardButton);
+            cardButton.append(aCardButton);
+            aCardButton.append(iCardButton);
+
+            pPlatesDescription.innerHTML = platesFilter.description;
+            h4PlatesData.innerHTML = platesFilter.name;
+            pPlatesData.innerHTML = platesFilter.price;
+            aCardButton.setAttribute('href', '#');
+
+
+        }*/
         }
 
         function fetchPlates(idIngredientsSelected) {
@@ -146,14 +188,21 @@
             .then(function(response) {
                 return response.json();
             })
-            .then(function(data2) {
-                console.log(data2);
+            .then(function(plates) {
+                var platesFilter = plates;
+                
+                return platesFilter;
+
             })
             .catch(function(error) {
                 console.log(JSON.stringify(data));
                 console.log("The error was: " + error);
             });
         }
+
+        
+
+
         
 
     </script>

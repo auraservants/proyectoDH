@@ -172,7 +172,14 @@ class ProductsController extends Controller
                 } 
             }
         }
-        return json_encode($idPlates);
+        $id = [];       
+        foreach($idPlates as $clave => $valor) {
+            array_push($id, $clave);
+        }
+        $platesFilter = Plate::whereIn('id', $id)->get();
+        return json_encode($platesFilter);
     }
+
+
 }
 
