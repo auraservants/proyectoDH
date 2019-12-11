@@ -122,13 +122,18 @@
             var btnIngredient = document.getElementById(id);
             btnIngredient.classList.toggle('selected');
             var containerIngredientsSelected = document.querySelector('.ingredients__selected');    
-            var containerIngredients = document.querySelector('.container__ingredients');   
+            var containerIngredients = document.querySelector('.container__ingredients'); 
+            var id = btnIngredient.getAttribute('id');  
             if(btnIngredient.classList.contains('selected')){
                 containerIngredientsSelected.append(btnIngredient);
-                var id = btnIngredient.getAttribute('id');
                 idIngredientsSelected.push(id);
             } else {
-                containerIngredients.append(btnIngredient);
+                containerIngredients.append(btnIngredient);       
+                for(var i = 0; i < idIngredientsSelected.length; i++){ 
+                    if (idIngredientsSelected[i] === id) {
+                        idIngredientsSelected.splice(i, 1); 
+                    }
+                }
             }
             fetchPlates(idIngredientsSelected);
 

@@ -154,10 +154,25 @@ class ProductsController extends Controller
     }
 
     public function fetchPlates(Request $req) {
-        $idIngredient = explode(',', $req->get('ingredientsId'));
-      
-        
-        return json_encode($idIngredient);
+        $idIngredients = explode(',', $req->get('ingredientsId'));
+        $plates = Plate::all();
+        $idPlates = [];
+
+        foreach($plates as $plate) {
+            $idPlate = [];
+            foreach($plate->ingredients as $ingredient) {
+                array_push($idPlate, $ingredient->id);
+            }
+            $idPlates[$plate->id] = $idPlate;
+        }  
+        foreach($idIngredients as $idIngredient) {
+            foreach($idPlates as $clave => $valor) {
+                if(in_array($idIngredient, $valor) === false) {
+                    unset($idPlates[$clave]);
+                } 
+            }
+        }
+        return json_encode($idPlates);
     }
 }
 
