@@ -39,17 +39,20 @@
 			</form>
 		</div>-->
 	</div>
-	<div class="container__ingredients">
+	<div class="container__ingred">
 		<div class="arrow__left__ingredients">
 			<i class="fas fa-chevron-left"></i>
 		</div>
-		@foreach ($ingredients as $ingredient)
-			<button type="submit" id="{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
-				{{$ingredient->name}}
-				<p>Agregar</p>
-				<i class="fas fa-times"></i>
-			</button>			
-		@endforeach
+		<div class="container__ingredients">
+			@foreach ($ingredients as $ingredient)
+				<button class="button__ingredient" type="submit" id="{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
+					{{$ingredient->name}}
+					<p>Agregar</p>
+					<i class="fas fa-times"></i>
+				</button>			
+			@endforeach			
+		</div>
+
 		<div class="arrow__right__ingredients">
 			<i class="fas fa-chevron-right"></i>
 		</div>
@@ -77,7 +80,7 @@
 				</form>
 			</div>-->
 		</div>
-		<div class="container__card__plates">
+		<div class="container__card__plate">
 			<div class="arrow__left__ingredients">
 				<i class="fas fa-chevron-left"></i>
 			</div>
@@ -85,6 +88,21 @@
 			
 			<div class="container__card__plates">
 				
+			@foreach($plates as $plate)
+				<div class="card__plates">
+					<div class="plates__description">
+						<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>
+						<div class="plates__image"></div>
+					</div>
+					<div class="plates__data">
+						<h4>{{ $plate["name"] }}</h4>
+						<p>$ {{ $plate["price"] }}</p>
+						<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
+					</div>
+				</div>
+			@endforeach
+
+
 
 			</div>
 			

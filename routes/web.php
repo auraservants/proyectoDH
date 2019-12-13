@@ -20,6 +20,8 @@ Route::get('/api/products', 'ProductsController@fetchPlates');
 
 Route::get('/api/ingredients', 'ProductsController@fetchIngredients');
 
+Route::get('/api/plates', 'ProductsController@fetchAllPlates');
+
 Route::get('/faqs', function() {
     return view('faqs');
 });

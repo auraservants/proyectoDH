@@ -120,9 +120,10 @@
 
         async function myFunction(id) {
             var btnIngredient = document.getElementById(id);
+            var containerIngredients = document.querySelector('.container__ingredients');
             btnIngredient.classList.toggle('selected');
             var containerIngredientsSelected = document.querySelector('.ingredients__selected');    
-            var containerIngredients = document.querySelector('.container__ingredients'); 
+            var containerIngred = document.querySelector('.container__ingred'); 
             var id = btnIngredient.getAttribute('id');  
             if(btnIngredient.classList.contains('selected')){
                 containerIngredientsSelected.append(btnIngredient);
@@ -135,7 +136,15 @@
                     }
                 }
             }
-            var platesFilter = await fetchPlates(idIngredientsSelected);
+
+            var platesFilter = '';
+
+            if(idIngredientsSelected.length === 0) {
+                platesFilter = await fetchPlatesAll();
+            } else {
+                platesFilter = await fetchPlates(idIngredientsSelected);
+            }
+
             var containerCardPlates = document.querySelector('.container__card__plates');
             
             var cards = document.querySelectorAll('.card__plates');
@@ -144,7 +153,6 @@
             }
 
             for(var plate of platesFilter) {
-
             var cardPlates = document.createElement('div');
             cardPlates.classList.add('card__plates');
             containerCardPlates.append(cardPlates);
@@ -178,11 +186,9 @@
             iCardButton.classList.add('fas');
             iCardButton.classList.add('fa-shopping-basket');
             aCardButton.append(iCardButton);  
-
             pPlatesDescription.innerHTML = plate.description;
             h4PlatesData.innerHTML = plate.name;
             pPlatesData.innerHTML = '$' + plate.price;
-
             }
 
            
@@ -190,11 +196,44 @@
             for(var plate of platesFilter){
                 idPlatesFilter.push(plate.id); 
             }                
-             
+                      
+
             var ingredientsFilter = await fetchIngredients(idPlatesFilter);
+            
+            var buttonsIngredients = document.querySelectorAll('.container__ingredients button');
+            for(var buttonIngredient of buttonsIngredients) {
+                buttonIngredient.remove();
+            }    
+            
+
+            for(var ingredient of ingredientsFilter) {
+                var buttonIngredient = document.createElement('button');
+                var pButtonIngredient = document.createElement('p');
+                var iButtonIngredient = document.createElement('i');
+                containerIngredients.append(buttonIngredient);
+                buttonIngredient.classList.add('button__ingredient');
+                buttonIngredient.setAttribute('type', 'submit');
+                buttonIngredient.setAttribute('id', ingredient.id);
+                buttonIngredient.setAttribute('onclick', 'myFunction(' + ingredient.id + ')');
+                buttonIngredient.innerHTML = ingredient.name;
+                buttonIngredient.append(pButtonIngredient);
+                buttonIngredient.append(iButtonIngredient);
+                pButtonIngredient.innerHTML = 'Agregar';
+                iButtonIngredient.classList.add('fas');
+                iButtonIngredient.classList.add('fa-chevron-right');
+
+
+            }
             
         }
 
+        async function fetchPlatesAll() {           
+        var response = await fetch('/api/plates', {
+        })
+        var plates =  await response.json();
+        var p = plates;
+        return p;            
+        }
         
         async function fetchPlates(idIngredientsSelected) {           
         var idIngredients = idIngredientsSelected.join(',');
@@ -211,7 +250,6 @@
         })
         var ingredientsFilter =  await response.json();
         var i = ingredientsFilter;
-        console.log(i);
         return i;            
         }
 

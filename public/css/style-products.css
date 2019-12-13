@@ -139,6 +139,16 @@
 .products__categories label {
     color: rgb(155, 155, 155);
 }
+.container__ingred {
+    width: 100%;
+    max-width: 1080px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 20px auto;
+}
 .container__ingredients {
     width: 100%;
     max-width: 1080px;
@@ -238,6 +248,10 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    position: relative;
+    padding: 35px 0;
+}
+.container__card__plate {
     position: relative;
     padding: 35px 0;
 }
