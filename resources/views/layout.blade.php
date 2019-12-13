@@ -118,7 +118,7 @@
     <script>
         var idIngredientsSelected = [];
 
-        function myFunction(id) {
+        async function myFunction(id) {
             var btnIngredient = document.getElementById(id);
             btnIngredient.classList.toggle('selected');
             var containerIngredientsSelected = document.querySelector('.ingredients__selected');    
@@ -135,52 +135,87 @@
                     }
                 }
             }
-            var platesFilter = fetchPlates(idIngredientsSelected);
-            console.log(platesFilter);
+            var platesFilter = await fetchPlates(idIngredientsSelected);
+            var containerCardPlates = document.querySelector('.container__card__plates');
             
-            
+            var cards = document.querySelectorAll('.card__plates');
+            for(var card of cards) {
+                card.remove();
+            }
 
-        /*for(var plate of platesFilter) {
-            var cardPlates = document.querySelector('.card__plates')
+            for(var plate of platesFilter) {
+
+            var cardPlates = document.createElement('div');
+            cardPlates.classList.add('card__plates');
+            containerCardPlates.append(cardPlates);
             var platesDescription = document.createElement('div');
-            var pPlatesDescription = document.createElement('p');
-            var iPlatesDescription = document.createElement('i'); 
-            var platesImage = document.createElement('div');   
-            var platesData = document.createElement('div');
-            var h4PlatesData = document.createElement('h4');
-            var pPlatesData = document.createElement('p');
-            var cardButton = document.createElement('div');
-            var aCardButton = document.createElement('a');
-            var iCardButton = document.createElement('i');
-            
-
             platesDescription.classList.add('plates__description');
-            platesImage.classList.add('plates__image');
-            platesData.classList.add('plates__data');
-            divPlatesData.classList.add('cart-button');
-            iPlatesDescription.classList.add('fas fa-info-circle');      
-            iCardButton.classList.add('fas fa-shopping-basket');
-
             cardPlates.append(platesDescription);
-            cardPlates.append(platesData);
+            var pPlatesDescription = document.createElement('p');
             platesDescription.append(pPlatesDescription);
-            platesDescription.append(platesImage);
+            var iPlatesDescription = document.createElement('i'); 
+            iPlatesDescription.classList.add('fas');      
+            iPlatesDescription.classList.add('fa-info-circle');      
             pPlatesDescription.append(iPlatesDescription);
+            var platesImage = document.createElement('div');  
+            platesImage.classList.add('plates__image');
+            platesDescription.append(platesImage);
+            var platesData = document.createElement('div');
+            platesData.classList.add('plates__data');
+            cardPlates.append(platesData);
+            var h4PlatesData = document.createElement('h4');
             platesData.append(h4PlatesData);
+            var pPlatesData = document.createElement('p');
             platesData.append(pPlatesData);
+            var cardButton = document.createElement('div');
+            cardButton.classList.add('cart-button');
             platesData.append(cardButton);
+            var aCardButton = document.createElement('a');
             cardButton.append(aCardButton);
-            aCardButton.append(iCardButton);
-
-            pPlatesDescription.innerHTML = platesFilter.description;
-            h4PlatesData.innerHTML = platesFilter.name;
-            pPlatesData.innerHTML = platesFilter.price;
+            aCardButton.innerHTML = 'Agregar ';
             aCardButton.setAttribute('href', '#');
+            var iCardButton = document.createElement('i');
+            iCardButton.classList.add('fas');
+            iCardButton.classList.add('fa-shopping-basket');
+            aCardButton.append(iCardButton);  
 
+            pPlatesDescription.innerHTML = plate.description;
+            h4PlatesData.innerHTML = plate.name;
+            pPlatesData.innerHTML = '$' + plate.price;
 
-        }*/
+            }
+
+           
+            var idPlatesFilter = [];
+            for(var plate of platesFilter){
+                idPlatesFilter.push(plate.id); 
+            }                
+             
+            var ingredientsFilter = await fetchIngredients(idPlatesFilter);
+            
         }
 
+        
+        async function fetchPlates(idIngredientsSelected) {           
+        var idIngredients = idIngredientsSelected.join(',');
+        var response = await fetch('/api/products?ingredientsId=' + idIngredients, {
+        })
+        var platesFilter =  await response.json();
+        var p = platesFilter;
+        return p;            
+        }
+
+        async function fetchIngredients(idPlatesFilter) {           
+        var idPlates = idPlatesFilter.join(',');
+        var response = await fetch('/api/ingredients?platesId=' + idPlates, {
+        })
+        var ingredientsFilter =  await response.json();
+        var i = ingredientsFilter;
+        console.log(i);
+        return i;            
+        }
+
+        /*
         function fetchPlates(idIngredientsSelected) {
             var idIngredients = idIngredientsSelected.join(',');
             fetch('/api/products?ingredientsId=' + idIngredients, {
@@ -188,19 +223,19 @@
             .then(function(response) {
                 return response.json();
             })
-            .then(function(plates) {
-                var platesFilter = plates;
-                
-                return platesFilter;
-
+            .then(function(platesFilter) {
+                var p = platesFilter;
+                console.log(p); 
+                return p;
             })
             .catch(function(error) {
                 console.log(JSON.stringify(data));
                 console.log("The error was: " + error);
             });
-        }
+        }*/
 
-        
+
+
 
 
         

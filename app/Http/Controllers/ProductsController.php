@@ -180,6 +180,21 @@ class ProductsController extends Controller
         return json_encode($platesFilter);
     }
 
+    public function fetchIngredients(Request $req) {
+        $idPlates = explode(',', $req->get('platesId'));
+        $platesFilter = Plate::whereIn('id', $idPlates)->get();
+        $idIngredients = [];
 
+        foreach($platesFilter as $plateFilter) {
+            foreach($plateFilter->ingredients as $ingredient) {
+                array_push($idIngredients, $ingredient->id);
+            }
+        }
+        $id = array_keys(array_flip($idIngredients));
+        $ingredientsFilter = Ingredient::whereIn('id', $id)->get();
+              
+        return json_encode($ingredientsFilter); 
+    }
+    
 }
 

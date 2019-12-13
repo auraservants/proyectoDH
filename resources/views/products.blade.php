@@ -27,7 +27,7 @@
 			</div>
 			<p class="detail__line__progress">Podes elegir 85 de nuestros 100 ingredientes</p>
 		</div>
-		<div class="products__categories">
+		<!--<div class="products__categories">
 			<form action="" method="POST">
 				<label for="">Filtrar por categoria:</label>
 				<select name="categorias">
@@ -37,7 +37,7 @@
 					@endfor
 				</select>	
 			</form>
-		</div>
+		</div>-->
 	</div>
 	<div class="container__ingredients">
 		<div class="arrow__left__ingredients">
@@ -65,7 +65,7 @@
 				</div>
 				<p class="detail__line__progress">Podes elegir 15 de nuestros 50 platos</p>
 			</div>
-			<div class="products__categories">
+			<!--<div class="products__categories">
 				<form action="" method="POST">
 					<label for="">Filtrar por categoria:</label>
 					<select name="categorias">
@@ -75,7 +75,7 @@
 						@endfor
 					</select>	
 				</form>
-			</div>
+			</div>-->
 		</div>
 		<div class="container__card__plates">
 			<div class="arrow__left__ingredients">
@@ -83,16 +83,9 @@
 			</div>
 			
 			
-			<div class="card__plates">
-				<!--<div class="plates__description">
-					<p><i class="fas fa-info-circle"></i></p>
-					<div class="plates__image"></div>
-				</div>
-				<div class="plates__data">
-					<h4></h4>
-					<p>$ </p>
-					<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
-				</div>-->
+			<div class="container__card__plates">
+				
+
 			</div>
 			
 			<div class="arrow__right__ingredients">

@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/products', 'ProductsController@products');
+
 Route::get('/api/products', 'ProductsController@fetchPlates');
+
+Route::get('/api/ingredients', 'ProductsController@fetchIngredients');
 
 Route::get('/faqs', function() {
     return view('faqs');
