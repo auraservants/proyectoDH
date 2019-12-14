@@ -26,7 +26,7 @@
 				<div class="line__ingredients line__progress__top" style="width: 100%">
 				</div>
 			</div>
-			<p class="detail__line__progress">Podes elegir 85 de nuestros 100 ingredientes</p>
+			<p class="detail__line__progress detail__ingredients">Podes elegir 21 de nuestros 21 ingredientes</p>
 		</div>
 		<!--<div class="products__categories">
 			<form action="" method="POST">
@@ -47,8 +47,7 @@
 		<div class="container__ingredients">
 			@foreach ($ingredients as $ingredient)
 				<button class="button__ingredient" type="submit" id="{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
-					{{ $ingredient->name }}
-					<!--<img src="/storage/" alt="">-->
+					<img src="/storage/{{ $ingredient->image }}" alt="">
 					<p>Agregar</p>
 					<i class="fas fa-minus-circle"></i>
 				</button>			
@@ -65,10 +64,10 @@
 		<div class="container__products__config">
 			<div class="products__progress">
 				<div class="line__progress__bottom">
-					<div class="line__plates line__progress__top" style="width: 80%">
+					<div class="line__plates line__progress__top" style="width: 100%">
 					</div>
 				</div>
-				<p class="detail__line__progress">Podes elegir 15 de nuestros 50 platos</p>
+				<p class="detail__line__progress detail__plates">Podes elegir 4 de nuestros 4 platos</p>
 			</div>
 			<!--<div class="products__categories">
 				<form action="" method="POST">

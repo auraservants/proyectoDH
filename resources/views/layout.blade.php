@@ -50,8 +50,10 @@
                                 @csrf
                             </form>
                         </li>
+                        @if(Auth::user()->administrator == 1)
+                            <li><a href="/admin-orders"><i class="fas fa-cog"></i></a></li>
+                        @endif
                     @endguest                    
-                    <li><a href="/admin-orders"><i class="fas fa-cog"></i></a></li>
                 </ul>           
             </div>
         </nav>
@@ -139,8 +141,8 @@
             var ingredientsAll = await fetchIngredientsAll();
             var lineIngredients = document.querySelector('.line__ingredients');
 
-          
-
+            var platesAll = await fetchPlatesAll();
+            var linePlates = document.querySelector('.line__plates');
             var platesFilter = '';
 
             if(idIngredientsSelected.length === 0) {
@@ -210,19 +212,31 @@
             var ingredientsFilter = await fetchIngredients(idPlatesFilter);
             
 
-           var percentage = (100 * (ingredientsFilter.length - idIngredientsSelected.length)) / ingredientsAll.length;
-
+            var percentageWidthIngredient = (100 * (ingredientsFilter.length - idIngredientsSelected.length)) / ingredientsAll.length;
+            var detailIngredients = document.querySelector(".detail__ingredients");
+            var percentageWidthPlates = (100 * platesFilter.length) / platesAll.length;
+            var detailPlates = document.querySelector(".detail__plates");
+            
             if(idIngredientsSelected.length === 0) {
-                lineIngredients.style.width = '100%';
+                lineIngredients.style.width = percentageWidthIngredient + '%';
+                detailIngredients.innerHTML = `Podés elegir ${ingredientsAll.length} de nuestros ${ingredientsAll.length} ingredientes`;
+                linePlates.style.width = percentageWidthPlates + '%';
+                detailPlates.innerHTML = `Podés elegir ${platesAll.length} de ${platesAll.length} platos`;
+
             } else {
-                lineIngredients.style.width = percentage + '%';
+                lineIngredients.style.width = percentageWidthIngredient + '%';
+                var ingredientsSelectable = ingredientsFilter.length - idIngredientsSelected.length;
+                detailIngredients.innerHTML = `Podés elegir ${ingredientsSelectable} de nuestros ${ingredientsAll.length} ingredientes`;
+                linePlates.style.width = percentageWidthPlates + '%';
+                detailPlates.innerHTML = `Podés elegir ${platesFilter.length} de ${platesAll.length} platos`;
+                
             }
             
             var buttonsIngredients = document.querySelectorAll('.container__ingredients button');
             for(var buttonIngredient of buttonsIngredients) {
                 buttonIngredient.remove();
-            }   
-            
+            }
+
             for(var ingredient of ingredientsFilter) {
                 if(!idIngredientsSelected.includes(ingredient.id.toString())) {
                     var buttonIngredient = document.createElement('button');
