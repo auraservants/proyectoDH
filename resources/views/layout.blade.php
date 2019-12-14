@@ -136,12 +136,22 @@
                     }
                 }
             }
+            var ingredientsAll = await fetchIngredientsAll();
+            var lineIngredients = document.querySelector('.line__ingredients');
+
+          
 
             var platesFilter = '';
 
             if(idIngredientsSelected.length === 0) {
+                /*var pNotSelected = document.createElement('p');
+                pNotSelected.classList.add('not__selected');
+                containerIngredientsSelected.append(pNotSelected);
+                pNotSelected.innerHTML = '- Aun no ha seleccionado ningún ingrediente -'; */
                 platesFilter = await fetchPlatesAll();
             } else {
+               /* var pNotSelected = document.querySelector('.not__selected')
+                pNotSelected.remove();*/
                 platesFilter = await fetchPlates(idIngredientsSelected);
             }
 
@@ -197,34 +207,41 @@
                 idPlatesFilter.push(plate.id); 
             }                
                       
-
             var ingredientsFilter = await fetchIngredients(idPlatesFilter);
+            
+
+           var percentage = (100 * (ingredientsFilter.length - idIngredientsSelected.length)) / ingredientsAll.length;
+
+            if(idIngredientsSelected.length === 0) {
+                lineIngredients.style.width = '100%';
+            } else {
+                lineIngredients.style.width = percentage + '%';
+            }
             
             var buttonsIngredients = document.querySelectorAll('.container__ingredients button');
             for(var buttonIngredient of buttonsIngredients) {
                 buttonIngredient.remove();
-            }    
+            }   
             
-
             for(var ingredient of ingredientsFilter) {
-                var buttonIngredient = document.createElement('button');
-                var pButtonIngredient = document.createElement('p');
-                var iButtonIngredient = document.createElement('i');
-                containerIngredients.append(buttonIngredient);
-                buttonIngredient.classList.add('button__ingredient');
-                buttonIngredient.setAttribute('type', 'submit');
-                buttonIngredient.setAttribute('id', ingredient.id);
-                buttonIngredient.setAttribute('onclick', 'myFunction(' + ingredient.id + ')');
-                buttonIngredient.innerHTML = ingredient.name;
-                buttonIngredient.append(pButtonIngredient);
-                buttonIngredient.append(iButtonIngredient);
-                pButtonIngredient.innerHTML = 'Agregar';
-                iButtonIngredient.classList.add('fas');
-                iButtonIngredient.classList.add('fa-chevron-right');
-
-
+                if(!idIngredientsSelected.includes(ingredient.id.toString())) {
+                    var buttonIngredient = document.createElement('button');
+                    var pButtonIngredient = document.createElement('p');
+                    var iButtonIngredient = document.createElement('i');
+                    containerIngredients.append(buttonIngredient);
+                    buttonIngredient.classList.add('button__ingredient');
+                    buttonIngredient.setAttribute('type', 'submit');
+                    buttonIngredient.setAttribute('id', ingredient.id);
+                    buttonIngredient.setAttribute('onclick', 'myFunction(' + ingredient.id + ')');
+                    buttonIngredient.innerHTML = ingredient.name;
+                    buttonIngredient.append(pButtonIngredient);
+                    buttonIngredient.append(iButtonIngredient);
+                    pButtonIngredient.innerHTML = 'Agregar';
+                    iButtonIngredient.classList.add('fas');
+                    iButtonIngredient.classList.add('fa-minus-circle');                        
+                }   
             }
-            
+
         }
 
         async function fetchPlatesAll() {           
@@ -235,6 +252,14 @@
         return p;            
         }
         
+        async function fetchIngredientsAll() {           
+        var response = await fetch('/api/ingredientsAll', {
+        })
+        var ingredients =  await response.json();
+        var i = ingredients;
+        return i;            
+        }
+
         async function fetchPlates(idIngredientsSelected) {           
         var idIngredients = idIngredientsSelected.join(',');
         var response = await fetch('/api/products?ingredientsId=' + idIngredients, {

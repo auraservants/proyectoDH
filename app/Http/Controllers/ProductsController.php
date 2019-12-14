@@ -200,5 +200,11 @@ class ProductsController extends Controller
         $plates = Plate::All();
         return json_encode($plates); 
     }
+
+    public function fetchAllIngredients() {
+        $ingredients = Ingredient::All();
+        return json_encode($ingredients); 
+    }
+  
 }
 

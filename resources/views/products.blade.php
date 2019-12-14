@@ -14,6 +14,7 @@
 	<div class="ingredients__selected__container">
 		<p class="ingredients__selected__title">Ingredientes elegidos:</p>
 		<div class="ingredients__selected">
+			<!--<p class="not__selected">- Aun no ha seleccionado ningún ingrediente -</p>-->
 
 		</div>
 
@@ -22,7 +23,7 @@
 	<div class="container__products__config">
 		<div class="products__progress">
 			<div class="line__progress__bottom">
-				<div class="line__progress__top">
+				<div class="line__ingredients line__progress__top" style="width: 100%">
 				</div>
 			</div>
 			<p class="detail__line__progress">Podes elegir 85 de nuestros 100 ingredientes</p>
@@ -40,22 +41,23 @@
 		</div>-->
 	</div>
 	<div class="container__ingred">
-		<div class="arrow__left__ingredients">
+		<!--<div class="arrow__left__ingredients">
 			<i class="fas fa-chevron-left"></i>
-		</div>
+		</div>-->
 		<div class="container__ingredients">
 			@foreach ($ingredients as $ingredient)
 				<button class="button__ingredient" type="submit" id="{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
-					{{$ingredient->name}}
+					{{ $ingredient->name }}
+					<!--<img src="/storage/" alt="">-->
 					<p>Agregar</p>
-					<i class="fas fa-times"></i>
+					<i class="fas fa-minus-circle"></i>
 				</button>			
 			@endforeach			
 		</div>
 
-		<div class="arrow__right__ingredients">
+		<!--<div class="arrow__right__ingredients">
 			<i class="fas fa-chevron-right"></i>
-		</div>
+		</div>-->
 	</div>
 
 	<div class="container__plates">
@@ -63,7 +65,7 @@
 		<div class="container__products__config">
 			<div class="products__progress">
 				<div class="line__progress__bottom">
-					<div class="line__progress__top">
+					<div class="line__plates line__progress__top" style="width: 80%">
 					</div>
 				</div>
 				<p class="detail__line__progress">Podes elegir 15 de nuestros 50 platos</p>
@@ -81,9 +83,9 @@
 			</div>-->
 		</div>
 		<div class="container__card__plate">
-			<div class="arrow__left__ingredients">
+			<!--<div class="arrow__left__ingredients">
 				<i class="fas fa-chevron-left"></i>
-			</div>
+			</div>-->
 			
 			
 			<div class="container__card__plates">
@@ -106,9 +108,9 @@
 
 			</div>
 			
-			<div class="arrow__right__ingredients">
+			<!--<div class="arrow__right__ingredients">
 				<i class="fas fa-chevron-right"></i>
-			</div>					
+			</div>-->					
 		</div>
 		
 	</div>
