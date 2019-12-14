@@ -47,7 +47,8 @@
 		<div class="container__ingredients">
 			@foreach ($ingredients as $ingredient)
 				<button class="button__ingredient" type="submit" id="{{$ingredient->id}}" onclick="myFunction({{$ingredient->id}})">
-					<img src="/storage/{{ $ingredient->image }}" alt="">
+					<span>{{ $ingredient->name }}</span>
+					<img class="button__img" src="/storage/{{ $ingredient->image }}">
 					<p>Agregar</p>
 					<i class="fas fa-minus-circle"></i>
 				</button>			

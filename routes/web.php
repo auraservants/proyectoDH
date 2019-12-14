@@ -65,3 +65,7 @@ Route::post('/home', 'HomeController@storeData');
 Route::get('/home','UserController@showChangePasswordForm');
 
 Route::post('/changePassword','UserController@changePassword')->name('changePassword');
+
+Route::get('cart', 'ProductsController@cart');
+
+Route::get('cart/{id}', 'ProductsController@addPlateToCart');

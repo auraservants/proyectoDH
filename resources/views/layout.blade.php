@@ -240,16 +240,23 @@
             for(var ingredient of ingredientsFilter) {
                 if(!idIngredientsSelected.includes(ingredient.id.toString())) {
                     var buttonIngredient = document.createElement('button');
+                    var spanButtonIngredient = document.createElement('span');
+                    var imgButtonIngredient = document.createElement('img');
                     var pButtonIngredient = document.createElement('p');
                     var iButtonIngredient = document.createElement('i');
+
                     containerIngredients.append(buttonIngredient);
                     buttonIngredient.classList.add('button__ingredient');
                     buttonIngredient.setAttribute('type', 'submit');
                     buttonIngredient.setAttribute('id', ingredient.id);
                     buttonIngredient.setAttribute('onclick', 'myFunction(' + ingredient.id + ')');
-                    buttonIngredient.innerHTML = ingredient.name;
+                    imgButtonIngredient.setAttribute('src', '/storage/' + ingredient.image);
+                    imgButtonIngredient.classList.add('button__img');
+                    buttonIngredient.append(spanButtonIngredient);
+                    buttonIngredient.append(imgButtonIngredient); 
                     buttonIngredient.append(pButtonIngredient);
                     buttonIngredient.append(iButtonIngredient);
+                    spanButtonIngredient.innerHTML = ingredient.name;         
                     pButtonIngredient.innerHTML = 'Agregar';
                     iButtonIngredient.classList.add('fas');
                     iButtonIngredient.classList.add('fa-minus-circle');                        

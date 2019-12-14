@@ -65,6 +65,12 @@
     align-items: center;
     flex-wrap: wrap;
 }
+.ingredients__selected span {
+    display: inline-block;
+}
+.ingredients__selected .button__img {
+    display: none;
+}
 .not__selected {
     height: 54px;
     color: var(--color2);
@@ -153,6 +159,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.container__ingredients span {
+    display: none;
+}
 .container__ingredients button{
     width: 160px;
     border-radius: 21px;
@@ -167,7 +176,7 @@
     border: none;
     background: transparent;
 }
-.container__ingredients button img{
+.button__img{
     width: 90%;
     height: auto;
 }
