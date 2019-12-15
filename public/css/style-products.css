@@ -323,13 +323,18 @@
     color: #c7c7c7;
     font-size: 18px;
     font-weight: 600;
+    border: none;
+    background-color: transparent;
 }
 
 .card__plates .cart-button:hover{
+    cursor: pointer;
+
     color: #f58220;
 }
 
-.card__plates .cart-button a{
+.card__plates .cart-button i{
+
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;

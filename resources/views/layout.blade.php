@@ -138,13 +138,14 @@
                     }
                 }
             }
-            var ingredientsAll = await fetchIngredientsAll();
+
+            var fetches = await Promise.all([fetchIngredientsAll(), fetchPlatesAll()]);
+            var ingredientsAll = fetches[0];//await fetchIngredientsAll();
             var lineIngredients = document.querySelector('.line__ingredients');
 
-            var platesAll = await fetchPlatesAll();
+            var platesAll = fetches[1]; //await fetchPlatesAll();
             var linePlates = document.querySelector('.line__plates');
             var platesFilter = '';
-
             if(idIngredientsSelected.length === 0) {
                 /*var pNotSelected = document.createElement('p');
                 pNotSelected.classList.add('not__selected');
@@ -165,42 +166,40 @@
             }
 
             for(var plate of platesFilter) {
-            var cardPlates = document.createElement('div');
-            cardPlates.classList.add('card__plates');
-            containerCardPlates.append(cardPlates);
-            var platesDescription = document.createElement('div');
-            platesDescription.classList.add('plates__description');
-            cardPlates.append(platesDescription);
-            var pPlatesDescription = document.createElement('p');
-            platesDescription.append(pPlatesDescription);
-            var iPlatesDescription = document.createElement('i'); 
-            iPlatesDescription.classList.add('fas');      
-            iPlatesDescription.classList.add('fa-info-circle');      
-            pPlatesDescription.append(iPlatesDescription);
-            var platesImage = document.createElement('div');  
-            platesImage.classList.add('plates__image');
-            platesDescription.append(platesImage);
-            var platesData = document.createElement('div');
-            platesData.classList.add('plates__data');
-            cardPlates.append(platesData);
-            var h4PlatesData = document.createElement('h4');
-            platesData.append(h4PlatesData);
-            var pPlatesData = document.createElement('p');
-            platesData.append(pPlatesData);
-            var cardButton = document.createElement('div');
-            cardButton.classList.add('cart-button');
-            platesData.append(cardButton);
-            var aCardButton = document.createElement('a');
-            cardButton.append(aCardButton);
-            aCardButton.innerHTML = 'Agregar ';
-            aCardButton.setAttribute('href', '#');
-            var iCardButton = document.createElement('i');
-            iCardButton.classList.add('fas');
-            iCardButton.classList.add('fa-shopping-basket');
-            aCardButton.append(iCardButton);  
-            pPlatesDescription.innerHTML = plate.description;
-            h4PlatesData.innerHTML = plate.name;
-            pPlatesData.innerHTML = '$' + plate.price;
+                var cardPlates = document.createElement('div');
+                cardPlates.classList.add('card__plates');
+                containerCardPlates.append(cardPlates);
+                var platesDescription = document.createElement('div');
+                platesDescription.classList.add('plates__description');
+                cardPlates.append(platesDescription);
+                var pPlatesDescription = document.createElement('p');
+                platesDescription.append(pPlatesDescription);
+                var iPlatesDescription = document.createElement('i');
+                iPlatesDescription.classList.add('fas');
+                iPlatesDescription.classList.add('fa-info-circle');
+                pPlatesDescription.append(iPlatesDescription);
+                var platesImage = document.createElement('div');
+                platesImage.classList.add('plates__image');
+                platesDescription.append(platesImage);
+                var platesData = document.createElement('div');
+                platesData.classList.add('plates__data');
+                cardPlates.append(platesData);
+                var h4PlatesData = document.createElement('h4');
+                platesData.append(h4PlatesData);
+                var pPlatesData = document.createElement('p');
+                platesData.append(pPlatesData);
+                var cardButton = document.createElement('button');
+                cardButton.classList.add('cart-button');
+                platesData.append(cardButton);
+                cardButton.innerHTML = 'Agregar ';
+                cardButton.setAttribute('type', 'submit');
+                var iCardButton = document.createElement('i');
+                iCardButton.classList.add('fas');
+                iCardButton.classList.add('fa-shopping-basket');
+                cardButton.append(iCardButton);  
+                pPlatesDescription.innerHTML = plate.description;
+                h4PlatesData.innerHTML = plate.name;
+                pPlatesData.innerHTML = '$' + plate.price;
             }
 
            
