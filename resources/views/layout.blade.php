@@ -193,6 +193,9 @@
                 platesData.append(cardButton);
                 cardButton.innerHTML = 'Agregar ';
                 cardButton.setAttribute('type', 'submit');
+                cardButton.setAttribute('name', 'plate[]');
+                cardButton.setAttribute('value', plate.id);
+                cardButton.setAttribute('id', plate.id);
                 var iCardButton = document.createElement('i');
                 iCardButton.classList.add('fas');
                 iCardButton.classList.add('fa-shopping-basket');

@@ -17,42 +17,29 @@ class OrdersController extends Controller
         return view('admin-orders', $vac);
     }
     public function cart(){
-        return view('cart');
+        $orders = Order::where('user_id', '=', Auth::user()->id)->get();
+        $platesId = [];
+        foreach($orders as $order) {
+        foreach($order->plates as $plate) {
+            array_push($platesId, $plate->pivot->plate_id);
+            }            
+        }
+        $plates = [];
+        foreach($platesId as $plateId) {
+            array_push($plates, Plate::where('id', $plateId)->get());
+        }
+        $vac = compact('plates');
+        return view('cart', $vac); 
     }
 
     public function addPlateToCart(Request $req){
         $plate = Plate::find($req->plate[0]);
-        
-             
-        /*$cart = session()->get('cart');
-        if(!$cart){
-            $cart = [
-                $id => [
-                    "name" => $plate->name,
-                    "price" => $plate->price,
-                    "image" => $plate->imgage,
-                    "description" => $plate->description
-                    ]
-                ];
-                session()->put('cart', $cart);
-                return view('cart');
-        }
-        $cart[$id] = [
-            "name" => $plate->name,
-            "price" => $plate->price,
-            "image" => $plate->imgage,
-            "description" => $plate->description
-        ];
-        session()->put('cart', $cart);
-        return view('cart');*/
-
         $order = new Order();
         $order->user_id = Auth::user()->id;
         $order->price = intval($plate->price);
         $order->save();
         $order->plates()->attach($req->plate[0]);  
-        $vac = compact('plate');
-        return view('cart', $vac);
+        return redirect('products'); 
     }
 
 }

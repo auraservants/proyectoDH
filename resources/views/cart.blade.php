@@ -23,23 +23,27 @@
                 <p class="name_cart">Platos</p>
                 <p>Precio</p>
             </div>
-            @foreach($plate as $p)
+            @foreach($plates as $p)
+            @foreach($p as $plate)
             <div class="description_cart">
-                <div class="img_products"><img src="image/cart/product-cart1.png" alt="product"></div>
-                <p class="detail_products">{{$p->price}}</p>
-                <p class="amount_products">$ ...</p>
+                
+                <div class="img_products"><img src="/storage/{{ $plate->image }}" alt="product"></div>
+                <p class="detail_products">{{$plate->name}}</p>
+                <p class="amount_products">$ {{$plate->price}}</p>
                 <p class="remove_products"><a href="#"><img src="image/cart/remove-cart.png" alt=""></a></p>
+                
             </div>
+            @endforeach
             @endforeach
         </section>
 
-        <section class="container_options">
+        <!--<section class="container_options">
             <form class="cupon_cart" action="validar.php" method="post">
                 <p>Ingresar Cupón</p>
                 <input type="text" name="cupon" placeholder="Ingresá el código">
             </form>
             <button type="submit" class="update_cart" value="">Actualizar Carrito</button> 
-        </section>     
+        </section>-->     
     </section>
 
     
@@ -48,7 +52,7 @@
         
         <div class="page_cart">
             <p class="total_cart">Total</p>
-            <p class="bar_total_cart"></p>
+            <p class="bar_total_cart">$</p>
         </div>
         <div class="btn_cart">
             <input class="btn btn--orange btn--large" type="submit" value="Finalizar compra">
