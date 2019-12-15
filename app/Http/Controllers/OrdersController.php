@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Address;
 use App\Plate;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
@@ -20,9 +21,10 @@ class OrdersController extends Controller
     }
 
     public function addPlateToCart(Request $req){
-        $plate = Plate::find($req->plateId);
-        $cart = session()->get('cart');
-
+        $plate = Plate::find($req->plate[0]);
+        
+             
+        /*$cart = session()->get('cart');
         if(!$cart){
             $cart = [
                 $id => [
@@ -35,7 +37,6 @@ class OrdersController extends Controller
                 session()->put('cart', $cart);
                 return view('cart');
         }
-
         $cart[$id] = [
             "name" => $plate->name,
             "price" => $plate->price,
@@ -43,9 +44,16 @@ class OrdersController extends Controller
             "description" => $plate->description
         ];
         session()->put('cart', $cart);
-        return view('cart');
-    }
-    public function createOrder() {
+        return view('cart');*/
 
+        $order = new Order();
+        $order->user_id = Auth::user()->id;
+        $order->price = intval($plate->price);
+        $order->save();
+        $order->plates()->attach($req->plate[0]);  
+        $vac = compact('plate');
+        return view('cart', $vac);
     }
+
 }
+

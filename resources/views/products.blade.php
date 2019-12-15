@@ -117,8 +117,7 @@
 							<div class="plates__data">
 								<h4>{{ $plate["name"] }}</h4>
 								<p>$ {{ $plate["price"] }}</p>
-								<button type="submit" class="cart-button">Agregar <i class="fas fa-shopping-basket"></i></button>	
-								<input type="hidden" name="plateId" value="{{$plate->id}}">
+								<button type="submit" class="cart-button" name="plate[]" value="{{$plate->id}}" id="{{$plate->id}}">Agregar<i class="fas fa-shopping-basket"></i></button>
 							</div>
 						</div>
 					@endforeach
