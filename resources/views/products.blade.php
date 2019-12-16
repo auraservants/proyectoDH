@@ -106,7 +106,7 @@
 					@endforeach
 				</form>
 			@else
-				<form action="/cart" method="post" class="container__card__plates">
+				<div class="container__card__plates">
 					@csrf
 					@foreach($plates as $plate)
 						<div class="card__plates">
@@ -117,11 +117,11 @@
 							<div class="plates__data">
 								<h4>{{ $plate["name"] }}</h4>
 								<p>$ {{ $plate["price"] }}</p>
-								<button type="submit" class="cart-button" name="plate[]" value="{{$plate->id}}" id="{{$plate->id}}">Agregar<i class="fas fa-shopping-basket"></i></button>
+								<button type="submit" class="cart-button" onclick="selectPlate({{$plate->id}})">Agregar<i class="fas fa-shopping-basket"></i></button>
 							</div>
 						</div>
 					@endforeach
-				</form>
+					</div>
 			@endguest
 			
 

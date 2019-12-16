@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/3233ba318b.js" crossorigin="anonymous"></script>
+        <script src ="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
         <link rel="stylesheet" href="/css/style.css">
         <title>Document</title>
     </head>
@@ -193,9 +194,8 @@
                 platesData.append(cardButton);
                 cardButton.innerHTML = 'Agregar ';
                 cardButton.setAttribute('type', 'submit');
-                cardButton.setAttribute('name', 'plate[]');
-                cardButton.setAttribute('value', plate.id);
-                cardButton.setAttribute('id', plate.id);
+                cardButton.setAttribute('onclick', 'selectPlate(' + plate.id + ')');
+
                 var iCardButton = document.createElement('i');
                 iCardButton.classList.add('fas');
                 iCardButton.classList.add('fa-shopping-basket');
@@ -267,6 +267,24 @@
 
         }
 
+        async function selectPlate(id) {
+            var addPlate = await fetchSelectPlate(id);
+            if(addPlate) {
+                swal ( "Seleccionaste un plato!" , "Dirigite al carrito para ver tus platos seleccionados" , "success" );
+            } else {
+                alert('Hubo un error');
+            }
+
+        }
+
+
+        async function fetchSelectPlate(id) {
+        var response = await fetch('/api/addPlateToCart?plateId=' + id, {
+        })
+        var resultado =  await response.json();
+        return resultado;
+        }
+
         async function fetchPlatesAll() {           
         var response = await fetch('/api/plates', {
         })
@@ -301,25 +319,15 @@
         return i;            
         }
 
-        /*
-        function fetchPlates(idIngredientsSelected) {
-            var idIngredients = idIngredientsSelected.join(',');
-            fetch('/api/products?ingredientsId=' + idIngredients, {
+        async function fetchRemovePlate(idPlate) {
+            var response = await fetch('/api/removePlate?plateId=' + idPlate, {
             })
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(platesFilter) {
-                var p = platesFilter;
-                console.log(p); 
-                return p;
-            })
-            .catch(function(error) {
-                console.log(JSON.stringify(data));
-                console.log("The error was: " + error);
-            });
-        }*/
 
+        var plateDeleted =  await response.json();
+       
+        return plateDeleted;            
+        }
+        
 
 
 

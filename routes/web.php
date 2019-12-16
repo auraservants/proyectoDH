@@ -65,4 +65,6 @@ Route::post('/changePassword','UserController@changePassword')->name('changePass
 
 Route::get('/cart', 'OrdersController@cart');
 
-Route::post('/cart', 'OrdersController@addPlateToCart');
+Route::get('/api/addPlateToCart', 'OrdersController@addPlateToCart');
+
+Route::get('/api/removePlate', 'OrdersController@removePlate');
