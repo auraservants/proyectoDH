@@ -30,10 +30,6 @@ Route::get('/faqs', function() {
 Route::get('/contact', function() {
     return view('contact');
 });
-Route::get('/cart', function() {
-    return view('cart');
-});
-
 
 Route::get('/admin-plates', 'ProductsController@plates');
 
@@ -67,9 +63,10 @@ Route::get('/home','UserController@showChangePasswordForm');
 
 Route::post('/changePassword','UserController@changePassword')->name('changePassword');
 
-Route::get('cart', 'ProductsController@cart');
+Route::get('/cart', 'OrdersController@cart');
 
-Route::get('cart/{id}', 'ProductsController@addPlateToCart');
+Route::get('/api/addPlateToCart', 'OrdersController@addPlateToCart');
+
 
 Route::get('checkout', function(){
     return view('checkout');
@@ -79,3 +76,4 @@ Route::get('order-received', function(){
     return view('order-received');
 });
 
+Route::get('/api/removePlate', 'OrdersController@removePlate');

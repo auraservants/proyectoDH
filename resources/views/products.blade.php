@@ -87,26 +87,46 @@
 				<i class="fas fa-chevron-left"></i>
 			</div>-->
 			
+			@guest
+				<form action="/login" method="get" class="container__card__plates">
+					@csrf
+					@foreach($plates as $plate)
+						<div class="card__plates">
+							<div class="plates__description">
+								<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>
+								<div class="plates__image"></div>
+							</div>
+							<div class="plates__data">
+								<h4>{{ $plate["name"] }}</h4>
+								<p>$ {{ $plate["price"] }}</p>
+								<button type="submit" class="cart-button">Agregar <i class="fas fa-shopping-basket"></i></button>	
+								<input type="hidden" name="plateId" value="{{$plate->id}}">
+							</div>
+						</div>
+					@endforeach
+				</form>
+			@else
+				<div class="container__card__plates">
+					@csrf
+					@foreach($plates as $plate)
+						<div class="card__plates">
+							<div class="plates__description">
+								<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>
+								<div class="plates__image"></div>
+							</div>
+							<div class="plates__data">
+								<h4>{{ $plate["name"] }}</h4>
+								<p>$ {{ $plate["price"] }}</p>
+								<button type="submit" class="cart-button" onclick="selectPlate({{$plate->id}})">Agregar<i class="fas fa-shopping-basket"></i></button>
+							</div>
+						</div>
+					@endforeach
+					</div>
+			@endguest
 			
-			<div class="container__card__plates">
-				
-			@foreach($plates as $plate)
-				<div class="card__plates">
-					<div class="plates__description">
-						<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>
-						<div class="plates__image"></div>
-					</div>
-					<div class="plates__data">
-						<h4>{{ $plate["name"] }}</h4>
-						<p>$ {{ $plate["price"] }}</p>
-						<div class="cart-button"><a href="#">Agregar <i class="fas fa-shopping-basket"></i></a></div>	
-					</div>
-				</div>
-			@endforeach
 
 
 
-			</div>
 			
 			<!--<div class="arrow__right__ingredients">
 				<i class="fas fa-chevron-right"></i>
