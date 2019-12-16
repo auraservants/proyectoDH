@@ -9,14 +9,15 @@
         <div class=line_steps_cart>
         </div>
         <div class="options_steps_cart">
-            <a href="#"><img src="image/cart/steps-cart2.png" alt=""></a>
+            <a href="#"><img src="image/cart/steps-cart2bw.png" alt=""></a>
         </div>
-        <div class=line_steps_cart>
+        <div class="line_steps_cart_checkout_bw">
         </div>
         <div class="options_steps_cart">
-            <a href="#"><img src="image/cart/steps-cart3.png" alt=""></a>
+            <a href="#"><img src="image/cart/steps-cart3bw.png" alt=""></a>
         </div>
     </section>
+
     <section class="buy_cart">
         <section class="container_buy_cart">
 
@@ -51,28 +52,29 @@
 
         </section>
 
-        <section class="container_options">
+        {{-- <section class="container_options">
             <form class="cupon_cart" action="validar.php" method="post">
                 <p>Ingresar Cupón</p>
                 <input type="text" name="cupon" placeholder="Ingresá el código">
             </form>
-            <button type="submit" class="update_cart" value="">Actualizar Carrito</button> 
-        </section>     
+            <button type="submit" class="update_cart" value="">Actualizar Carrito</button>
+        </section> --}}
     </section>
 
-    
+
 
     <section class="buy_btn_cart">
-        
+
         <div class="page_cart">
             <p class="total_cart">Total</p>
             <p class="bar_total_cart"></p>
         </div>
+
         <div class="btn_cart">
-            <input class="btn btn--orange btn--large" type="submit" value="Finalizar compra">
+            <a href="/checkout" class="btn btn--orange btn--large">Finalizar compra</a>
 		</div>
-        
+
     </section>
-    
+
 </main>
 @endsection

@@ -8,6 +8,8 @@
 @import "style-profile.css";
 @import "style-cart.css";
 @import "style-admin.css";
+@import "style-checkout.css";
+@import "style.order-received.css";
 
 *,
 *::after,
@@ -30,7 +32,7 @@ li {
     list-style: none;
 }
 button:focus, input:focus {
-    outline: none;  
+    outline: none;
 }
 
 :root {
@@ -83,7 +85,7 @@ button:focus, input:focus {
     background-color: #f0f0f0;
 }
 .btn--orange {
-    color: #f0f0f0;    
+    color: #f0f0f0;
     background-color: rgb(245, 130, 32, 0.8);
 }
 .btn--light:hover {

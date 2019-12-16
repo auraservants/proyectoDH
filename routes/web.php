@@ -34,6 +34,7 @@ Route::get('/cart', function() {
     return view('cart');
 });
 
+
 Route::get('/admin-plates', 'ProductsController@plates');
 
 Route::get('/admin-ingredients', 'ProductsController@ingredients');
@@ -69,3 +70,12 @@ Route::post('/changePassword','UserController@changePassword')->name('changePass
 Route::get('cart', 'ProductsController@cart');
 
 Route::get('cart/{id}', 'ProductsController@addPlateToCart');
+
+Route::get('checkout', function(){
+    return view('checkout');
+});
+
+Route::get('order-received', function(){
+    return view('order-received');
+});
+

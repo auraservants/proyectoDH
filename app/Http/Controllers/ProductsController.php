@@ -65,8 +65,8 @@ class ProductsController extends Controller
         if($req->image) {
             $ruta = $req->file('image')->store('public');
             $image = basename($ruta);
-            $ingredient->image = $image;            
-        }  
+            $ingredient->image = $image;
+        }
         $ingredient->name = $req['name'];
         $ingredient->stock = $req['stock'];
         $ingredient->category_id = $req['category'];
@@ -108,7 +108,7 @@ class ProductsController extends Controller
         $plate->platescategories()->attach($req["category"]);
         $plate->ingredients()->attach($req["ingredient"]);
         return redirect('admin-plates');
-    }  
+    }
     public function editPlate($id) {
         $plate = Plate::find($id);
         $ingredients = Ingredient::all();
@@ -132,12 +132,12 @@ class ProductsController extends Controller
         if($req->image) {
             $ruta = $req->file('image')->store('public');
             $image = basename($ruta);
-            $plate->image = $image;            
-        }  
+            $plate->image = $image;
+        }
         $plate->name = $req['name'];
         $plate->price = $req['price'];
         $plate->description = $req['description'];
-        $plate->save();   
+        $plate->save();
         $plate->platescategories()->sync($req["category"]);
         $plate->ingredients()->sync($req["ingredient"]);
         return redirect('admin-plates');
@@ -164,15 +164,15 @@ class ProductsController extends Controller
                 array_push($idPlate, $ingredient->id);
             }
             $idPlates[$plate->id] = $idPlate;
-        }  
+        }
         foreach($idIngredients as $idIngredient) {
             foreach($idPlates as $clave => $valor) {
                 if(in_array($idIngredient, $valor) === false) {
                     unset($idPlates[$clave]);
-                } 
+                }
             }
         }
-        $id = [];       
+        $id = [];
         foreach($idPlates as $clave => $valor) {
             array_push($id, $clave);
         }
@@ -192,18 +192,18 @@ class ProductsController extends Controller
         }
         $id = array_keys(array_flip($idIngredients));
         $ingredientsFilter = Ingredient::whereIn('id', $id)->get();
-              
-        return json_encode($ingredientsFilter); 
+
+        return json_encode($ingredientsFilter);
     }
 
     public function fetchAllPlates() {
         $plates = Plate::All();
-        return json_encode($plates); 
+        return json_encode($plates);
     }
 
     public function fetchAllIngredients() {
         $ingredients = Ingredient::All();
-        return json_encode($ingredients); 
+        return json_encode($ingredients);
     }
 
     public function cart(){
@@ -236,6 +236,6 @@ class ProductsController extends Controller
         session()->put('cart', $cart);
         return view('cart');
     }
-  
+
 }
 

@@ -14,15 +14,15 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="/"><img src="/image/randfood.png" alt="randfood"></a>
-                </div>   
-                <button class="menu-movile" type="submit"><i class="fas fa-bars"></i></button>  
+                </div>
+                <button class="menu-movile" type="submit"><i class="fas fa-bars"></i></button>
                 <ul class="header-nav-links">
                     <li><a href="/" id="link-home" class="btn-header">Inicio</a></li>
                     <li><a href="/products" id="link-shop" class="btn-header">Shop</a></li>
                     <li><a href="/faqs" id="link-us" class="btn-header">Faqs</a></li>
                     <li><a href="/contact" id="link-contact" class="btn-header">Contacto</a></li>
                 </ul>
-                <ul class="header-nav-options">    
+                <ul class="header-nav-options">
                     <li><a href="/cart" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> <span>Carrito</span> </a></li>
                     @guest
                         <li class="nav-item">
@@ -37,7 +37,7 @@
                         <li class="nav-item">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="home" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>                                
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -53,8 +53,8 @@
                         @if(Auth::user()->administrator == 1)
                             <li><a href="/admin-orders"><i class="fas fa-cog"></i></a></li>
                         @endif
-                    @endguest                    
-                </ul>           
+                    @endguest
+                </ul>
             </div>
         </nav>
     </header>
@@ -75,10 +75,10 @@
                     <a href="www.google.com"><img src="/image/twitter.png" alt=""></a>
                     <a href="www.google.com"><img src="/image/whatsapp.png" alt=""></a>
                     </div>
-                </div> 
+                </div>
                 <div class="links-footer">
                     <ul>
-                        <h3 class="Links">Navegación</h3>	
+                        <h3 class="Links">Navegación</h3>
                         <li><a href="/" id="link-home" class="btn-header">Inicio</a></li>
                         <li><a href="/products" id="link-shop" class="btn-header">Shop</a></li>
                         <li><a href="/faqs" id="link-us" class="btn-header">Faqs</a></li>
@@ -111,12 +111,15 @@
             <div class="payment-logos">
                 <img src="/image/payment.png" alt="">
             </div>
-            </div> 
+            </div>
         </div>
     </footer>
 
+
     <script src="/js/jquery.js"></script>
     <script src="/js/main.js"></script>
+
+
     <script>
         var idIngredientsSelected = [];
 
@@ -124,17 +127,17 @@
             var btnIngredient = document.getElementById(id);
             var containerIngredients = document.querySelector('.container__ingredients');
             btnIngredient.classList.toggle('selected');
-            var containerIngredientsSelected = document.querySelector('.ingredients__selected');    
-            var containerIngred = document.querySelector('.container__ingred'); 
-            var id = btnIngredient.getAttribute('id');  
+            var containerIngredientsSelected = document.querySelector('.ingredients__selected');
+            var containerIngred = document.querySelector('.container__ingred');
+            var id = btnIngredient.getAttribute('id');
             if(btnIngredient.classList.contains('selected')){
                 containerIngredientsSelected.append(btnIngredient);
                 idIngredientsSelected.push(id);
             } else {
-                containerIngredients.append(btnIngredient);       
-                for(var i = 0; i < idIngredientsSelected.length; i++){ 
+                containerIngredients.append(btnIngredient);
+                for(var i = 0; i < idIngredientsSelected.length; i++){
                     if (idIngredientsSelected[i] === id) {
-                        idIngredientsSelected.splice(i, 1); 
+                        idIngredientsSelected.splice(i, 1);
                     }
                 }
             }
@@ -158,7 +161,7 @@
             }
 
             var containerCardPlates = document.querySelector('.container__card__plates');
-            
+
             var cards = document.querySelectorAll('.card__plates');
             for(var card of cards) {
                 card.remove();
@@ -173,11 +176,11 @@
             cardPlates.append(platesDescription);
             var pPlatesDescription = document.createElement('p');
             platesDescription.append(pPlatesDescription);
-            var iPlatesDescription = document.createElement('i'); 
-            iPlatesDescription.classList.add('fas');      
-            iPlatesDescription.classList.add('fa-info-circle');      
+            var iPlatesDescription = document.createElement('i');
+            iPlatesDescription.classList.add('fas');
+            iPlatesDescription.classList.add('fa-info-circle');
             pPlatesDescription.append(iPlatesDescription);
-            var platesImage = document.createElement('div');  
+            var platesImage = document.createElement('div');
             platesImage.classList.add('plates__image');
             platesDescription.append(platesImage);
             var platesData = document.createElement('div');
@@ -197,26 +200,26 @@
             var iCardButton = document.createElement('i');
             iCardButton.classList.add('fas');
             iCardButton.classList.add('fa-shopping-basket');
-            aCardButton.append(iCardButton);  
+            aCardButton.append(iCardButton);
             pPlatesDescription.innerHTML = plate.description;
             h4PlatesData.innerHTML = plate.name;
             pPlatesData.innerHTML = '$' + plate.price;
             }
 
-           
+
             var idPlatesFilter = [];
             for(var plate of platesFilter){
-                idPlatesFilter.push(plate.id); 
-            }                
-                      
+                idPlatesFilter.push(plate.id);
+            }
+
             var ingredientsFilter = await fetchIngredients(idPlatesFilter);
-            
+
 
             var percentageWidthIngredient = (100 * (ingredientsFilter.length - idIngredientsSelected.length)) / ingredientsAll.length;
             var detailIngredients = document.querySelector(".detail__ingredients");
             var percentageWidthPlates = (100 * platesFilter.length) / platesAll.length;
             var detailPlates = document.querySelector(".detail__plates");
-            
+
             if(idIngredientsSelected.length === 0) {
                 lineIngredients.style.width = percentageWidthIngredient + '%';
                 detailIngredients.innerHTML = `Podés elegir ${ingredientsAll.length} de nuestros ${ingredientsAll.length} ingredientes`;
@@ -229,9 +232,9 @@
                 detailIngredients.innerHTML = `Podés elegir ${ingredientsSelectable} de nuestros ${ingredientsAll.length} ingredientes`;
                 linePlates.style.width = percentageWidthPlates + '%';
                 detailPlates.innerHTML = `Podés elegir ${platesFilter.length} de ${platesAll.length} platos`;
-                
+
             }
-            
+
             var buttonsIngredients = document.querySelectorAll('.container__ingredients button');
             for(var buttonIngredient of buttonsIngredients) {
                 buttonIngredient.remove();
@@ -253,50 +256,50 @@
                     imgButtonIngredient.setAttribute('src', '/storage/' + ingredient.image);
                     imgButtonIngredient.classList.add('button__img');
                     buttonIngredient.append(spanButtonIngredient);
-                    buttonIngredient.append(imgButtonIngredient); 
+                    buttonIngredient.append(imgButtonIngredient);
                     buttonIngredient.append(pButtonIngredient);
                     buttonIngredient.append(iButtonIngredient);
-                    spanButtonIngredient.innerHTML = ingredient.name;         
+                    spanButtonIngredient.innerHTML = ingredient.name;
                     pButtonIngredient.innerHTML = 'Agregar';
                     iButtonIngredient.classList.add('fas');
-                    iButtonIngredient.classList.add('fa-minus-circle');                        
-                }   
+                    iButtonIngredient.classList.add('fa-minus-circle');
+                }
             }
 
         }
 
-        async function fetchPlatesAll() {           
+        async function fetchPlatesAll() {
         var response = await fetch('/api/plates', {
         })
         var plates =  await response.json();
         var p = plates;
-        return p;            
+        return p;
         }
-        
-        async function fetchIngredientsAll() {           
+
+        async function fetchIngredientsAll() {
         var response = await fetch('/api/ingredientsAll', {
         })
         var ingredients =  await response.json();
         var i = ingredients;
-        return i;            
+        return i;
         }
 
-        async function fetchPlates(idIngredientsSelected) {           
+        async function fetchPlates(idIngredientsSelected) {
         var idIngredients = idIngredientsSelected.join(',');
         var response = await fetch('/api/products?ingredientsId=' + idIngredients, {
         })
         var platesFilter =  await response.json();
         var p = platesFilter;
-        return p;            
+        return p;
         }
 
-        async function fetchIngredients(idPlatesFilter) {           
+        async function fetchIngredients(idPlatesFilter) {
         var idPlates = idPlatesFilter.join(',');
         var response = await fetch('/api/ingredients?platesId=' + idPlates, {
         })
         var ingredientsFilter =  await response.json();
         var i = ingredientsFilter;
-        return i;            
+        return i;
         }
 
         /*
@@ -309,7 +312,7 @@
             })
             .then(function(platesFilter) {
                 var p = platesFilter;
-                console.log(p); 
+                console.log(p);
                 return p;
             })
             .catch(function(error) {
@@ -322,7 +325,7 @@
 
 
 
-        
+
 
     </script>
 </html>

@@ -14,8 +14,8 @@ window.onload = function() {
             nav.classList.remove('nav1');
             nav.className = ('nav2');
             nav.style.transition = '.5s';
-            
-        } 
+
+        }
     }
 
     window.addEventListener('scroll', function(){
@@ -25,7 +25,7 @@ window.onload = function() {
     var cardIngredients = document.getElementsByClassName('card__ingredients');
     /*
     var muestra;
-    
+
     var tope;//
     var restult;// = floor(cardIngredients.length / tope);
     var resto;// = cardIngredients.length % tope;
@@ -33,7 +33,7 @@ window.onload = function() {
     var eleArr=[];
     var outerArray=[];
     tope=12;
-    
+
     /*for(var i = 0; i < cardIngredients.length; i++) {
         eleArr.push(cardIngredients[i]);
     }
@@ -53,10 +53,10 @@ window.onload = function() {
         }
         outerArray.push(eleArr.slice(j));
     }
-    
+
     index = outerArray.length;*/
 
-  
+
     /*var idIngredients = [];
     for(ingredient of fetchElement) {
         var id = ingredient.getAttribute('id');
@@ -67,7 +67,10 @@ window.onload = function() {
 
 
 
-
-
 }
+
+
+
+
+
 
