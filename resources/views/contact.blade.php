@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('main')
-<main class="contact">
-	<div>
+<main>
+	<div class="contact">
 		<h1 class="contact__title">Contactanos</h2>
 	</div>
 	<div class="background_contact">

@@ -75,8 +75,8 @@
             <div class="footer-body">
                 <div class="brand-footer">
                     <img src="/image/randfood.png" alt="logo-footer">
-                    <p>Av. Callao 335, CABA, Argentina.</p>
-                    <p>Teléfono: 0800 – 123 456 78</p>
+                    <p>Av. Callao 506, CABA, Argentina.</p>
+                    <p>Teléfono: 11 50685947</p>
                     <p>Email: info@randfood.com</p>
                     <div class="social-footer">
                     <a href="www.google.com"><img src="/image/facebook.png" alt=""></a>
@@ -93,13 +93,15 @@
                         <li><a href="/faqs" id="link-us" class="btn-header">Faqs</a></li>
                         <li><a href="/contact" id="link-contact" class="btn-header">Contacto</a></li>
                     </ul>
+                    @auth
                     <ul>
                         <h3 class="Links">Navegación</h3>
-                        <li><a href="/index" id="link-home" class="btn-header">Mi cuenta</a></li>
-                        <li><a href="/products" id="link-shop" class="btn-header">Carrito</a></li>
-                        <li><a href="/faqs" id="link-us" class="btn-header">Ofertas</a></li>
-                        <li><a href="/contact" id="link-contact" class="btn-header">Garantía</a></li>
+                        <li><a href="/cart" id="link-home" class="btn-header">Carrito</a></li>
+                        <li><a href="/home" id="link-us" class="btn-header">Mi Cuenta</a></li>
+                        <li><a href="/home#myData" id="link-shop" class="btn-header">Mis Datos</a></li>
+                        <li><a href="/home#points" id="link-contact" class="btn-header">Mis puntos</a></li>
                     </ul>
+                    @endauth
                 </div>
                 <div class="newsletter-footer">
                     <h3 class="Newsletter">Suscribete al newsletter</h3>
@@ -318,14 +320,29 @@
             return i;            
         }
 
+        async function removePlate(idPlate) {
+            var removePlate = await fetchRemovePlate(idPlate);
+            if(removePlate) {
+                var containerPlateRemove = document.getElementById('plateCartRemove[' + idPlate + ']');
+                containerPlateRemove.remove();
+                var container = document.querySelector('.container_buy_cart');
+                var p = document.createElement('p');
+                p.classList.add('empty_cart');
+                p.innerHTML = 'Aun no has seleccionado ningún plato';
+                container.append(p);
+            }
+        }
+
         async function fetchRemovePlate(idPlate) {
             var response = await fetch('/api/removePlate?plateId=' + idPlate, {
             })
-            var plateDeleted =  await response.json();
-            return plateDeleted;            
+            var resultado =  await response.json();
+            return resultado;         
         }
 
         
         
     </script>
 </html>
+
+

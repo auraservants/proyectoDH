@@ -106,3 +106,6 @@ button:focus, input:focus {
     padding: 5px 13px;
     font-size: 19px;
 }
+input {
+    font-family: "Montserrat", sans-serif;
+}

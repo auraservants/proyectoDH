@@ -71,9 +71,7 @@ Route::get('checkout', function(){
     return view('checkout');
 });
 
-Route::get('order-received', function(){
-    return view('order-received');
-});
+Route::get('order-received', 'OrdersController@orderReceived');
 
 Route::get('/api/removePlate', 'OrdersController@removePlate');
 

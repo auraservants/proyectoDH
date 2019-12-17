@@ -50,14 +50,24 @@ class OrdersController extends Controller
     }
     public function removePlate(Request $req){
         $idPlate = $req->get('plateId');
-        $plate = Plate::find($idPlate);
-        foreach($plate->orders as $order) {
-            
+        $orders = Order::where('user_id', '=', Auth::user()->id)->get();
+
+        foreach($orders as $order){
+            $plate = $order->plates()->where('plate_id', '=', $idPlate)->get();
+            if(count($plate) !== 0) {
+                $orderRemove = $order;   
+            }
         }
-        $plate->orders()->detach($idPlate);
+        $orderRemove->plates()->detach();
+        $orderRemove->delete();
+        return json_encode(true);  
+            
     }
 
-
-
+    public function orderReceived() {
+        $orders = Order::where('user_id', '=', Auth::user()->id)->get();
+        $vac = compact('orders');
+        return view('order-received', $vac);
+    }
 }
 

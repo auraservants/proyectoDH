@@ -29,16 +29,25 @@
                 @foreach($plates as $p)
                 @foreach($p as $plate)
                 <?php $precioTotal += $plate->price?>
-                <div class="description_cart">
+                <div class="description_cart" id="plateCartRemove[{{$plate->id}}]">
                     <div class="img_products"><img src="/storage/{{ $plate->image }}" alt="product"></div>
                     <p class="detail_products">{{$plate->name}}</p>
                     <p class="amount_products">$ {{$plate->price}}</p>
-                    <button type="submit" class="remove_products" onclick="fetchRemovePlate({{$plate->id}})"><img src="image/cart/remove-cart.png" alt=""></button>
+                    <button type="submit" class="remove_products" onclick="removePlate({{$plate->id}})"><img src="image/cart/remove-cart.png" alt=""></button>
                 </div>
                 @endforeach
                 @endforeach
             @else
-                <p class="empty_cart" >Aun no has seleccionado ningún plato</p>
+                <script>
+                    if(document.querySelector('.description_cart') !== true && document.querySelector('.empty_cart') !== true){
+                        var container = document.querySelector('.container_buy_cart');
+                        var p = document.createElement('p');
+                        p.classList.add('empty_cart');
+                        p.innerHTML = 'Aun no has seleccionado ningún plato';
+                        container.append(p);
+                    }
+                </script>
+                
             @endif
         </section>
 

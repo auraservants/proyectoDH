@@ -16,15 +16,15 @@
 
       <div class="ingredients_admin">
         <h2>Ingredientes</h2>
-        <table class="nth detail_ingredients_admin" cellspacing="0">
-          <tr>
+        <table class="nth detail_ingredients_admin detail_ingredients" cellspacing="0">
+          <tr class="categories_detail_products">
             <th>Nombre</th>
             <th>Imagen</th>
             <th>Stock</th>
             <th>Categoria</th>
           </tr>
           @foreach ($ingredients as $ingredient)
-            <tr>
+            <tr class="description_detail_products">
               <td class="ingredients_title"><a href="/admin-edit-ingredients/{{$ingredient->id}}">{{ $ingredient->name }}<i class="fas fa-wrench"></i></a></td>
               <td class="img-products"><img src="/storage/{{ $ingredient->image }}" alt=""></td>
               <td>{{ $ingredient->stock }}</td>

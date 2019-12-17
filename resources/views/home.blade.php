@@ -12,7 +12,7 @@
       <div class="profile__nav">
         <ul>
           <li class="user-nav__items"><a href="#myData"> Mis Datos</a></li>
-          <li class="user-nav__items"><a href="#shopping"> Mis Pedidos</a></li>
+          <!--<li class="user-nav__items"><a href="#shopping"> Mis Pedidos</a></li>-->
           <li class="user-nav__items"><a href="#points"> Puntos</a></li>
         </ul>
         <form action="profile" method="post">
@@ -221,7 +221,7 @@
       </div>
 
  
-      <div class="profile__categories selection__shopping" id="shopping">
+      <!--<div class="profile__categories selection__shopping" id="shopping">
         <h2>Pedidos</h2>
         <div class="detail_total_shopping">
             <div class="description_shopping">
@@ -249,7 +249,7 @@
                 <p class="remove_products_orders"><a href="#">+</a><span>Volver a comprar</span></p>
             </div>
         </div>
-      </div>
+      </div>-->
 
       <div class="profile__categories selection__points" id="points">
         <h2>Puntos</h2>

@@ -16,8 +16,8 @@
 
       <div class="ingredients_admin">
         <h2>Platos</h2>
-        <table class="nth detail_ingredients_admin detail_plates" cellspacing="0">
-          <tr>
+        <table class="nth detail_ingredients_admin" cellspacing="0">
+          <tr class="categories_detail_products">
             <th>Nombre</th>
             <th>Precio</th>
             <th>Imagen</th>
@@ -26,7 +26,7 @@
             <th>Ingredientes</th>
           </tr>
           @foreach ($plates as $plate)
-            <tr>
+            <tr class="description_detail_products">
               <td class="ingredients_title"><a href="admin-edit-plates/{{$plate->id}}">{{ $plate->name }}<i class="fas fa-wrench"></i></a></td>
               <td>{{ $plate->price }}</td>
               <td class="img-products"><img src="/storage/{{ $plate->image }}" alt=""></td>
