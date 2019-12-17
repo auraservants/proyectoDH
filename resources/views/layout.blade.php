@@ -127,6 +127,7 @@
     <script src="/js/jquery.js"></script>
     <script src="/js/main.js"></script>
     <script>
+
         var idIngredientsSelected = [];
         async function myFunction(id) {
             
@@ -197,6 +198,7 @@
                 cardButton.innerHTML = 'Agregar ';
                 cardButton.setAttribute('type', 'submit');
                 cardButton.setAttribute('onclick', 'selectPlate(' + plate.id + ')');
+                
                 var iCardButton = document.createElement('i');
                 iCardButton.classList.add('fas');
                 iCardButton.classList.add('fa-shopping-basket');
@@ -268,19 +270,17 @@
         }
 
         async function selectPlate(id) {
-            var addPlate = await fetchSelectPlate(id);
-            if(addPlate) {
-                swal ( "Seleccionaste un plato!" , "Dirigite al carrito para ver tus platos seleccionados" , "success" );
-            } else {
-                alert('Hubo un error');
-            }
-        }
-
-        async function fetchSelectPlate(id) {
             var response = await fetch('/api/addPlateToCart?plateId=' + id, {
             })
             var resultado =  await response.json();
-            return resultado;
+            console.log(resultado)
+            if(resultado) {
+                swal ( "Seleccionaste un plato!" , "Dirigite al carrito para ver tus platos seleccionados" , "success" )
+                .then(function(){
+                    document.location.href = "/cart";});
+            } else {
+                toast.error('Disculpe las moletias', 'Hubo un error');
+            }
         }
 
         async function fetchPlatesAll() {           
@@ -324,31 +324,7 @@
             return plateDeleted;            
         }
 
-        var aConfirmPurcharse = document.querySelector('.btn_confirmPurcharse');
-        if(aConfirmPurcharse) {
-            aConfirmPurcharse.onclick = function(event) {
-                event.preventDefault();
-                var inputAddressCart = document.querySelectorAll('.inputAddressCart');
-                if(inputAddressCart.length === 0) {
-                    swal ( "Aun no tienes ninguna dirección" , "Redirigete a tus datos para agregar una nueva" , "warning" )
-                        .then(function(){
-                        document.location.href = "/home#myData";
-                    });
-                } else {
-                    for(var input of inputAddressCart) {
-                        if(input.checked) {
-                            swal ( "Finalizaste tu compra con exito!" , "Procede a realizar el pago" , "success" )
-                                .then(function(){
-                                document.location.href = "/checkout";
-                            });
-                        } else {
-                            swal ( "No seleccionaste ninguna dirección" , "Elige alguna para finalizar tu compra" , "warning" );
-                        }
-                    }
-                }
-                
-            }              
-        }    
+        
         
     </script>
 </html>

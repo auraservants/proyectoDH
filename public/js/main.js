@@ -22,7 +22,7 @@ window.onload = function() {
         menus();
     });
 
-    var cardIngredients = document.getElementsByClassName('card__ingredients');
+
     
     toastr.options = {
     "closeButton": true,
@@ -73,17 +73,23 @@ window.onload = function() {
             var card = document.getElementById('cardCheckout');
             var status = [];
             if(name.value === '') {
-                toastr.warning("Por favor complete su nombre", "Nombre vacío" );
+                toastr.warning("Por favor complete su nombre", "Nombre vacío",{onclick: function() {
+                    name.focus();
+                }});
                 status.push(false);
             }
             if(email.value === '') {
-                toastr.warning("Por favor complete su email", "Email vacío");
+                toastr.warning("Por favor complete su email", "Email vacío",{onclick: function() {
+                    email.focus();
+                }});
                 status.push(false);
 
             } else {
                 var regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 if(!regexEmail.test(email.value)) {
-                    toastr.warning("Por favor ingrese un email válido", "Email inválido");                        
+                    toastr.warning("Por favor ingrese un email válido", "Email inválido",{onclick: function() {
+                        email.focus();
+                    }});                        
                     status.push(false);
                     
                 }
@@ -94,17 +100,23 @@ window.onload = function() {
                 var numberCard = document.getElementById('numberCardCheckout');
                 var cvvCard = document.getElementById('cvvCardCheckout');
                 if(nameCard.value === '') {
-                    toastr.warning("Por favor complete el nombre en la tarjeta","Nombre tarjeta vacío");
+                    toastr.warning("Por favor complete el nombre en la tarjeta","Nombre tarjeta vacío",{onclick: function() {
+                        nameCard.focus();
+                    }});
                     status.push(false);
                     
                 } 
                 if(numberCard.value === '') {
-                    toastr.warning("Por favor complete el número de la tarjeta", "Número tarjeta vacío");
+                    toastr.warning("Por favor complete el número de la tarjeta", "Número tarjeta vacío",{onclick: function() {
+                        numberCard.focus();
+                    }});
                     status.push(false);
                     
                 }
                 if(cvvCard.value === '') {
-                    toastr.warning("Por favor complete el CVV de la tarjeta", "CVV vacío");
+                    toastr.warning("Por favor complete el CVV de la tarjeta", "CVV vacío",{onclick: function() {
+                        cvvCard.focus();
+                    }});
                     status.push(false);
                     
                 }
@@ -120,7 +132,37 @@ window.onload = function() {
     }
 
 
-    
+    var emptyCart = document.querySelector('.empty_cart');
+
+    var aConfirmPurcharse = document.querySelector('.btn_confirmPurcharse');
+    if(aConfirmPurcharse) {
+        aConfirmPurcharse.onclick = function(event) {
+            event.preventDefault();
+            if(!emptyCart) {
+                var inputAddressCart = document.querySelectorAll('.inputAddressCart');
+                if(inputAddressCart.length === 0) {
+                    swal ( "Aun no tienes ninguna dirección" , "Redirigete a tus datos para agregar una nueva" , "warning" )
+                    .then(function(){
+                        document.location.href = "/home#myData";
+                    });
+                } else {
+                    for(var input of inputAddressCart) {
+                        if(input.checked) {
+                            swal ( "Finalizaste tu compra con exito!" , "Procede a realizar el pago" , "success" )
+                            .then(function(){
+                                document.location.href = "/checkout";
+                            });
+                        } else {
+                            swal ( "No seleccionaste ninguna dirección" , "Elige alguna para finalizar tu compra" , "warning" );
+                        }
+                    }
+                }
+            } else {
+                toastr.warning("Dirigete al shop para iniciar tu compra", "No tienes ningún plato seleccionado");
+            }
+            
+        }              
+    }    
 
 
 }

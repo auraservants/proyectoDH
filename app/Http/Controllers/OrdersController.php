@@ -33,15 +33,20 @@ class OrdersController extends Controller
     }
 
     public function addPlateToCart(Request $req){
-        $idPlate = $req->get('plateId');
-        $plate = Plate::find($idPlate);
-        $order = new Order();
-        $order->user_id = Auth::user()->id;
-        $order->price = intval($plate->price);
-        $order->save();
-        $order->plates()->attach($idPlate);  
+        try {
 
-        return json_encode(true); 
+            $idPlate = $req->get('plateId');
+            $plate = Plate::find($idPlate);
+            $order = new Order();
+            $order->user_id = Auth::user()->id;
+            $order->price = intval($plate->price);
+            $order->save();
+            $order->plates()->attach($idPlate);  
+            return json_encode(true); 
+        } catch(ExceptionDTO $e) {
+            return json_encode(false);
+            
+        }
     }
     public function removePlate(Request $req){
         $idPlate = $req->get('plateId');
