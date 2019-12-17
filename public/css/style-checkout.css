@@ -175,3 +175,7 @@ border: 2px solid #e7e7e7;
 .users-btn:hover {
   background-color: rgba(245, 130, 32, 1);
 }
+
+.cards__data {
+  display:none;
+}
