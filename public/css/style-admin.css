@@ -38,7 +38,7 @@
     padding: 15px;
 }
 .detail_ingredients_admin td {
-    padding: 10px;    
+    padding: 0 10px;   
     border-left: solid 0.5px #fff;
 }
 .detail_ingredients_admin td:first-child {

@@ -57,7 +57,7 @@
             @if(Auth::user()->addresses)
                 @forelse(Auth::user()->addresses as $address)
                 <div>
-                    <input type="radio" name="address[]" id="{{$address->id}}" value="{{$address->id}}">
+                    <input type="radio" class="inputAddressCart" name="address[]" id="{{$address->id}}" value="{{$address->id}}">
                     <label for="{{$address->id}}">{{$address->fullAddress()}}</label>
                 </div>
                 @endforeach
@@ -75,9 +75,10 @@
         </div>
 
         <div class="btn_cart">
-            <a href="/checkout" class="btn btn--orange btn--large">Finalizar compra</a>
+            <a href="" class="btn_confirmPurcharse btn btn--orange btn--large">Finalizar compra</a>
 		</div>
 
+        
     </section>
 
 </main>

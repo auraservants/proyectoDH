@@ -30,14 +30,14 @@
             <tr>
               <td>{{ $order->user->name }}</td>
               <td>{{ $order->date }}</td>
-              <td>{{ $order->address->fullAddress() }}</td>
+              <td>@if($order->address){{ $order->address->fullAddress() }}@endif</td>
               <td>
                 @foreach($order->plates as $order->plate)
                   <li>{{ $order->plate->name }}</li>
                 @endforeach
               </td>
               <td>${{ $order->price }}</td>
-              <td>{{ $order->state->description }}</td>
+              <td>@if($order->state){{ $order->state->description }}@endif</td>
               <td>
                 <input type="checkbox">
                 <label for="">Enviado</label>

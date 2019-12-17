@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/3233ba318b.js" crossorigin="anonymous"></script>
-        <script src ="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src ="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
         <link rel="stylesheet" href="/css/style.css">
         <title>Document</title>
     </head>
@@ -15,16 +15,18 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="/"><img src="/image/randfood.png" alt="randfood"></a>
-                </div>
-                <button class="menu-movile" type="submit"><i class="fas fa-bars"></i></button>
+                </div>   
+                <button class="menu-movile" type="submit"><i class="fas fa-bars"></i></button>  
                 <ul class="header-nav-links">
                     <li><a href="/" id="link-home" class="btn-header">Inicio</a></li>
                     <li><a href="/products" id="link-shop" class="btn-header">Shop</a></li>
                     <li><a href="/faqs" id="link-us" class="btn-header">Faqs</a></li>
                     <li><a href="/contact" id="link-contact" class="btn-header">Contacto</a></li>
                 </ul>
-                <ul class="header-nav-options">
+                <ul class="header-nav-options">    
+                    @auth
                     <li><a href="/cart" id="link-cart" class="btn-header"><i class="fas fa-shopping-basket"></i> <span>Carrito</span> </a></li>
+                    @endauth
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -38,7 +40,7 @@
                         <li class="nav-item">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="home" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+                            </a>                                
                         </li>
                         <li class="nav-item">
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -52,10 +54,10 @@
                             </form>
                         </li>
                         @if(Auth::user()->administrator == 1)
-                            <li><a href="/admin-orders"><i class="fas fa-cog"></i></a></li>
+                            <li><a href="/admin-ingredients"><i class="fas fa-cog"></i></a></li>
                         @endif
-                    @endguest
-                </ul>
+                    @endguest                    
+                </ul>           
             </div>
         </nav>
     </header>
@@ -76,10 +78,10 @@
                     <a href="www.google.com"><img src="/image/twitter.png" alt=""></a>
                     <a href="www.google.com"><img src="/image/whatsapp.png" alt=""></a>
                     </div>
-                </div>
+                </div> 
                 <div class="links-footer">
                     <ul>
-                        <h3 class="Links">Navegación</h3>
+                        <h3 class="Links">Navegación</h3>	
                         <li><a href="/" id="link-home" class="btn-header">Inicio</a></li>
                         <li><a href="/products" id="link-shop" class="btn-header">Shop</a></li>
                         <li><a href="/faqs" id="link-us" class="btn-header">Faqs</a></li>
@@ -112,105 +114,134 @@
             <div class="payment-logos">
                 <img src="/image/payment.png" alt="">
             </div>
-            </div>
+            </div> 
         </div>
     </footer>
 
-
     <script src="/js/jquery.js"></script>
     <script src="/js/main.js"></script>
-
-
     <script>
         var idIngredientsSelected = [];
-
         async function myFunction(id) {
+            
+            var pNotSelectedIngredients = document.querySelector('.not_selected_Ingredients');
+                if(pNotSelectedIngredients) {
+                    pNotSelectedIngredients.remove();        
+                }
+
             var btnIngredient = document.getElementById(id);
             var containerIngredients = document.querySelector('.container__ingredients');
             btnIngredient.classList.toggle('selected');
-            var containerIngredientsSelected = document.querySelector('.ingredients__selected');
-            var containerIngred = document.querySelector('.container__ingred');
-            var id = btnIngredient.getAttribute('id');
+            var containerIngredientsSelected = document.querySelector('.ingredients__selected');    
+            var containerIngred = document.querySelector('.container__ingred'); 
+            var id = btnIngredient.getAttribute('id');  
             if(btnIngredient.classList.contains('selected')){
                 containerIngredientsSelected.append(btnIngredient);
                 idIngredientsSelected.push(id);
             } else {
-                containerIngredients.append(btnIngredient);
-                for(var i = 0; i < idIngredientsSelected.length; i++){
+                containerIngredients.append(btnIngredient);       
+                for(var i = 0; i < idIngredientsSelected.length; i++){ 
                     if (idIngredientsSelected[i] === id) {
-                        idIngredientsSelected.splice(i, 1);
+                        idIngredientsSelected.splice(i, 1); 
                     }
                 }
             }
-
             var fetches = await Promise.all([fetchIngredientsAll(), fetchPlatesAll()]);
             var ingredientsAll = fetches[0];//await fetchIngredientsAll();
             var lineIngredients = document.querySelector('.line__ingredients');
-
             var platesAll = fetches[1]; //await fetchPlatesAll();
             var linePlates = document.querySelector('.line__plates');
             var platesFilter = '';
             if(idIngredientsSelected.length === 0) {
-                /*var pNotSelected = document.createElement('p');
-                pNotSelected.classList.add('not__selected');
-                containerIngredientsSelected.append(pNotSelected);
-                pNotSelected.innerHTML = '- Aun no ha seleccionado ningún ingrediente -'; */
                 platesFilter = await fetchPlatesAll();
             } else {
-               /* var pNotSelected = document.querySelector('.not__selected')
-                pNotSelected.remove();*/
                 platesFilter = await fetchPlates(idIngredientsSelected);
             }
-
             var containerCardPlates = document.querySelector('.container__card__plates');
-
+            
             var cards = document.querySelectorAll('.card__plates');
             for(var card of cards) {
                 card.remove();
             }
-
             for(var plate of platesFilter) {
+                var cardPlates = document.createElement('div');
+                cardPlates.classList.add('card__plates');
+                containerCardPlates.append(cardPlates);
+                var platesDescription = document.createElement('div');
+                platesDescription.classList.add('plates__description');
+                cardPlates.append(platesDescription);
+                var pPlatesDescription = document.createElement('p');
+                platesDescription.append(pPlatesDescription);
+                pPlatesDescription.innerHTML = plate.description;
+                var platesImage = document.createElement('div');
+                platesImage.classList.add('plates__image');
+                platesDescription.append(platesImage);
+                var platesData = document.createElement('div');
+                platesData.classList.add('plates__data');
+                cardPlates.append(platesData);
+                var h4PlatesData = document.createElement('h4');
+                h4PlatesData.innerHTML = plate.name;
+                platesData.append(h4PlatesData);
+                var pPlatesData = document.createElement('p');
+                pPlatesData.innerHTML = '$' + plate.price;
+                platesData.append(pPlatesData);
+                var cardButton = document.createElement('button');
+                cardButton.classList.add('cart-button');
+                platesData.append(cardButton);
+                cardButton.innerHTML = 'Agregar ';
+                cardButton.setAttribute('type', 'submit');
+                cardButton.setAttribute('onclick', 'selectPlate(' + plate.id + ')');
+                var iCardButton = document.createElement('i');
+                iCardButton.classList.add('fas');
+                iCardButton.classList.add('fa-shopping-basket');
+                cardButton.append(iCardButton);  
 
+                
+                
+            }
+           
             var idPlatesFilter = [];
             for(var plate of platesFilter){
-                idPlatesFilter.push(plate.id);
-            }
-
+                idPlatesFilter.push(plate.id); 
+            }                
+                      
             var ingredientsFilter = await fetchIngredients(idPlatesFilter);
-
-
+            
             var percentageWidthIngredient = (100 * (ingredientsFilter.length - idIngredientsSelected.length)) / ingredientsAll.length;
             var detailIngredients = document.querySelector(".detail__ingredients");
             var percentageWidthPlates = (100 * platesFilter.length) / platesAll.length;
             var detailPlates = document.querySelector(".detail__plates");
-
+            
             if(idIngredientsSelected.length === 0) {
+                var pNotSelectedIngredients = document.createElement('p');
+                pNotSelectedIngredients.classList.add('not_selected_Ingredients');
+                containerIngredientsSelected.append(pNotSelectedIngredients);
+                pNotSelectedIngredients.innerHTML = 'Aun no has seleccionado ningún ingrediente';
+
                 lineIngredients.style.width = percentageWidthIngredient + '%';
                 detailIngredients.innerHTML = `Podés elegir ${ingredientsAll.length} de nuestros ${ingredientsAll.length} ingredientes`;
                 linePlates.style.width = percentageWidthPlates + '%';
                 detailPlates.innerHTML = `Podés elegir ${platesAll.length} de ${platesAll.length} platos`;
-
             } else {
                 lineIngredients.style.width = percentageWidthIngredient + '%';
                 var ingredientsSelectable = ingredientsFilter.length - idIngredientsSelected.length;
                 detailIngredients.innerHTML = `Podés elegir ${ingredientsSelectable} de nuestros ${ingredientsAll.length} ingredientes`;
                 linePlates.style.width = percentageWidthPlates + '%';
                 detailPlates.innerHTML = `Podés elegir ${platesFilter.length} de ${platesAll.length} platos`;
-
+                
             }
-
+            
             var buttonsIngredients = document.querySelectorAll('.container__ingredients button');
             for(var buttonIngredient of buttonsIngredients) {
                 buttonIngredient.remove();
             }
-
             for(var ingredient of ingredientsFilter) {
                 if(!idIngredientsSelected.includes(ingredient.id.toString())) {
+                    var buttonIngredient = document.createElement('button');
                     var spanButtonIngredient = document.createElement('span');
                     var imgButtonIngredient = document.createElement('img');
                     var pButtonIngredient = document.createElement('p');
                     var iButtonIngredient = document.createElement('i');
-
                     containerIngredients.append(buttonIngredient);
                     buttonIngredient.classList.add('button__ingredient');
                     buttonIngredient.setAttribute('type', 'submit');
@@ -219,16 +250,15 @@
                     imgButtonIngredient.setAttribute('src', '/storage/' + ingredient.image);
                     imgButtonIngredient.classList.add('button__img');
                     buttonIngredient.append(spanButtonIngredient);
-                    buttonIngredient.append(imgButtonIngredient);
+                    buttonIngredient.append(imgButtonIngredient); 
                     buttonIngredient.append(pButtonIngredient);
                     buttonIngredient.append(iButtonIngredient);
-                    spanButtonIngredient.innerHTML = ingredient.name;
+                    spanButtonIngredient.innerHTML = ingredient.name;         
                     pButtonIngredient.innerHTML = 'Agregar';
                     iButtonIngredient.classList.add('fas');
-                    iButtonIngredient.classList.add('fa-minus-circle');
-                }
+                    iButtonIngredient.classList.add('fa-minus-circle');                        
+                }   
             }
-
         }
 
         async function selectPlate(id) {
@@ -238,65 +268,129 @@
             } else {
                 alert('Hubo un error');
             }
-
         }
-
 
         async function fetchSelectPlate(id) {
-        var response = await fetch('/api/addPlateToCart?plateId=' + id, {
-        })
-        var resultado =  await response.json();
-        return resultado;
+            var response = await fetch('/api/addPlateToCart?plateId=' + id, {
+            })
+            var resultado =  await response.json();
+            return resultado;
         }
 
-        async function fetchPlatesAll() {
-        var response = await fetch('/api/plates', {
-        })
-        var plates =  await response.json();
-        var p = plates;
-        return p;
+        async function fetchPlatesAll() {           
+            var response = await fetch('/api/plates', {
+            })
+            var plates =  await response.json();
+            var p = plates;
+            return p;            
+        }
+        
+        async function fetchIngredientsAll() {           
+            var response = await fetch('/api/ingredientsAll', {
+            })
+            var ingredients =  await response.json();
+            var i = ingredients;
+            return i;            
         }
 
-        async function fetchIngredientsAll() {
-        var response = await fetch('/api/ingredientsAll', {
-        })
-        var ingredients =  await response.json();
-        var i = ingredients;
-        return i;
+        async function fetchPlates(idIngredientsSelected) {           
+            var idIngredients = idIngredientsSelected.join(',');
+            var response = await fetch('/api/products?ingredientsId=' + idIngredients, {
+            })
+            var platesFilter =  await response.json();
+            var p = platesFilter;
+            return p;            
         }
 
-        async function fetchPlates(idIngredientsSelected) {
-        var idIngredients = idIngredientsSelected.join(',');
-        var response = await fetch('/api/products?ingredientsId=' + idIngredients, {
-        })
-        var platesFilter =  await response.json();
-        var p = platesFilter;
-        return p;
-        }
-
-        async function fetchIngredients(idPlatesFilter) {
-        var idPlates = idPlatesFilter.join(',');
-        var response = await fetch('/api/ingredients?platesId=' + idPlates, {
-        })
-        var ingredientsFilter =  await response.json();
-        var i = ingredientsFilter;
-        return i;
+        async function fetchIngredients(idPlatesFilter) {           
+            var idPlates = idPlatesFilter.join(',');
+            var response = await fetch('/api/ingredients?platesId=' + idPlates, {
+            })
+            var ingredientsFilter =  await response.json();
+            var i = ingredientsFilter;
+            return i;            
         }
 
         async function fetchRemovePlate(idPlate) {
             var response = await fetch('/api/removePlate?plateId=' + idPlate, {
             })
-
-        var plateDeleted =  await response.json();
-
-        return plateDeleted;
+            var plateDeleted =  await response.json();
+            return plateDeleted;            
         }
 
+        var aConfirmPurcharse = document.querySelector('.btn_confirmPurcharse');
+        if(aConfirmPurcharse) {
+            aConfirmPurcharse.onclick = function(event) {
+                event.preventDefault();
+                var inputAddressCart = document.querySelectorAll('.inputAddressCart');
+                if(inputAddressCart.length === 0) {
+                    swal ( "Aun no tienes ninguna dirección" , "Redirigete a tus datos para agregar una nueva" , "warning" )
+                        .then(function(){
+                        document.location.href = "/home#myData";
+                    });
+                } else {
+                    for(var input of inputAddressCart) {
+                        if(input.checked) {
+                            swal ( "Finalizaste tu compra con exito!" , "Procede a realizar el pago" , "success" )
+                                .then(function(){
+                                document.location.href = "/checkout";
+                            });
+                        } else {
+                            swal ( "No seleccionaste ninguna dirección" , "Elige alguna para finalizar tu compra" , "warning" );
+                        }
+                    }
+                }
+                
+            }              
+        }
+                
+        var aFinishPurchase = document.querySelector('.btn_finishPurchase');
+        if(aFinishPurchase) {
+            aFinishPurchase.onclick = function(event) {
+                event.preventDefault();
+                console.log('si');
+                var name = document.getElementById('nameCheckout');
+                var email = document.getElementById('emailCheckout');
+                var cash = document.getElementById('cashCheckout');
+                var card = document.getElementById('cardCheckout');
+                if(name === '') {
+                    swal("El campo nombre esta vacio");
+                }
+                if(email === '') {
+                    swal("El campo email esta vacio");
+                } else {
+                    var regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    if(!regexEmail.test(email)) {
+                        swal("El campo email no es válido");                        
+                    }
+                }
+                if(card.checked) {
+                    var nameCard = document.getElementById('nameCardCheckout');
+                    var numberCard = document.getElementById('numberCardCheckout');
+                    var cvvCard = document.getElementById('cvvCardCheckout');
+                    if(nameCard === '') {
+                        swal("El nombre de tarjeta esta vacio");
+                    } 
+                    if(numberCard === '') {
+                        swal("El número de tarjeta esta vacio");
+                    } else {
 
+                    }
+                    if(cvvCard === '') {
+                        swal("El cvv de tarjeta esta vacio");
+                    } else {
+                        
+                    }
+                }
+                
+                swal ( "Tu compra finalizó con exito!" , "Ahora solo tienes que esperar a que llegue tu pedido" , "success" )
+                .then(function(){
+                    document.location.href = 'order-received';
+                });
+            }              
+        }
 
-
-
-
-
+    
+        
     </script>
 </html>

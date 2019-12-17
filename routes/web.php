@@ -67,7 +67,6 @@ Route::get('/cart', 'OrdersController@cart');
 
 Route::get('/api/addPlateToCart', 'OrdersController@addPlateToCart');
 
-
 Route::get('checkout', function(){
     return view('checkout');
 });
@@ -77,3 +76,5 @@ Route::get('order-received', function(){
 });
 
 Route::get('/api/removePlate', 'OrdersController@removePlate');
+
+

@@ -6,7 +6,7 @@
 
       <div class="nav_admin">
         <ul>
-          <li class="user-nav__items"><a href="/admin-orders">Pedidos</a></li>
+          <!--<li class="user-nav__items"><a href="/admin-orders">Pedidos</a></li>-->
           <li class="user-nav__items"><a href="/admin-ingredients">Ingregientes</a></li>
           <li class="user-nav__items"><a href="/admin-add-ingredients">Agregar ingredientes</a></li>
           <li class="user-nav__items"><a href="/admin-plates">Platos</a></li>

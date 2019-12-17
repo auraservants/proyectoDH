@@ -14,8 +14,7 @@
 	<div class="ingredients__selected__container">
 		<p class="ingredients__selected__title">Ingredientes elegidos:</p>
 		<div class="ingredients__selected">
-			<!--<p class="not__selected">- Aun no ha seleccionado ningún ingrediente -</p>-->
-
+			<p class="not_selected_Ingredients">Aun no has seleccionado ningún ingrediente</p>
 		</div>
 
 	</div>
@@ -93,7 +92,7 @@
 					@foreach($plates as $plate)
 						<div class="card__plates">
 							<div class="plates__description">
-								<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>
+								<p>{{ $plate["description"] }}</p>
 								<div class="plates__image"></div>
 							</div>
 							<div class="plates__data">
@@ -111,13 +110,13 @@
 					@foreach($plates as $plate)
 						<div class="card__plates">
 							<div class="plates__description">
-								<p><i class="fas fa-info-circle"></i>{{ $plate["description"] }}</p>
+								<p>{{ $plate["description"] }}</p>
 								<div class="plates__image"></div>
 							</div>
 							<div class="plates__data">
 								<h4>{{ $plate["name"] }}</h4>
 								<p>$ {{ $plate["price"] }}</p>
-								<button type="submit" class="cart-button" onclick="selectPlate({{$plate->id}})">Agregar<i class="fas fa-shopping-basket"></i></button>
+								<button type="submit" class="cart-button" onclick="selectPlate({{$plate->id}})">Agregar <i class="fas fa-shopping-basket"></i></button>
 							</div>
 						</div>
 					@endforeach

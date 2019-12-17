@@ -50,12 +50,9 @@ class OrdersController extends Controller
             
         }
         $plate->orders()->detach($idPlate);
-        
-        
-
-
     }
-   
+
+
 
 }
 
