@@ -23,48 +23,104 @@ window.onload = function() {
     });
 
     var cardIngredients = document.getElementsByClassName('card__ingredients');
-    /*
-    var muestra;
-
-    var tope;//
-    var restult;// = floor(cardIngredients.length / tope);
-    var resto;// = cardIngredients.length % tope;
-    var index;
-    var eleArr=[];
-    var outerArray=[];
-    tope=12;
-
-    /*for(var i = 0; i < cardIngredients.length; i++) {
-        eleArr.push(cardIngredients[i]);
+    
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
     }
 
-    if(eleArr%tope==0){
-        for(var i = 0; i < eleArr.length;) {
-            eleArr.slice(i, i+1)
-            i+=tope;
+    var cardCheck = document.getElementById('cardCheckout');
+    var cardsData = document.querySelector('.cards__data');
+    var cashCheck = document.getElementById('cashCheckout');
+    var paymentChecks = document.querySelector('.checkout_checks');
+    if(cardCheck){
+
+        if(cardCheck.checked) {
+            cardsData.style.display = 'block';
+        } else if(cashCheck.checked){
+            cardsData.style.display = 'none';
         }
-    } else {
-        result = Math.floor(cardIngredients.length/tope);
-        resto = cardIngredients.length % tope;
-        var j = 0;
-        for(var i = 0; i < result; i++) {
-            outerArray.push(eleArr.slice(j, tope));
-            j+=tope;
-        }
-        outerArray.push(eleArr.slice(j));
+        paymentChecks.addEventListener('click', function() {
+            if(cardCheck.checked) {
+                cardsData.style.display = 'block';
+            } else if(cashCheck.checked){
+                cardsData.style.display = 'none';
+            }
+        });
+    }
+    
+
+    var aFinishPurchase = document.querySelector('.btn_finishPurchase');
+    if(aFinishPurchase) {
+        aFinishPurchase.onclick = function(event) {
+            event.preventDefault();
+            var name = document.getElementById('nameCheckout');
+            var email = document.getElementById('emailCheckout');
+            var cash = document.getElementById('cashCheckout');
+            var card = document.getElementById('cardCheckout');
+            var status = [];
+            if(name.value === '') {
+                toastr.warning("Por favor complete su nombre", "Nombre vacío" );
+                status.push(false);
+            }
+            if(email.value === '') {
+                toastr.warning("Por favor complete su email", "Email vacío");
+                status.push(false);
+
+            } else {
+                var regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if(!regexEmail.test(email.value)) {
+                    toastr.warning("Por favor ingrese un email válido", "Email inválido");                        
+                    status.push(false);
+                    
+                }
+            }
+
+            if(card.checked) {
+                var nameCard = document.getElementById('nameCardCheckout');
+                var numberCard = document.getElementById('numberCardCheckout');
+                var cvvCard = document.getElementById('cvvCardCheckout');
+                if(nameCard.value === '') {
+                    toastr.warning("Por favor complete el nombre en la tarjeta","Nombre tarjeta vacío");
+                    status.push(false);
+                    
+                } 
+                if(numberCard.value === '') {
+                    toastr.warning("Por favor complete el número de la tarjeta", "Número tarjeta vacío");
+                    status.push(false);
+                    
+                }
+                if(cvvCard.value === '') {
+                    toastr.warning("Por favor complete el CVV de la tarjeta", "CVV vacío");
+                    status.push(false);
+                    
+                }
+            }
+            if(status.length == 0){
+
+                swal( "Tu compra finalizó con exito!" , "Ahora solo tienes que esperar a que llegue tu pedido" , "success" )
+                .then(function(){
+                    document.location.href = 'order-received';
+                });
+            }
+        }              
     }
 
-    index = outerArray.length;*/
 
-
-    /*var idIngredients = [];
-    for(ingredient of fetchElement) {
-        var id = ingredient.getAttribute('id');
-        idIngredients.push(id);
-    }
-    console.log(idIngredients);
-        */
-
+    
 
 
 }

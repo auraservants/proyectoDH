@@ -7,6 +7,12 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/3233ba318b.js" crossorigin="anonymous"></script>
         <script src ="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" integrity="sha256-ENFZrbVzylNbgnXx0n3I1g//2WeO47XxoPe0vkp3NC8=" crossorigin="anonymous" />
         <link rel="stylesheet" href="/css/style.css">
         <title>Document</title>
     </head>
@@ -342,55 +348,7 @@
                 }
                 
             }              
-        }
-                
-        var aFinishPurchase = document.querySelector('.btn_finishPurchase');
-        if(aFinishPurchase) {
-            aFinishPurchase.onclick = function(event) {
-                event.preventDefault();
-                console.log('si');
-                var name = document.getElementById('nameCheckout');
-                var email = document.getElementById('emailCheckout');
-                var cash = document.getElementById('cashCheckout');
-                var card = document.getElementById('cardCheckout');
-                if(name === '') {
-                    swal("El campo nombre esta vacio");
-                }
-                if(email === '') {
-                    swal("El campo email esta vacio");
-                } else {
-                    var regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    if(!regexEmail.test(email)) {
-                        swal("El campo email no es válido");                        
-                    }
-                }
-                if(card.checked) {
-                    var nameCard = document.getElementById('nameCardCheckout');
-                    var numberCard = document.getElementById('numberCardCheckout');
-                    var cvvCard = document.getElementById('cvvCardCheckout');
-                    if(nameCard === '') {
-                        swal("El nombre de tarjeta esta vacio");
-                    } 
-                    if(numberCard === '') {
-                        swal("El número de tarjeta esta vacio");
-                    } else {
-
-                    }
-                    if(cvvCard === '') {
-                        swal("El cvv de tarjeta esta vacio");
-                    } else {
-                        
-                    }
-                }
-                
-                swal ( "Tu compra finalizó con exito!" , "Ahora solo tienes que esperar a que llegue tu pedido" , "success" )
-                .then(function(){
-                    document.location.href = 'order-received';
-                });
-            }              
-        }
-
-    
+        }    
         
     </script>
 </html>
