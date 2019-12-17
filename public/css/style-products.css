@@ -281,7 +281,7 @@
 }
 .plates__image {
     height: 100%;
-    background-image: url(../image/productos/plate1.jpg);
+
     background-size: cover;
 }
 .plates__description p {

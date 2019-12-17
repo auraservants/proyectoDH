@@ -175,6 +175,7 @@
                 pPlatesDescription.innerHTML = plate.description;
                 var platesImage = document.createElement('div');
                 platesImage.classList.add('plates__image');
+                platesImage.setAttribute('style', 'background-image: url(/storage/' + plate.image + ')');
                 platesDescription.append(platesImage);
                 var platesData = document.createElement('div');
                 platesData.classList.add('plates__data');

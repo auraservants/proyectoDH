@@ -92,8 +92,8 @@
 					@foreach($plates as $plate)
 						<div class="card__plates">
 							<div class="plates__description">
-								<p>{{ $plate["description"] }}</p>
-								<div class="plates__image"></div>
+								<p>{{ $plate["description"] }}</p>    
+								<div class="plates__image" style="background-image: url(/storage/{{ $plate["image"] }})"></div>
 							</div>
 							<div class="plates__data">
 								<h4>{{ $plate["name"] }}</h4>
@@ -111,7 +111,7 @@
 						<div class="card__plates">
 							<div class="plates__description">
 								<p>{{ $plate["description"] }}</p>
-								<div class="plates__image"></div>
+								<div class="plates__image" style="background-image: url(/storage/{{ $plate["image"] }})"></div>
 							</div>
 							<div class="plates__data">
 								<h4>{{ $plate["name"] }}</h4>
