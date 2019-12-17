@@ -50,7 +50,7 @@
 				<img src="image/about.jpg" alt="">
 			</div>
 			<div class="about-text">
-				<p>Es el método que diseñamos para poder escucharte y ofrecerte lo que realmente te gusta, 
+				<p>Es el método que diseñamos para poder escucharte y ofrecerte lo que realmente te gusta,
 				permitiendote a su vez conocer cosas nuevas.</p></br>
 				<p>Elegis ingredientes que sabes que te gustan,</p>
 				<p>y seleccionas tu plato o...</p>
@@ -59,31 +59,35 @@
 		</div>
 	</section>
 	<section class="ingredients container" id="products">
-		
+
 	<section class="features container" id="features">
 		<div>
 			<h3>En Randfood te aseguramos</h3>
-			<p class="after">lorem ipsum dolom.</p>
+			<p class="after">Todo lo necesario para que tu experiencia sea la mejor.</p>
 			<div class="features">
 				<div class="div-features">
 					<img src="image/features1.png" alt="">
 					<h4>Calidad Premium</h4>
-					<p>Lorem ipsum, dolor sit amet consectetil.</p>
+                    <p>Ingredientes de primera calidad<br>
+                        elegidos por nuestros expertos.</p>
 				</div>
 				<div class="div-features">
 					<img src="image/features2.png" alt="">
 					<h4>Personal Calificado</h4>
-					<p>Lorem ipsum, dolor sit amet consectetil.</p>
+                    <p>Altamente entrenado y preparado <br>
+                        para tus exigencias.</p>
 				</div>
 				<div class="div-features">
 					<img src="image/features3.png" alt="">
 					<h4>Rápida Ejecución</h4>
-					<p>Lorem ipsum, dolor sit amet consectetil.</p>
+                    <p>Ya no tienes que esperar <br>
+                        una hora por tu comida.</p>
 				</div>
 				<div class="div-features">
 					<img src="image/features4.png" alt="">
 					<h4>Devolución Segura</h4>
-					<p>Lorem ipsum, dolor sit amet consectetil.</p>
+                    <p>De haber algun error con tu pedido<br>
+                         te devolvemos tu plata.</p>
 				</div>
 			</div>
 		</div>

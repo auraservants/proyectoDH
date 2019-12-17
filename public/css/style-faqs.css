@@ -96,7 +96,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  font-size: 22px;
+  font-size: 20px;
 }
 .faqs__question img {
   width: 20px;
@@ -115,7 +115,7 @@
 }
 .faqs__reply p {
   height: 100%;
-  font-size: 22px;
+  font-size: 18px;
   padding: 20px 45px;
 }
 .faqs__group:hover .faqs__reply {
