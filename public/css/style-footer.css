@@ -71,7 +71,7 @@ footer {
 .links-footer h3{
     color: #fff;
     margin-bottom: 20px;
-
+    height: 20px;
 }
 
 .links-footer ul li a:hover{

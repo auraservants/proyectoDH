@@ -67,6 +67,10 @@ class OrdersController extends Controller
     public function orderReceived() {
         $orders = Order::where('user_id', '=', Auth::user()->id)->get();
         $vac = compact('orders');
+        foreach($orders as $order) {
+            $order->plates()->detach();
+            $order->delete();
+        }
         return view('order-received', $vac);
     }
 }

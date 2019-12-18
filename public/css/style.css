@@ -109,3 +109,7 @@ button:focus, input:focus {
 input {
     font-family: "Montserrat", sans-serif;
 }
+.custom_message {
+    color: #ff4747;
+    font-size: 14px;
+}

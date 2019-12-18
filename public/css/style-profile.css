@@ -353,6 +353,9 @@ justify-content: flex-end;
 .points__user span {
   color: var(--color4);
 }
+.error_addresses {
+  color:red;
+}
 
 
 

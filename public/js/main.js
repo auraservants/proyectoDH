@@ -138,7 +138,7 @@ window.onload = function() {
     if(aConfirmPurcharse) {
         aConfirmPurcharse.onclick = function(event) {
             event.preventDefault();
-            if(!emptyCart) {
+            if(document.querySelector('.description_cart') !== null) {
                 var inputAddressCart = document.querySelectorAll('.inputAddressCart');
                 if(inputAddressCart.length === 0) {
                     swal ( "Aun no tienes ninguna dirección" , "Redirigete a tus datos para agregar una nueva" , "warning" )
@@ -146,15 +146,20 @@ window.onload = function() {
                         document.location.href = "/home#myData";
                     });
                 } else {
+                    var queryChecked = false;
                     for(var input of inputAddressCart) {
                         if(input.checked) {
+                            queryChecked = true;
+                        }
+                        if(queryChecked) {
                             swal ( "Finalizaste tu compra con exito!" , "Procede a realizar el pago" , "success" )
                             .then(function(){
                                 document.location.href = "/checkout";
                             });
-                        } else {
-                            swal ( "No seleccionaste ninguna dirección" , "Elige alguna para finalizar tu compra" , "warning" );
-                        }
+                        } 
+                    }
+                    if(!queryChecked) {
+                        toastr.warning( "Elige alguna para finalizar tu compra", "No seleccionaste ninguna dirección");
                     }
                 }
             } else {

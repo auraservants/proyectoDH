@@ -20,7 +20,7 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror form-items" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nombre y Apellido">
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback custom_message" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -31,7 +31,7 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror form-items" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback custom_message" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -42,7 +42,7 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror form-items" name="password" required autocomplete="new-password" placeholder="Contraseña">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback custom_message" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
