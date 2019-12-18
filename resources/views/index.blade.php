@@ -57,8 +57,20 @@
 				<p class="about-text-orange">Te arriegas y probas Randfood!</p>
 			</div>
 		</div>
-	</section>
-	<section class="ingredients container" id="products">
+    </section>
+
+
+	<section class="ingredients_slide" id="slide_to_shop">
+        <div class="box_slide_shop">
+            <img src="image/642275-POM9I1-943.jpg" alt="plates of food">
+         <div class="text_slide_shop">
+            <h1>Armá tu plato ideal</h1>
+            <p>Más sano, Más rico, Más original</p>
+            <a href="/products" class="button_slide_shop btn btn--orange btn--large">Comenzar</a>
+         </div>
+        </div>
+    </section>
+
 
 	<section class="features container" id="features">
 		<div>

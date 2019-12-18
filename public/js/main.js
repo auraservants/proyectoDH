@@ -23,7 +23,7 @@ window.onload = function() {
     });
 
 
-    
+
     toastr.options = {
     "closeButton": true,
     "debug": false,
@@ -61,7 +61,7 @@ window.onload = function() {
             }
         });
     }
-    
+
 
     var aFinishPurchase = document.querySelector('.btn_finishPurchase');
     if(aFinishPurchase) {
@@ -89,9 +89,9 @@ window.onload = function() {
                 if(!regexEmail.test(email.value)) {
                     toastr.warning("Por favor ingrese un email válido", "Email inválido",{onclick: function() {
                         email.focus();
-                    }});                        
+                    }});
                     status.push(false);
-                    
+
                 }
             }
 
@@ -104,21 +104,21 @@ window.onload = function() {
                         nameCard.focus();
                     }});
                     status.push(false);
-                    
-                } 
+
+                }
                 if(numberCard.value === '') {
                     toastr.warning("Por favor complete el número de la tarjeta", "Número tarjeta vacío",{onclick: function() {
                         numberCard.focus();
                     }});
                     status.push(false);
-                    
+
                 }
                 if(cvvCard.value === '') {
                     toastr.warning("Por favor complete el CVV de la tarjeta", "CVV vacío",{onclick: function() {
                         cvvCard.focus();
                     }});
                     status.push(false);
-                    
+
                 }
             }
             if(status.length == 0){
@@ -128,7 +128,7 @@ window.onload = function() {
                     document.location.href = 'order-received';
                 });
             }
-        }              
+        }
     }
 
 
@@ -160,9 +160,9 @@ window.onload = function() {
             } else {
                 toastr.warning("Dirigete al shop para iniciar tu compra", "No tienes ningún plato seleccionado");
             }
-            
-        }              
-    }    
+
+        }
+    }
 
 
 }
