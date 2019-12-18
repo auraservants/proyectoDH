@@ -136,27 +136,27 @@
                   <div>
                     <p>Barrio</p><input class="address-neighborhood" name="add[neighborhood]" type="text" value="">   
                     @error('add.neighborhood')
-                      <p>{{$message}}</p>
+                      <p class="error_addresses">{{$message}}</p>
                     @enderror                     
                   </div>
                   <div>
                     <p>Calle</p><input name="add[street]" type="text" value="">  
                     @error('add.street')
-                      <p>{{$message}}</p>
+                      <p class="error_addresses">{{$message}}</p>
                     @enderror                                            
                   </div>
                   <div class="address-data">
                     <p>N°</p><input name="add[number]" type="text" value="">  
                     @error('add.number')
-                      <p>{{$message}}</p>
+                      <p class="error_addresses">{{$message}}</p>
                     @enderror   
                     <p>Piso</p><input name="add[floor]" type="text" value="">
                     @error('add.floor')
-                      <p>{{$message}}</p>
+                      <p class="error_addresses">{{$message}}</p>
                     @enderror  
                     <p>Depto</p><input name="add[apartment]" type="text" value=""> 
                     @error('add.apartment')
-                      <p>{{$message}}</p>
+                      <p class="error_addresses">{{$message}}</p>
                     @enderror                             
                   </div>               
                 </div> 
