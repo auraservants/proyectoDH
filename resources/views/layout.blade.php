@@ -95,7 +95,7 @@
                     </ul>
                     @auth
                     <ul>
-                        <h3 class="Links">Navegación</h3>
+                        <h3 class="Links"></h3>
                         <li><a href="/cart" id="link-home" class="btn-header">Carrito</a></li>
                         <li><a href="/home" id="link-us" class="btn-header">Mi Cuenta</a></li>
                         <li><a href="/home#myData" id="link-shop" class="btn-header">Mis Datos</a></li>
@@ -325,11 +325,14 @@
             if(removePlate) {
                 var containerPlateRemove = document.getElementById('plateCartRemove[' + idPlate + ']');
                 containerPlateRemove.remove();
+                if(document.querySelector('.description_cart') === null){
+                
                 var container = document.querySelector('.container_buy_cart');
                 var p = document.createElement('p');
                 p.classList.add('empty_cart');
                 p.innerHTML = 'Aun no has seleccionado ningún plato';
                 container.append(p);
+                }
             }
         }
 

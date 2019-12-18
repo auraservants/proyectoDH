@@ -20,7 +20,7 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror form-items" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus  placeholder="Email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback custom_message" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -31,7 +31,7 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror form-items" name="password" required autocomplete="current-password" placeholder="Contraseña">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback custom_message" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
